@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BNBRenderTarget: NSObject
+@interface BanubaRenderTarget: NSObject
 
 @property (nonatomic, assign) GLuint framebuffer2;
 @property (nonatomic, assign) CGSize renderSize;
