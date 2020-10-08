@@ -4,7 +4,7 @@
 //  Copyright © 2018 Banuba. All rights reserved.
 //
 
-#import "BNBRenderTarget.h"
+#import "BanubaRenderTarget.h"
 #import "SBVideoWriter.h"
 #import "SBVideoWriterError.h"
 
