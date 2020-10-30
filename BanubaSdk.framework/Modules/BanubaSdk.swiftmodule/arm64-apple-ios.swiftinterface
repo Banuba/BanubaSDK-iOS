@@ -289,7 +289,7 @@ public protocol InputServiceDelegate : AnyObject {
   func push(buffer: CoreVideo.CVPixelBuffer)
   func push(buffer: CoreMedia.CMSampleBuffer)
 }
-public enum CameraSessionType {
+@frozen public enum CameraSessionType {
   case FrontCameraVideoSession
   case BackCameraVideoSession
   case FrontCameraPhotoSession
