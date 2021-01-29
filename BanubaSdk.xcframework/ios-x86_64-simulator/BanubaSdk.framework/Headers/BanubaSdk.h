@@ -4,9 +4,8 @@
 //  Copyright © 2018 Banuba. All rights reserved.
 //
 
-#import "BanubaRenderTarget.h"
 #import "SBVideoWriter.h"
-#import "SBVideoWriterError.h"
+#import "CVPixelBuffer+scale.h"
 
 //! Project version number for BanubaSdk.
 FOUNDATION_EXPORT double BanubaSdkVersionNumber;

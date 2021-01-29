@@ -4,53 +4,49 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/BanubaRenderTarget.h</key>
-		<data>
-		uVWvD8sLyGqlhzMjRYspM25af54=
-		</data>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<data>
-		L8xf7bRnmcasteU0TG8vlsDkz2c=
+		gpPNrPL8duL3di4FeJXni3+Z8Wc=
 		</data>
 		<key>Headers/BanubaSdk.h</key>
 		<data>
-		QF6EztFMIs7REQAR9mnzOkmAPd4=
+		QvN1ycDvzKv0fS162q5tpKA5VuY=
+		</data>
+		<key>Headers/CVPixelBuffer+scale.h</key>
+		<data>
+		Chm8IJs0sONPk3ccbPu7/oNl0ss=
 		</data>
 		<key>Headers/SBVideoWriter.h</key>
 		<data>
-		aLMo5rlD8axNQ9TdhRhgTDb1j2I=
-		</data>
-		<key>Headers/SBVideoWriterError.h</key>
-		<data>
-		vFkUtOOd9N6G7wXcWjnvbXRENFY=
+		r9Cz9QAx25lXi5qtUrWoRer0DmM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		c+swEwXs1Zk3w9uiVEmcHvuOe7c=
+		Zw7S2s8y6yr0n8trOwaqDT8BD7M=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		PhE9q5nNIYlc/E/sEtroL2iItoc=
+		Ltkpui0AE1hncJsNcLFdyCC2lLY=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bQ9MJsB0emnYysWfjS27NKd7vEQ=
+		FDgtF4EmG2NFO5UYOu55jEjexfo=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dB21e5HOkq4rowlqMAtVpb3T0RY=
+		NeA4TvHSAmCmT5aL8DREFo1qQog=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		PhE9q5nNIYlc/E/sEtroL2iItoc=
+		Ltkpui0AE1hncJsNcLFdyCC2lLY=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		bQ9MJsB0emnYysWfjS27NKd7vEQ=
+		FDgtF4EmG2NFO5UYOu55jEjexfo=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		dB21e5HOkq4rowlqMAtVpb3T0RY=
+		NeA4TvHSAmCmT5aL8DREFo1qQog=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,81 +55,74 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/BanubaRenderTarget.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ziikgSJJH1Qg+M8svjHsPufhQhTKEmmtg+ItfRuSdhk=
-			</data>
-		</dict>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w7o1w+ms/Mwz4vGc0AwVaMX2g6VwTt/ubOmO/PbSNpc=
+			kORx9xiv9bis97ctgJGDq/d0JQ+Fjeabwg/ugHC7U5w=
 			</data>
 		</dict>
 		<key>Headers/BanubaSdk.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MucfQT7Djc7dSY6B4wzOLB1US0NkXu7hkx2ClwEg7JU=
+			56RcKefii2sdLfL/ZayETzoTOyLysdg9Jb1MCvulDO8=
+			</data>
+		</dict>
+		<key>Headers/CVPixelBuffer+scale.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4V5JNBc/d7HDTg/wFY7KGpbROoqwmMfFIE/1HjuTMFk=
 			</data>
 		</dict>
 		<key>Headers/SBVideoWriter.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tVgN6JANU19tjPeHjyaHK+2hVTIgruWa5896m8Pt/gY=
-			</data>
-		</dict>
-		<key>Headers/SBVideoWriterError.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			8/WaV5c/yx6qUqx0M7sjLRoiMnBb1ANvJ51J5eMXifE=
+			0CTGnHAa0AY989uwsRkpTu2ZiYinbKSNBjkz6vprW9U=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QwS+oV3+2nXdQOqqLjo9dpghLXimAZ+GNmUMHu1gRb4=
+			sOOdXuKS4N8YVex+MQ9T3Ha5t9Kao/q1BQ+hyReY9BY=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q98UD4j7Z/9nPBmeLPti1fwDZcwdmQmzXPKq2bw2x1w=
+			ow9PQ8GIX9U9OlnYIdN5/yb1zEoF1gB6svtSX/nxmHU=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mMc6IZRiyzr9VSCQxijfd5Jr98+CwGoWk9OlkKQIQtQ=
+			m3A/UiJL3dPqGEgpuV4bcReyjFFKtV1NKgEt+4lmaTk=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QwS+oV3+2nXdQOqqLjo9dpghLXimAZ+GNmUMHu1gRb4=
+			sOOdXuKS4N8YVex+MQ9T3Ha5t9Kao/q1BQ+hyReY9BY=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q98UD4j7Z/9nPBmeLPti1fwDZcwdmQmzXPKq2bw2x1w=
+			ow9PQ8GIX9U9OlnYIdN5/yb1zEoF1gB6svtSX/nxmHU=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mMc6IZRiyzr9VSCQxijfd5Jr98+CwGoWk9OlkKQIQtQ=
+			m3A/UiJL3dPqGEgpuV4bcReyjFFKtV1NKgEt+4lmaTk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
