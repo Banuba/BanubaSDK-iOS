@@ -238,7 +238,8 @@ public enum VoiceChangerError : Swift.Error {
   @objc final public let applyWatermark: Swift.Bool
   @objc final public let adjustDeviceOrientation: Swift.Bool
   @objc final public let mirrorFrontCamera: Swift.Bool
-  @objc public init(applyWatermark: Swift.Bool, adjustDeviceOrientation: Swift.Bool, mirrorFrontCamera: Swift.Bool)
+  @objc final public let useHEVCCodecIfPossible: Swift.Bool
+  @objc public init(applyWatermark: Swift.Bool, adjustDeviceOrientation: Swift.Bool, mirrorFrontCamera: Swift.Bool, useHEVCCodecIfPossible: Swift.Bool)
   @objc public static var defaultConfiguration: BanubaSdk.OutputConfiguration {
     @objc get
   }
@@ -262,6 +263,7 @@ public typealias RotateCameraCallBack = () -> ()
   @objc var exposurePointOfInterest: CoreGraphics.CGPoint { get }
   @objc var useARKit: Swift.Bool { get }
   @objc var flipCamera: Swift.Bool { get set }
+  @objc var cameraVideoOutput: AVFoundation.AVCaptureVideoDataOutput? { get }
   @objc func startCamera()
   @objc func stopCamera()
   @objc func initializeCameraInput()

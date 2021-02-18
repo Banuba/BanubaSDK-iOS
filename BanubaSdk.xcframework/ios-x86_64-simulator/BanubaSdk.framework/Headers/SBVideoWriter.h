@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+#import <AVKit/AVKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,11 +27,21 @@ FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
 
 @end
 
+@interface RecorderSettings : NSObject
+
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithVideoDataOutput:(AVCaptureVideoDataOutput* _Nullable)videoDataOutput
+                            captureSize:(CGSize)captureSize
+                 useHEVCCodecIfPossible:(BOOL)useHEVCCodecIfPossible;
+
+@end
+
 @interface SBVideoWriter : NSObject
 
 @property(assign, nonatomic, readonly) CMTime recorderVideoDuration;
 
-- (instancetype)initWithSize:(CGSize)size outputSettings:(OutputSettings*)settings;
+- (instancetype)initWithOutputSettings:(OutputSettings*)settings
+                      recorderSettings:(RecorderSettings*)recorderSettings;
 
 - (void)pushAudioSampleBuffer:(CMSampleBufferRef)buffer;
 - (void)pushVideoSampleBuffer:(CVPixelBufferRef)buffer;

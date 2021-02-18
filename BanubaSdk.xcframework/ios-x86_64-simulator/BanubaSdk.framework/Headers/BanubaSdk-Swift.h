@@ -397,6 +397,7 @@ SWIFT_CLASS("_TtC9BanubaSdk19CameraPhotoSettings")
 @end
 
 enum CameraSessionType : NSInteger;
+@class AVCaptureVideoDataOutput;
 @class BNBFrameData;
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
@@ -409,6 +410,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 @property (nonatomic, readonly) CGPoint exposurePointOfInterest;
 @property (nonatomic, readonly) BOOL useARKit;
 @property (nonatomic) BOOL flipCamera;
+@property (nonatomic, readonly, strong) AVCaptureVideoDataOutput * _Nullable cameraVideoOutput;
 - (void)startCamera;
 - (void)stopCamera;
 - (void)initializeCameraInput;
@@ -527,7 +529,8 @@ SWIFT_CLASS("_TtC9BanubaSdk19OutputConfiguration")
 @property (nonatomic, readonly) BOOL applyWatermark;
 @property (nonatomic, readonly) BOOL adjustDeviceOrientation;
 @property (nonatomic, readonly) BOOL mirrorFrontCamera;
-- (nonnull instancetype)initWithApplyWatermark:(BOOL)applyWatermark adjustDeviceOrientation:(BOOL)adjustDeviceOrientation mirrorFrontCamera:(BOOL)mirrorFrontCamera OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) BOOL useHEVCCodecIfPossible;
+- (nonnull instancetype)initWithApplyWatermark:(BOOL)applyWatermark adjustDeviceOrientation:(BOOL)adjustDeviceOrientation mirrorFrontCamera:(BOOL)mirrorFrontCamera useHEVCCodecIfPossible:(BOOL)useHEVCCodecIfPossible OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OutputConfiguration * _Nonnull defaultConfiguration;)
 + (OutputConfiguration * _Nonnull)defaultConfiguration SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
