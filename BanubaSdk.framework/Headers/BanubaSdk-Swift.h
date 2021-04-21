@@ -190,6 +190,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AVFoundation;
 @import BanubaEffectPlayer;
+@import BanubaSDKServicing;
 @import CoreGraphics;
 @import CoreMedia;
 @import CoreVideo;
@@ -226,9 +227,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14AudioCapturing_")
 
 
 
+@protocol SDKInputServicingDelegate;
+@protocol SDKARInputServicingDelegate;
 
 SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @interface BanubaCameraModule : NSObject
+@property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL allowProcessing;
+@property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
+@property (nonatomic, strong) id <SDKARInputServicingDelegate> _Nullable inputARDelegate;
 + (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder arCloudPath:(NSString * _Nullable)arCloudPath;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -238,7 +245,20 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 - (void)onEffectEvent:(NSString * _Nonnull)name params:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
 @end
 
+@class UIImage;
+@class AVURLAsset;
 
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
+- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
+- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
+- (void)unloadEffectTexture;
+@end
+
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
+@property (nonatomic) BOOL isBeautificationEnabled;
+- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class ARFrame;
 
@@ -256,11 +276,91 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)willPresentFramebufferWithRenderSize:(CGSize)renderSize;
 @end
 
+@class NSValue;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
+@property (nonatomic, readonly) BOOL isRecording;
+@property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)stopVideoCapturingWithCancel:(BOOL)cancel;
+@end
 
 
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
+- (void)seekPIPPlayerTo:(NSTimeInterval)time;
+- (void)resetPIPShape;
+- (void)createPIPPlayerWithVideoURL:(NSURL * _Nonnull)url completion:(void (^ _Nullable)(void))completion;
+- (void)startPIPPlayer;
+- (void)stopPIPPlayer;
+- (void)setPIPPlayerWithRenderBehaviour:(enum RenderBehaviorAdapter)renderBehaviour;
+- (void)setPIPPlayerWithShapeType:(enum PIPShapeTypeAdapter)type;
+- (void)setPIPPlayerWithCenterPoint:(CGPoint)point;
+@end
 
 
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
+- (void)postprocessProcessVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
+- (void)postprocessStopVideoProcessing;
+- (void)postprocessPlaybackStop;
+- (void)postprocessSurfaceDestroyed;
+- (void)postprocessSurfaceCreatedWith:(CGSize)size;
+- (void)postprocessSetEffectSize:(CGSize)size;
+- (void)postprocessLoadEffectWithPath:(NSString * _Nonnull)path;
+- (void)postprocessStartVideoProcessingWith:(CGSize)size;
+- (void)postprocessDraw;
+@end
 
+@class EffectModel;
+@protocol EffectSubtypeModificationsEventListener;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)loadMaskWithName:(NSString * _Nonnull)name;
+- (void)unloadMask;
+- (void)removeAllFilters;
+- (void)applyFilter:(EffectModel * _Nonnull)filter;
+- (void)removeFilter:(EffectModel * _Nonnull)filter;
+- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
+- (NSArray<NSString *> * _Nonnull)effectsPathsWithIncludeBeautyEffect:(BOOL)includeBeautyEffect SWIFT_WARN_UNUSED_RESULT;
+- (void)effectDidBeginApplying;
+- (void)effectDidEndApplying;
+- (void)effectDidResetApplying;
+- (void)effectDidChangeState;
+@end
+
+@class EAGLContext;
+@class UIView;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <CameraModule>
+@property (nonatomic, readonly) CGSize pipRenderSize;
+@property (nonatomic) BOOL autoStart;
+@property (nonatomic, readonly) CGSize playerViewSize;
+- (void)setupWithPostproccessContext:(EAGLContext * _Nonnull)postproccessContext;
+- (void)destroy;
+- (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)startWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)stopWithCompletion:(void (^ _Nullable)(void))completion;
+- (void)setRenderTargetWithView:(UIView * _Nonnull)view;
+- (void)removeRenderTarget;
+- (UIView * _Nonnull)getRendererView SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKInputServicing>
+@property (nonatomic, readonly) float zoomFactor;
+@property (nonatomic, readonly) BOOL isFrontCamera;
+@property (nonatomic, readonly) enum CameraModuleSessionType currentCameraSessionType;
+- (void)configureFocusSettings:(CGPoint)point useContinuousDetection:(BOOL)useContinuousDetection;
+- (void)configureExposureSettings:(CGPoint)point useContinuousDetection:(BOOL)useContinuousDetection;
+- (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
+- (void)toggleCameraWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)startCamera;
+- (void)startAudioCapturing;
+- (void)stopAudioCapturing;
+- (void)setCameraSessionType:(enum CameraModuleSessionType)type;
+- (enum AVCaptureTorchMode)setTorchWithMode:(enum AVCaptureTorchMode)mode SWIFT_WARN_UNUSED_RESULT;
+- (enum AVCaptureTorchMode)toggleTorch SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class BNBEffectPlayer;
 @class BNBEffectManager;
@@ -331,13 +431,13 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
-- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
 @end
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
+- (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
 
@@ -366,7 +466,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 - (void)onRenderFrameDurationChanged:(float)instant averaged:(float)averaged;
 @end
 
-@class UIImage;
 @class NSNumber;
 @class BNBProcessImageParams;
 @class CameraPhotoSettings;
@@ -469,6 +568,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @end
 
 
+
 @class NSNotificationCenter;
 
 SWIFT_CLASS("_TtC9BanubaSdk25EffectPlayerConfiguration")
@@ -560,7 +660,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OutputConfig
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSValue;
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 @protocol OutputServicing
