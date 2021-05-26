@@ -228,12 +228,21 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14AudioCapturing_")
 
 
 @class NSNumber;
+@class NSURL;
+@class PIPSwitchLayoutSetting;
+@class PIPPlayerLayoutSetting;
+@class PIPCameraLayoutSetting;
 @protocol SDKInputServicingDelegate;
 @protocol SDKARInputServicingDelegate;
 @class NSString;
 
 SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @interface BanubaCameraModule : NSObject
+@property (nonatomic) BOOL isPIPSession;
+@property (nonatomic, copy) NSURL * _Nullable pipVideoURL;
+@property (nonatomic, strong) PIPSwitchLayoutSetting * _Nullable pipSwitchSetting;
+@property (nonatomic, strong) PIPPlayerLayoutSetting * _Nullable pipPlayerSetting;
+@property (nonatomic, strong) PIPCameraLayoutSetting * _Nullable pipCameraSetting;
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
@@ -245,15 +254,6 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BNBEffectEventListener>
 - (void)onEffectEvent:(NSString * _Nonnull)name params:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
-@end
-
-@class UIImage;
-@class AVURLAsset;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
-- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
-- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
-- (void)unloadEffectTexture;
 @end
 
 
@@ -278,27 +278,26 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)willPresentFramebufferWithRenderSize:(CGSize)renderSize;
 @end
 
-@class NSURL;
 @class NSValue;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
 @property (nonatomic, readonly) BOOL isRecording;
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
 - (void)seekPIPPlayerTo:(NSTimeInterval)time;
-- (void)resetPIPShape;
-- (void)createPIPPlayerWithVideoURL:(NSURL * _Nonnull)url completion:(void (^ _Nullable)(void))completion;
 - (void)startPIPPlayer;
 - (void)stopPIPPlayer;
-- (void)setPIPPlayerWithRenderBehaviour:(enum RenderBehaviorAdapter)renderBehaviour;
-- (void)setPIPPlayerWithShapeType:(enum PIPShapeTypeAdapter)type;
-- (void)setPIPPlayerWithCenterPoint:(CGPoint)point;
+- (void)setupPIPSessionWithVideoURL:(NSURL * _Nonnull)url;
+- (void)startPIPSessionIfNeeded;
+- (void)applyPIPCameraSettingIfNeeded:(PIPCameraLayoutSetting * _Nonnull)setting;
+- (void)applyPIPPlayerSettingIfNeeded:(PIPPlayerLayoutSetting * _Nonnull)setting;
+- (void)applyPIPSwitchSettingIfNeeded:(PIPSwitchLayoutSetting * _Nonnull)setting;
 @end
 
 
@@ -312,6 +311,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)postprocessLoadEffectWithPath:(NSString * _Nonnull)path;
 - (void)postprocessStartVideoProcessingWith:(CGSize)size;
 - (void)postprocessDraw;
+@end
+
+@class UIImage;
+@class AVURLAsset;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
+- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
+- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
+- (void)unloadEffectTexture;
 @end
 
 @class EffectModel;
@@ -335,7 +343,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @class UIView;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <CameraModule>
-@property (nonatomic, readonly) CGSize pipRenderSize;
 @property (nonatomic) BOOL autoStart;
 @property (nonatomic, readonly) CGSize playerViewSize;
 - (void)setupWithPostproccessContext:(EAGLContext * _Nonnull)postproccessContext;
@@ -434,13 +441,13 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
+- (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
-- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
 @end
 
 
@@ -671,8 +678,8 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 - (void)removeWatermark;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 - (void)startForwardingFramesWithHandler:(void (^ _Nonnull)(CVPixelBufferRef _Nonnull))handler;
 - (void)stopForwardingFrames;
@@ -696,6 +703,7 @@ SWIFT_CLASS("_TtC9BanubaSdk14PIPShapeDrawer")
 SWIFT_CLASS("_TtC9BanubaSdk9PIPPlayer")
 @interface PIPPlayer : PIPShapeDrawer
 @end
+
 
 
 
