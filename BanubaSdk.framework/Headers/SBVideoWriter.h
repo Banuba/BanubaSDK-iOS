@@ -49,6 +49,7 @@ FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
 - (void)prepareInputs:(NSURL*)fileUrl;
 - (void)startCapturingScreenWithUrl:(NSURL*)fileUrl
                            progress:(void (^_Nullable)(CMTime))progress
+                           didStart:(void (^_Nullable)(void))didStart
        periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval
                       boundaryTimes:(NSArray<NSValue*>* _Nullable)boundaryTimes
                     boundaryHandler:(void (^_Nullable)(CMTime))boundaryHandler
@@ -57,6 +58,7 @@ FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
                          completion:(void (^)(BOOL, NSError*))completionHandler;
 
 - (void)startCapturingScreenWithProgress:(void (^_Nullable)(CMTime))progress
+                                didStart:(void (^_Nullable)(void))didStart
             periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval
                            boundaryTimes:(NSArray<NSValue*>* _Nullable)boundaryTimes
                          boundaryHandler:(void (^_Nullable)(CMTime))boundaryHandler
