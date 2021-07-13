@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaSdk
 import ARKit
 import AVKit
@@ -23,9 +23,11 @@ import UIKit
     get
   }
   public init(asset: AVFoundation.AVAsset, context: OpenGLES.EAGLContext)
+  public func setVolume(_ volume: Swift.Float)
   public func startPlaying()
   public func stopPlaying()
   public func seek(to time: Foundation.TimeInterval)
+  public func drawZoomToFit(in viewportSize: CoreGraphics.CGSize)
   public func draw()
   public func draw(fullRenderSize: CoreGraphics.CGSize, absoluteCenter: CoreGraphics.CGPoint, scale: CoreGraphics.CGFloat)
   @objc deinit
@@ -63,11 +65,12 @@ import UIKit
   @objc public var useARKitWhenAvailable: Swift.Bool
   @objc public var fpsLimit: Swift.Double
   @objc override dynamic public convenience init()
-  @objc public convenience init(renderMode: BanubaSdk.EffectPlayerRenderMode, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, useARKitWhenAvailable: Swift.Bool = true, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
-  @objc public init(cameraMode: BanubaSdk.CameraSessionType, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, renderSize: CoreGraphics.CGSize, captureSessionPreset: AVFoundation.AVCaptureSession.Preset, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, flipVertically: Swift.Bool = true, useARKitWhenAvailable: Swift.Bool = true, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
+  @objc public convenience init(renderMode: BanubaSdk.EffectPlayerRenderMode, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
+  @objc public init(cameraMode: BanubaSdk.CameraSessionType, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, renderSize: CoreGraphics.CGSize, captureSessionPreset: AVFoundation.AVCaptureSession.Preset, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, flipVertically: Swift.Bool = true, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class BanubaCameraModule : ObjectiveC.NSObject {
+  @objc public var isPIPSessionAlreadySetup: Swift.Bool
   @objc public var isPIPSession: Swift.Bool
   @objc public var pipVideoURL: Foundation.URL?
   @objc public var pipSwitchSetting: BanubaSDKServicing.PIPSwitchLayoutSetting?
@@ -131,11 +134,13 @@ extension BanubaCameraModule {
   @objc dynamic public func seekPIPPlayer(to time: Foundation.TimeInterval)
   @objc dynamic public func startPIPPlayer()
   @objc dynamic public func stopPIPPlayer()
+  @objc dynamic public func setPIPPlayerVolume(_ volume: Swift.Float)
   @objc dynamic public func setupPIPSession(withVideoURL url: Foundation.URL)
-  @objc dynamic public func startPIPSessionIfNeeded()
-  @objc dynamic public func applyPIPCameraSettingIfNeeded(_ setting: BanubaSDKServicing.PIPCameraLayoutSetting)
-  @objc dynamic public func applyPIPPlayerSettingIfNeeded(_ setting: BanubaSDKServicing.PIPPlayerLayoutSetting)
-  @objc dynamic public func applyPIPSwitchSettingIfNeeded(_ setting: BanubaSDKServicing.PIPSwitchLayoutSetting)
+  @objc dynamic public func startPIPSessionIfNeeded(completion: (() -> Swift.Void)?)
+  @objc dynamic public func applyPIPCameraSettingIfNeeded(_ setting: BanubaSDKServicing.PIPCameraLayoutSetting, restoreSession: Swift.Bool)
+  public func applyPIPPlayerCenteredPoint(scale: CoreGraphics.CGFloat)
+  @objc dynamic public func applyPIPPlayerSettingIfNeeded(_ setting: BanubaSDKServicing.PIPPlayerLayoutSetting, restoreSession: Swift.Bool)
+  @objc dynamic public func applyPIPSwitchSettingIfNeeded(_ setting: BanubaSDKServicing.PIPSwitchLayoutSetting, restoreSession: Swift.Bool)
 }
 extension BanubaCameraModule : BanubaSDKServicing.SDKInputServicing {
   @objc dynamic public var zoomFactor: Swift.Float {
@@ -196,19 +201,14 @@ extension BanubaCameraModule : BanubaSDKServicing.SDKBeautyEffectManaging {
 }
 extension BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   @objc dynamic public func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
-  @objc dynamic public func willOutput(arFrame: ARKit.ARFrame)
+  public func willOutput(arFrame: ARKit.ARFrame)
   @objc dynamic public func willPresentFramebuffer(renderSize: CoreGraphics.CGSize)
 }
 extension BanubaCameraModule : BanubaSDKServicing.SDKMaskPostprocessServicing {
   @objc dynamic public func postprocessProcessVideoFrame(_ from: CoreVideo.CVPixelBuffer, to: CoreVideo.CVPixelBuffer, time: CoreMedia.CMTime)
-  @objc dynamic public func postprocessStopVideoProcessing()
-  @objc dynamic public func postprocessPlaybackStop()
-  @objc dynamic public func postprocessSurfaceDestroyed()
   @objc dynamic public func postprocessSurfaceCreated(with size: CoreGraphics.CGSize)
   @objc dynamic public func postprocessSetEffectSize(_ size: CoreGraphics.CGSize)
   @objc dynamic public func postprocessLoadEffect(path: Swift.String)
-  @objc dynamic public func postprocessStartVideoProcessing(with size: CoreGraphics.CGSize)
-  @objc dynamic public func postprocessDraw()
 }
 extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
   @objc dynamic public func onEffectEvent(_ name: Swift.String, params: [Swift.String : Swift.String])
@@ -243,8 +243,6 @@ extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
 @objc public protocol BanubaSdkManagerDelegate {
   @objc func willPresentFramebuffer(renderSize: CoreGraphics.CGSize)
   @objc func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
-  @objc @available(iOS 11.0, *)
-  func willOutput(arFrame: ARKit.ARFrame)
 }
 @_inheritsConvenienceInitializers @objc public class BanubaSdkManager : ObjectiveC.NSObject {
   @objc weak public var delegate: BanubaSdk.BanubaSdkManagerDelegate?
@@ -271,7 +269,6 @@ extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
   @objc public var output: BanubaSdk.OutputServicing? {
     @objc get
   }
-  final public let context: OpenGLES.EAGLContext?
   @objc public var renderTarget: BanubaSdk.RenderTarget?
   @objc public var playerConfiguration: BanubaSdk.EffectPlayerConfiguration? {
     @objc get
@@ -279,6 +276,9 @@ extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
   @objc public func setRenderTarget(layer: QuartzCore.CAEAGLLayer, renderMode: BanubaSdk.EffectPlayerRenderMode, contentMode: BanubaSdk.RenderContentMode = .resizeAspectFill)
   @objc public func setRenderTarget(layer: QuartzCore.CAEAGLLayer, contentMode: BanubaSdk.RenderContentMode = .resizeAspectFill, playerConfiguration: BanubaSdk.EffectPlayerConfiguration?)
   @objc public func removeRenderTarget()
+  public var editingImageFrameData: BanubaEffectPlayer.BNBFrameData? {
+    get
+  }
   @objc public var renderQueue: Dispatch.DispatchQueue {
     @objc get
   }
@@ -297,21 +297,9 @@ extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
 @objc extension BanubaSdkManager : BanubaSdk.InputServiceDelegate {
   @objc dynamic public func push(cmBuffer: CoreMedia.CMSampleBuffer)
   @objc dynamic public func push(cvBuffer: CoreVideo.CVPixelBuffer)
-  @available(iOS 11.0, *)
-  @objc dynamic public func push(frame: ARKit.ARFrame, useBackCamera: Swift.Bool)
 }
 @objc extension BanubaSdkManager {
   @objc dynamic public func setFrameDataRecord(_ isRecord: Swift.Bool)
-}
-extension BanubaSdkManager {
-  public func createPIPPlayer(withVideoURL url: Foundation.URL, completion: (() -> Swift.Void)?)
-  public func startPIPPlayer()
-  public func stopPIPPlayer()
-  public func seekPIPPlayer(to time: Foundation.TimeInterval)
-  public func setPIPPlayer(renderBehaviour: BanubaSdk.RenderBehavior)
-  public func setPIPPlayer(shapeType type: BanubaSdk.PIPShapeBuilder.PIPShapeType)
-  public func setPIPPlayer(centerPoint point: CoreGraphics.CGPoint)
-  public func setSplitRender()
 }
 @objc extension BanubaSdkManager {
   @objc dynamic public func startEffectPlayer()
@@ -349,6 +337,23 @@ extension BanubaSdkManager : BanubaEffectPlayer.BNBFrameDurationListener {
   @objc dynamic public func onRecognizerFrameDurationChanged(_ instant: Swift.Float, averaged: Swift.Float)
   @objc dynamic public func onCameraFrameDurationChanged(_ instant: Swift.Float, averaged: Swift.Float)
   @objc dynamic public func onRenderFrameDurationChanged(_ instant: Swift.Float, averaged: Swift.Float)
+}
+extension BanubaSdkManager {
+  public var isPiPPlayerLandscapeOrientation: Swift.Bool? {
+    get
+  }
+  public func createPIPPlayer(withVideoURL url: Foundation.URL, completion: (() -> Swift.Void)?)
+  public func startPIPPlayer()
+  public func stopPIPPlayer()
+  public func setPIPPlayerVolume(_ volume: Swift.Float)
+  public func seekPIPPlayer(to time: Foundation.TimeInterval)
+  public func setPIPPlayer(renderBehaviour: BanubaSdk.RenderBehavior)
+  public func setPIPPlayer(scale: CoreGraphics.CGFloat)
+  public func setPIPPlayer(shapeType type: BanubaSdk.PIPShapeBuilder.PIPShapeType)
+  public func setRenderTarget(shapeType type: BanubaSdk.PIPShapeBuilder.PIPShapeType)
+  public func setPIPPlayer(centerPoint point: CoreGraphics.CGPoint)
+  public func resetSplitRender()
+  public func setSplitRender()
 }
 extension UITouch {
   public var id: Swift.Int64 {
@@ -533,8 +538,6 @@ public typealias RotateCameraCallBack = () -> ()
 @objc public protocol InputServiceDelegate {
   @objc func push(cvBuffer: CoreVideo.CVPixelBuffer)
   @objc func push(cmBuffer: CoreMedia.CMSampleBuffer)
-  @objc @available(iOS 11.0, *)
-  func push(frame: ARKit.ARFrame, useBackCamera: Swift.Bool)
 }
 @objc public enum CameraSessionType : Swift.Int {
   case FrontCameraVideoSession = 0
@@ -597,6 +600,7 @@ public protocol PixelBufferProvider {
   public var pipRect: CoreGraphics.CGRect? {
     get
   }
+  public var shouldZoomPipImage: Swift.Bool
   public func setSplitRender(rect: CoreGraphics.CGRect, offset: CoreGraphics.CGPoint)
   @objc deinit
   @objc public func makeVideoPixelBuffer() -> CoreVideo.CVPixelBuffer?
