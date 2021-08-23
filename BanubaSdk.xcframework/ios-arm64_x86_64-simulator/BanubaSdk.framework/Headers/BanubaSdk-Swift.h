@@ -261,6 +261,12 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @end
 
 
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
+@property (nonatomic) BOOL isBeautificationEnabled;
+- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentFramebufferWithRenderSize:(CGSize)renderSize;
@@ -271,20 +277,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BanubaSdkManagerDelegate>
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
 - (void)willPresentFramebufferWithRenderSize:(CGSize)renderSize;
-@end
-
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
-- (void)postprocessProcessVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
-- (void)postprocessSurfaceCreatedWith:(CGSize)size;
-- (void)postprocessSetEffectSize:(CGSize)size;
-- (void)postprocessLoadEffectWithPath:(NSString * _Nonnull)path;
 @end
 
 @class NSValue;
@@ -438,13 +430,13 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
+- (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
-- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
 @end
 
 
@@ -648,6 +640,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
 @protocol InputServicing <AudioCapturing, CameraServicing, CameraZoomable>
+@end
+
+
+SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
+@interface MaskPostprocessingService : NSObject
+- (nonnull instancetype)initWithRenderSize:(CGSize)renderSize OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface MaskPostprocessingService (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
+- (void)postprocessProcessVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
+- (void)postprocessSurfaceCreatedWith:(CGSize)size;
+- (void)postprocessSetEffectSize:(CGSize)size;
+- (void)postprocessLoadEffectWithPath:(NSString * _Nonnull)path;
 @end
 
 
@@ -1035,6 +1043,12 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @end
 
 
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
+@property (nonatomic) BOOL isBeautificationEnabled;
+- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentFramebufferWithRenderSize:(CGSize)renderSize;
@@ -1045,20 +1059,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BanubaSdkManagerDelegate>
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
 - (void)willPresentFramebufferWithRenderSize:(CGSize)renderSize;
-@end
-
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
-- (void)postprocessProcessVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
-- (void)postprocessSurfaceCreatedWith:(CGSize)size;
-- (void)postprocessSetEffectSize:(CGSize)size;
-- (void)postprocessLoadEffectWithPath:(NSString * _Nonnull)path;
 @end
 
 @class NSValue;
@@ -1212,13 +1212,13 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
+- (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
-- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
 @end
 
 
@@ -1422,6 +1422,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
 @protocol InputServicing <AudioCapturing, CameraServicing, CameraZoomable>
+@end
+
+
+SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
+@interface MaskPostprocessingService : NSObject
+- (nonnull instancetype)initWithRenderSize:(CGSize)renderSize OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface MaskPostprocessingService (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
+- (void)postprocessProcessVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
+- (void)postprocessSurfaceCreatedWith:(CGSize)size;
+- (void)postprocessSetEffectSize:(CGSize)size;
+- (void)postprocessLoadEffectWithPath:(NSString * _Nonnull)path;
 @end
 
 

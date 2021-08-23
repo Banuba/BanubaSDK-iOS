@@ -204,12 +204,6 @@ extension BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   public func willOutput(arFrame: ARKit.ARFrame)
   @objc dynamic public func willPresentFramebuffer(renderSize: CoreGraphics.CGSize)
 }
-extension BanubaCameraModule : BanubaSDKServicing.SDKMaskPostprocessServicing {
-  @objc dynamic public func postprocessProcessVideoFrame(_ from: CoreVideo.CVPixelBuffer, to: CoreVideo.CVPixelBuffer, time: CoreMedia.CMTime)
-  @objc dynamic public func postprocessSurfaceCreated(with size: CoreGraphics.CGSize)
-  @objc dynamic public func postprocessSetEffectSize(_ size: CoreGraphics.CGSize)
-  @objc dynamic public func postprocessLoadEffect(path: Swift.String)
-}
 extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
   @objc dynamic public func onEffectEvent(_ name: Swift.String, params: [Swift.String : Swift.String])
 }
@@ -571,6 +565,17 @@ extension CameraServicing {
 @objc extension UIImage {
   @objc dynamic public convenience init?(rgbaDataNoCopy: Foundation.NSData, width: Swift.Int, height: Swift.Int)
   @objc dynamic public func makeBgraPixelBuffer() -> CoreVideo.CVPixelBuffer?
+}
+@objc public class MaskPostprocessingService : ObjectiveC.NSObject {
+  @objc public init(renderSize: CoreGraphics.CGSize)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension MaskPostprocessingService : BanubaSDKServicing.SDKMaskPostprocessServicing {
+  @objc dynamic public func postprocessProcessVideoFrame(_ from: CoreVideo.CVPixelBuffer, to: CoreVideo.CVPixelBuffer, time: CoreMedia.CMTime)
+  @objc dynamic public func postprocessSurfaceCreated(with size: CoreGraphics.CGSize)
+  @objc dynamic public func postprocessSetEffectSize(_ size: CoreGraphics.CGSize)
+  @objc dynamic public func postprocessLoadEffect(path: Swift.String)
 }
 @objc public enum RenderContentMode : Swift.Int {
   case resizeAspect
