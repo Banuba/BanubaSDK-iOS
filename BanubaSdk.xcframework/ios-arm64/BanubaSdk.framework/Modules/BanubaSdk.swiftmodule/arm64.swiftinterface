@@ -81,7 +81,6 @@ import UIKit
   @objc public var isLoaded: Swift.Bool
   @objc public var allowProcessing: Swift.Bool
   @objc public var inputDelegate: BanubaSDKServicing.SDKInputServicingDelegate?
-  @objc public var inputARDelegate: BanubaSDKServicing.SDKARInputServicingDelegate?
   public static var videoSize: CoreGraphics.CGSize! {
     get
   }

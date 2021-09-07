@@ -236,7 +236,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14AudioCapturing_")
 @class PIPPlayerLayoutSetting;
 @class PIPCameraLayoutSetting;
 @protocol SDKInputServicingDelegate;
-@protocol SDKARInputServicingDelegate;
 @class NSString;
 
 SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
@@ -250,7 +249,6 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
-@property (nonatomic, strong) id <SDKARInputServicingDelegate> _Nullable inputARDelegate;
 + (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder arCloudPath:(NSString * _Nullable)arCloudPath;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1018,7 +1016,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14AudioCapturing_")
 @class PIPPlayerLayoutSetting;
 @class PIPCameraLayoutSetting;
 @protocol SDKInputServicingDelegate;
-@protocol SDKARInputServicingDelegate;
 @class NSString;
 
 SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
@@ -1032,7 +1029,6 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
-@property (nonatomic, strong) id <SDKARInputServicingDelegate> _Nullable inputARDelegate;
 + (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder arCloudPath:(NSString * _Nullable)arCloudPath;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
