@@ -177,8 +177,8 @@ extension BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing {
   @objc dynamic public func loadMask(name: Swift.String)
   @objc dynamic public func unloadMask()
   @objc dynamic public func removeAllFilters()
-  @objc dynamic public func applyFilter(_ filter: BanubaSDKServicing.EffectModel)
-  @objc dynamic public func removeFilter(_ filter: BanubaSDKServicing.EffectModel)
+  @objc dynamic public func applyFilter(_ filter: BanubaSDKServicing.RenderEffect)
+  @objc dynamic public func removeFilter(_ filter: BanubaSDKServicing.RenderEffect)
   @objc dynamic public func setEffectSubtypeModificationsEventListener(_ listener: BanubaSDKServicing.EffectSubtypeModificationsEventListener)
   @objc dynamic public func effectsPaths(includeBeautyEffect: Swift.Bool) -> [Swift.String]
   @objc dynamic public func effectDidBeginApplying()
@@ -229,7 +229,7 @@ extension BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
   @objc public init(image: UIKit.UIImage, corner: BanubaSdk.WatermarkCornerPosition, offset: CoreGraphics.CGPoint, targetNormalizedWidth: CoreGraphics.CGFloat)
   @objc public init(image: UIKit.UIImage, normalizedPosition: CoreGraphics.CGPoint, targetWidth: CoreGraphics.CGFloat)
   @objc public init(image: UIKit.UIImage, normalizedPosition: CoreGraphics.CGPoint, targetNormalizedWidth: CoreGraphics.CGFloat)
-  @objc public func drawSettingsWithBoundsSize(_ boundsSize: CoreGraphics.CGSize, outputSettings: BanubaSdk.OutputSettings) -> BanubaSdk.WatermarkDrawSettings
+  @objc public func drawSettingsWithBoundsSize(_ boundsSize: CoreGraphics.CGSize, outputSettings: BanubaSDKServicing.OutputSettings) -> BanubaSdk.WatermarkDrawSettings
   @objc override dynamic public init()
   @objc deinit
 }
@@ -381,30 +381,6 @@ public enum VoiceChangerError : Swift.Error {
   public var hashValue: Swift.Int {
     get
   }
-}
-public class ColorEffect : BanubaSDKServicing.RenderEffect {
-  public var name: Swift.String
-  public var isLoaded: Swift.Bool {
-    get
-  }
-  public var isActive: Swift.Bool
-  public init(file url: Foundation.URL)
-  public func load(size: CoreGraphics.CGSize)
-  public func unload()
-  public func apply(params: Swift.Dictionary<Swift.String, Swift.String>)
-  @objc deinit
-}
-public class ShaderEffect : BanubaSDKServicing.RenderEffect {
-  public var name: Swift.String
-  public var isLoaded: Swift.Bool {
-    get
-  }
-  public var isActive: Swift.Bool
-  public init(name: Swift.String)
-  public func load(size: CoreGraphics.CGSize)
-  public func unload()
-  public func apply(params: Swift.Dictionary<Swift.String, Swift.String>)
-  @objc deinit
 }
 public protocol PIPShape : AnyObject {
   var size: CoreGraphics.CGSize { get }
@@ -587,7 +563,7 @@ extension MaskPostprocessingService : BanubaSDKServicing.SDKMaskPostprocessServi
   }
 }
 public protocol SnapshotProvider {
-  func makeSnapshotWithSettings(_ settings: BanubaSdk.OutputSettings, watermarkPixelBuffer: CoreVideo.CVPixelBuffer?) -> UIKit.UIImage?
+  func makeSnapshotWithSettings(_ settings: BanubaSDKServicing.OutputSettings, watermarkPixelBuffer: CoreVideo.CVPixelBuffer?) -> UIKit.UIImage?
 }
 public protocol PixelBufferProvider {
   func makeVideoPixelBuffer() -> CoreVideo.CVPixelBuffer?
@@ -608,7 +584,7 @@ public protocol PixelBufferProvider {
   public func setSplitRender(rect: CoreGraphics.CGRect, offset: CoreGraphics.CGPoint)
   @objc deinit
   @objc public func makeVideoPixelBuffer() -> CoreVideo.CVPixelBuffer?
-  @objc public func makeSnapshotWithSettings(_ settings: BanubaSdk.OutputSettings, watermarkPixelBuffer: CoreVideo.CVPixelBuffer?) -> UIKit.UIImage?
+  @objc public func makeSnapshotWithSettings(_ settings: BanubaSDKServicing.OutputSettings, watermarkPixelBuffer: CoreVideo.CVPixelBuffer?) -> UIKit.UIImage?
   @objc public func activate()
   @objc public func clearRenderColor(r: OpenGLES.GLclampf, g: OpenGLES.GLclampf, b: OpenGLES.GLclampf, a: OpenGLES.GLclampf)
   @objc public func presentRenderbuffer(_ willPresentHandler: (() -> Swift.Void)?)

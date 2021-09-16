@@ -296,15 +296,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)unloadEffectTexture;
 @end
 
-@class EffectModel;
+@protocol RenderEffect;
 @protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
 - (void)loadMaskWithName:(NSString * _Nonnull)name;
 - (void)unloadMask;
 - (void)removeAllFilters;
-- (void)applyFilter:(EffectModel * _Nonnull)filter;
-- (void)removeFilter:(EffectModel * _Nonnull)filter;
+- (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
+- (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
 - (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
 - (NSArray<NSString *> * _Nonnull)effectsPathsWithIncludeBeautyEffect:(BOOL)includeBeautyEffect SWIFT_WARN_UNUSED_RESULT;
 - (void)effectDidBeginApplying;
@@ -560,7 +560,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @property (nonatomic, readonly) float zoomFactor;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 @class NSNotificationCenter;
@@ -1076,15 +1075,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)unloadEffectTexture;
 @end
 
-@class EffectModel;
+@protocol RenderEffect;
 @protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
 - (void)loadMaskWithName:(NSString * _Nonnull)name;
 - (void)unloadMask;
 - (void)removeAllFilters;
-- (void)applyFilter:(EffectModel * _Nonnull)filter;
-- (void)removeFilter:(EffectModel * _Nonnull)filter;
+- (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
+- (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
 - (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
 - (NSArray<NSString *> * _Nonnull)effectsPathsWithIncludeBeautyEffect:(BOOL)includeBeautyEffect SWIFT_WARN_UNUSED_RESULT;
 - (void)effectDidBeginApplying;
@@ -1340,7 +1339,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @property (nonatomic, readonly) float zoomFactor;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 @class NSNotificationCenter;

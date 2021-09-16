@@ -1,39 +1,13 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+#import <BanubaSDKServicing/BanubaSDKServicing.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSErrorDomain const kVideoWriterErrorDomain;
 FOUNDATION_EXPORT NSInteger const kUnknownRecordingErrorCode;
 FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
-
-@interface OutputSettings : NSObject
-
-@property(nonatomic) UIDeviceOrientation deviceOrientation;
-@property(nonatomic) BOOL isMirrored;
-@property(nonatomic) BOOL applyWatermark;
-
-@property(nonatomic, readonly) BOOL shouldApplyVerticalFlip;
-@property(nonatomic, readonly) BOOL shouldApplyHorizontalFlip;
-@property(nonatomic, readonly) CGAffineTransform resultVideoTransform;
-@property(nonatomic, readonly) UIImageOrientation resultImageOrientation;
-
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithOrientation:(UIDeviceOrientation)orientation
-                         isMirrored:(BOOL)isMirrored
-                     applyWatermark:(BOOL)applyWatermark NS_DESIGNATED_INITIALIZER;
-
-@end
-
-@interface RecorderSettings : NSObject
-
-- (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithVideoDataOutput:(AVCaptureVideoDataOutput* _Nullable)videoDataOutput
-                            captureSize:(CGSize)captureSize
-                 useHEVCCodecIfPossible:(BOOL)useHEVCCodecIfPossible;
-
-@end
 
 @interface SBVideoWriter : NSObject
 
