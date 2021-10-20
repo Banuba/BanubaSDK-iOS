@@ -246,6 +246,8 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @property (nonatomic, strong) PIPSwitchLayoutSetting * _Nullable pipSwitchSetting;
 @property (nonatomic, strong) PIPPlayerLayoutSetting * _Nullable pipPlayerSetting;
 @property (nonatomic, strong) PIPCameraLayoutSetting * _Nullable pipCameraSetting;
+/// Setup the camera if needed
+@property (nonatomic) BOOL isCameraEnabled;
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
@@ -378,6 +380,8 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @property (nonatomic, readonly, strong) BNBEffectPlayer * _Nullable effectPlayer;
 /// Face orintation in frame (degrees).
 @property (nonatomic) NSInteger faceOrientation;
+/// Setup the camera if needed.
+@property (nonatomic) BOOL isCameraEnabled;
 - (BNBEffectManager * _Nullable)effectManager SWIFT_WARN_UNUSED_RESULT;
 /// Enable autorotation mode. Camera orientation and render size should change along with UI orientation
 @property (nonatomic) BOOL autoRotationEnabled;
@@ -1025,6 +1029,8 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @property (nonatomic, strong) PIPSwitchLayoutSetting * _Nullable pipSwitchSetting;
 @property (nonatomic, strong) PIPPlayerLayoutSetting * _Nullable pipPlayerSetting;
 @property (nonatomic, strong) PIPCameraLayoutSetting * _Nullable pipCameraSetting;
+/// Setup the camera if needed
+@property (nonatomic) BOOL isCameraEnabled;
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
@@ -1157,6 +1163,8 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @property (nonatomic, readonly, strong) BNBEffectPlayer * _Nullable effectPlayer;
 /// Face orintation in frame (degrees).
 @property (nonatomic) NSInteger faceOrientation;
+/// Setup the camera if needed.
+@property (nonatomic) BOOL isCameraEnabled;
 - (BNBEffectManager * _Nullable)effectManager SWIFT_WARN_UNUSED_RESULT;
 /// Enable autorotation mode. Camera orientation and render size should change along with UI orientation
 @property (nonatomic) BOOL autoRotationEnabled;

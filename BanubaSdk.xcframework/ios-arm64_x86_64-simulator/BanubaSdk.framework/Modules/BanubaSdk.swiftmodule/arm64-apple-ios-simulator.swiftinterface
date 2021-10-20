@@ -77,6 +77,10 @@ import _Concurrency
   @objc public var pipSwitchSetting: BanubaSDKServicing.PIPSwitchLayoutSetting?
   @objc public var pipPlayerSetting: BanubaSDKServicing.PIPPlayerLayoutSetting?
   @objc public var pipCameraSetting: BanubaSDKServicing.PIPCameraLayoutSetting?
+  @objc public var isCameraEnabled: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
   public static var arCloudPath: Swift.String?
   public var beautyManager: BanubaSDKServicing.BeautyEffectManaging
   @objc public var isLoaded: Swift.Bool
@@ -242,6 +246,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListen
     get
   }
   @objc public var faceOrientation: Swift.Int
+  @objc public var isCameraEnabled: Swift.Bool
   @objc public func effectManager() -> BanubaEffectPlayer.BNBEffectManager?
   @objc public var autoRotationEnabled: Swift.Bool {
     @objc get
