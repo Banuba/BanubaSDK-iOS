@@ -14,7 +14,8 @@ FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
 @property(assign, nonatomic, readonly) CMTime recorderVideoDuration;
 
 - (instancetype)initWithOutputSettings:(OutputSettings*)settings
-                      recorderSettings:(RecorderSettings*)recorderSettings;
+                      recorderSettings:(RecorderSettings*)recorderSettings
+            externalAudioConfiguration:(ExternalAudioConfiguration *_Nullable)externalAudiooConfiguration;
 
 - (void)pushAudioSampleBuffer:(CMSampleBufferRef)buffer;
 - (void)pushVideoSampleBuffer:(CVPixelBufferRef)buffer;

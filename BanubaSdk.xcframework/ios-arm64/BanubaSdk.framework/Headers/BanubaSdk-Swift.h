@@ -279,13 +279,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
 @end
 
+@class ExternalAudioConfiguration;
 @class NSValue;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
 @property (nonatomic, readonly) BOOL isRecording;
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
@@ -321,7 +322,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)startPIPPlayer;
 - (void)stopPIPPlayer;
 - (void)setPIPPlayerVolume:(float)volume;
-- (void)setupPIPSessionWithVideoURL:(NSURL * _Nonnull)url;
+- (void)setupPIPSessionWithVideoURL:(NSURL * _Nonnull)url playerSetting:(PIPPlayerLayoutSetting * _Nonnull)playerSetting cameraSetting:(PIPCameraLayoutSetting * _Nonnull)cameraSetting switchSetting:(PIPSwitchLayoutSetting * _Nonnull)switchSetting;
 - (void)startPIPSessionIfNeededWithSetting:(PIPPlayerLayoutSetting * _Nonnull)setting completion:(void (^ _Nullable)(void))completion;
 - (void)applyPIPCameraSettingIfNeeded:(PIPCameraLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPPlayerSettingIfNeeded:(PIPPlayerLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
@@ -523,6 +524,11 @@ SWIFT_CLASS("_TtC9BanubaSdk19CameraPhotoSettings")
 @interface CameraPhotoSettings : NSObject
 @property (nonatomic, readonly) BOOL useStabilization;
 @property (nonatomic, readonly) enum AVCaptureFlashMode flashMode;
+/// CameraPhotoSettings constructor
+/// \param useStabilization setup use stabilization
+///
+/// \param flashMode setup  flash mode
+///
 - (nonnull instancetype)initWithUseStabilization:(BOOL)useStabilization flashMode:(enum AVCaptureFlashMode)flashMode OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -598,7 +604,55 @@ SWIFT_CLASS("_TtC9BanubaSdk25EffectPlayerConfiguration")
 @property (nonatomic) BOOL useARKitWhenAvailable;
 @property (nonatomic) double fpsLimit;
 - (nonnull instancetype)init;
+/// CameraLutStage constructor
+/// \param renderMode effect player render mode
+///
+/// \param renderContentMode render content mode
+///
+/// \param orientation camera orientation
+///
+/// \param preferredRenderFrameRate preferred render frame rate
+///
+/// \param shouldAutoStartOnEnterForeground should auto start on enter foreground
+///
+/// \param isMirrored camera is mirrored
+///
+/// \param useARKitWhenAvailable use ARKit when available
+///
+/// \param fpsLimit setup fps limit
+///
+/// \param delayedCameraInitialization delayed сamera initialization
+///
+/// \param notificationCenter setup notification center
+///
 - (nonnull instancetype)initWithRenderMode:(enum EffectPlayerRenderMode)renderMode renderContentMode:(enum RenderContentMode)renderContentMode orientation:(BNBCameraOrientation)orientation preferredRenderFrameRate:(NSInteger)preferredRenderFrameRate shouldAutoStartOnEnterForeground:(BOOL)shouldAutoStartOnEnterForeground isMirrored:(BOOL)isMirrored useARKitWhenAvailable:(BOOL)useARKitWhenAvailable fpsLimit:(double)fpsLimit delayedCameraInitialization:(BOOL)delayedCameraInitialization notificationCenter:(NSNotificationCenter * _Nonnull)notificationCenter;
+/// CameraLutStage constructor
+/// \param cameraMode camera mode
+///
+/// \param renderContentMode render content mode
+///
+/// \param renderSize setup render size
+///
+/// \param captureSessionPreset capture session preset
+///
+/// \param orientation camera orientation
+///
+/// \param preferredRenderFrameRate preferred render frame rate
+///
+/// \param shouldAutoStartOnEnterForeground should auto start on enter foreground
+///
+/// \param isMirrored camera is mirrored
+///
+/// \param flipVertically setup flip vertically
+///
+/// \param useARKitWhenAvailable use ARKit when available
+///
+/// \param fpsLimit setup fps limit
+///
+/// \param delayedCameraInitialization delayed сamera initialization
+///
+/// \param notificationCenter setup notification center
+///
 - (nonnull instancetype)initWithCameraMode:(enum CameraSessionType)cameraMode renderContentMode:(enum RenderContentMode)renderContentMode renderSize:(CGSize)renderSize captureSessionPreset:(AVCaptureSessionPreset _Nonnull)captureSessionPreset orientation:(BNBCameraOrientation)orientation preferredRenderFrameRate:(NSInteger)preferredRenderFrameRate shouldAutoStartOnEnterForeground:(BOOL)shouldAutoStartOnEnterForeground isMirrored:(BOOL)isMirrored flipVertically:(BOOL)flipVertically useARKitWhenAvailable:(BOOL)useARKitWhenAvailable fpsLimit:(double)fpsLimit delayedCameraInitialization:(BOOL)delayedCameraInitialization notificationCenter:(NSNotificationCenter * _Nonnull)notificationCenter OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -624,32 +678,6 @@ typedef SWIFT_ENUM(NSInteger, EffectPlayerRenderMode, open) {
   EffectPlayerRenderModeVideo = 1,
 };
 
-@class NSCoder;
-@class UITouch;
-@class UIEvent;
-@class UITapGestureRecognizer;
-@class UIPinchGestureRecognizer;
-@class UIRotationGestureRecognizer;
-@class UISwipeGestureRecognizer;
-
-SWIFT_CLASS("_TtC9BanubaSdk16EffectPlayerView")
-@interface EffectPlayerView : UIView
-@property (nonatomic, strong) BNBEffectPlayer * _Nullable effectPlayer;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
-+ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
-- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)onLongTapGestureWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
-- (void)onDoubleTapGestureWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
-- (void)onScaleGestureWithGesture:(UIPinchGestureRecognizer * _Nonnull)gesture;
-- (void)onRotationGestureWithGesture:(UIRotationGestureRecognizer * _Nonnull)gesture;
-- (void)onSwipeGestureWithGesture:(UISwipeGestureRecognizer * _Nonnull)gesture;
-@end
-
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
@@ -659,6 +687,9 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
 
 SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @interface MaskPostprocessingService : NSObject
+/// MaskPostprocessingService constructor
+/// \param renderSize setup render size
+///
 - (nonnull instancetype)initWithRenderSize:(CGSize)renderSize OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -696,7 +727,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 - (void)startForwardingFramesWithHandler:(void (^ _Nonnull)(CVPixelBufferRef _Nonnull))handler;
 - (void)stopForwardingFrames;

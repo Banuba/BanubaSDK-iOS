@@ -4,8 +4,8 @@
 //  Copyright © 2018 Banuba. All rights reserved.
 //
 
-#import "SBVideoWriter.h"
-#import "CVPixelBuffer+scale.h"
+#import <BanubaSdk/SBVideoWriter.h>
+#import <BanubaSdk/CVPixelBuffer+scale.h>
 
 //! Project version number for BanubaSdk.
 FOUNDATION_EXPORT double BanubaSdkVersionNumber;
