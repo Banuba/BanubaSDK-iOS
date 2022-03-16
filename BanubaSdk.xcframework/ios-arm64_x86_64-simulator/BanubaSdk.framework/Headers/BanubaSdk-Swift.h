@@ -680,6 +680,32 @@ typedef SWIFT_ENUM(NSInteger, EffectPlayerRenderMode, open) {
   EffectPlayerRenderModeVideo = 1,
 };
 
+@class NSCoder;
+@class UITouch;
+@class UIEvent;
+@class UITapGestureRecognizer;
+@class UIPinchGestureRecognizer;
+@class UIRotationGestureRecognizer;
+@class UISwipeGestureRecognizer;
+
+SWIFT_CLASS("_TtC9BanubaSdk16EffectPlayerView")
+@interface EffectPlayerView : UIView
+@property (nonatomic, strong) BNBEffectPlayer * _Nullable effectPlayer;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)onLongTapGestureWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
+- (void)onDoubleTapGestureWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
+- (void)onScaleGestureWithGesture:(UIPinchGestureRecognizer * _Nonnull)gesture;
+- (void)onRotationGestureWithGesture:(UIRotationGestureRecognizer * _Nonnull)gesture;
+- (void)onSwipeGestureWithGesture:(UISwipeGestureRecognizer * _Nonnull)gesture;
+@end
+
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
@@ -1508,6 +1534,32 @@ typedef SWIFT_ENUM(NSInteger, EffectPlayerRenderMode, open) {
   EffectPlayerRenderModePhoto = 0,
   EffectPlayerRenderModeVideo = 1,
 };
+
+@class NSCoder;
+@class UITouch;
+@class UIEvent;
+@class UITapGestureRecognizer;
+@class UIPinchGestureRecognizer;
+@class UIRotationGestureRecognizer;
+@class UISwipeGestureRecognizer;
+
+SWIFT_CLASS("_TtC9BanubaSdk16EffectPlayerView")
+@interface EffectPlayerView : UIView
+@property (nonatomic, strong) BNBEffectPlayer * _Nullable effectPlayer;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)onLongTapGestureWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
+- (void)onDoubleTapGestureWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
+- (void)onScaleGestureWithGesture:(UIPinchGestureRecognizer * _Nonnull)gesture;
+- (void)onRotationGestureWithGesture:(UIRotationGestureRecognizer * _Nonnull)gesture;
+- (void)onSwipeGestureWithGesture:(UISwipeGestureRecognizer * _Nonnull)gesture;
+@end
 
 
 
