@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name BanubaSdk
 import ARKit
 import AVKit
@@ -45,11 +45,11 @@ import _Concurrency
 }
 @_inheritsConvenienceInitializers @objc public class EffectPlayerConfiguration : ObjectiveC.NSObject {
   @_inheritsConvenienceInitializers @objc public class Defaults : ObjectiveC.NSObject {
-    @objc public static var videoSessionPreset: AVFoundation.AVCaptureSession.Preset
-    @objc public static var photoSessionPreset: AVFoundation.AVCaptureSession.Preset
-    @objc public static var photoRenderSize: CoreGraphics.CGSize
-    @objc public static var videoRenderSize: CoreGraphics.CGSize
-    @objc public static var defaultFrameRate: Swift.Int
+    @objc public static let videoSessionPreset: AVFoundation.AVCaptureSession.Preset
+    @objc public static let photoSessionPreset: AVFoundation.AVCaptureSession.Preset
+    @objc public static let photoRenderSize: CoreGraphics.CGSize
+    @objc public static let videoRenderSize: CoreGraphics.CGSize
+    @objc public static let defaultFrameRate: Swift.Int
     @objc override dynamic public init()
     @objc deinit
   }
@@ -66,8 +66,8 @@ import _Concurrency
   @objc public var notificationCenter: Foundation.NotificationCenter
   @objc public var useARKitWhenAvailable: Swift.Bool
   @objc public var fpsLimit: Swift.Double
-  @objc override dynamic public convenience init()
-  @objc public convenience init(renderMode: BanubaSdk.EffectPlayerRenderMode, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
+  @objc override convenience dynamic public init()
+  @objc convenience public init(renderMode: BanubaSdk.EffectPlayerRenderMode, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
   @objc public init(cameraMode: BanubaSdk.CameraSessionType, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, renderSize: CoreGraphics.CGSize, captureSessionPreset: AVFoundation.AVCaptureSession.Preset, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, flipVertically: Swift.Bool = true, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
   @objc deinit
 }
@@ -80,7 +80,7 @@ import _Concurrency
   @objc public var pipCameraSetting: BanubaSDKServicing.PIPCameraLayoutSetting?
   @objc public var isCameraEnabled: Swift.Bool {
     @objc get
-    @objc set(value)
+    @objc set
   }
   public static var arCloudPath: Swift.String?
   public var beautyManager: BanubaSDKServicing.BeautyEffectManaging
@@ -94,7 +94,7 @@ import _Concurrency
     get
   }
   @objc public static func initialize(sdkToken: Swift.String, videoSize: CoreGraphics.CGSize, videoPreset: AVFoundation.AVCaptureSession.Preset, useHEVCCodecIfPossibleForRecorder: Swift.Bool, arCloudPath: Swift.String? = nil)
-  @objc override required dynamic public init()
+  @objc required override dynamic public init()
   public enum MethodInJson : Swift.String {
     case changeAxis
     case runScan
@@ -124,7 +124,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.CameraModule {
   }
   @objc dynamic public var autoStart: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc dynamic public var playerViewSize: CoreGraphics.CGSize {
     @objc get
@@ -205,7 +205,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsTextureSer
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBeautyEffectManaging {
   @objc dynamic public var isBeautificationEnabled: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc dynamic public func toggleBeautification() -> Swift.Bool
 }
@@ -256,7 +256,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListen
   @objc public func effectManager() -> BanubaEffectPlayer.BNBEffectManager?
   @objc public var autoRotationEnabled: Swift.Bool {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc public func loadEffect(_ effectUrl: Swift.String, synchronous: Swift.Bool = false) -> BanubaEffectPlayer.BNBEffect?
   @objc public var featureParameters: [BanubaEffectPlayer.BNBFeatureParameter]?
@@ -267,7 +267,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListen
   }
   @objc public var input: BanubaSdk.InputServicing {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc public var output: BanubaSdk.OutputServicing? {
     @objc get
@@ -425,7 +425,7 @@ extension BanubaEffectPlayer.BNBFrameData {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class EffectPlayerView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) public var effectPlayer: BanubaEffectPlayer.BNBEffectPlayer?
-  @objc @_Concurrency.MainActor(unsafe) override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
     @_Concurrency.MainActor(unsafe) @objc get
   }
@@ -552,7 +552,7 @@ extension BanubaSdk.CameraServicing {
   public func toggleCamera(completion: @escaping BanubaSdk.RotateCameraCallBack)
 }
 @objc extension UIKit.UIImage {
-  @objc dynamic public convenience init?(rgbaDataNoCopy: Foundation.NSData, width: Swift.Int, height: Swift.Int)
+  @objc convenience dynamic public init?(rgbaDataNoCopy: Foundation.NSData, width: Swift.Int, height: Swift.Int)
   @objc dynamic public func makeBgraPixelBuffer() -> CoreVideo.CVPixelBuffer?
 }
 @objc public class MaskPostprocessingService : ObjectiveC.NSObject {
@@ -601,3 +601,22 @@ public protocol PixelBufferProvider {
   @objc public func clearRenderColor(r: OpenGLES.GLclampf, g: OpenGLES.GLclampf, b: OpenGLES.GLclampf, a: OpenGLES.GLclampf)
   @objc public func presentRenderbuffer(_ willPresentHandler: ((CoreVideo.CVPixelBuffer?) -> Swift.Void)?)
 }
+extension BanubaSdk.EffectPlayerRenderMode : Swift.Equatable {}
+extension BanubaSdk.EffectPlayerRenderMode : Swift.Hashable {}
+extension BanubaSdk.EffectPlayerRenderMode : Swift.RawRepresentable {}
+extension BanubaSdk.BanubaCameraModule.MethodInJson : Swift.Equatable {}
+extension BanubaSdk.BanubaCameraModule.MethodInJson : Swift.Hashable {}
+extension BanubaSdk.BanubaCameraModule.MethodInJson : Swift.RawRepresentable {}
+extension BanubaSdk.WatermarkCornerPosition : Swift.Equatable {}
+extension BanubaSdk.WatermarkCornerPosition : Swift.Hashable {}
+extension BanubaSdk.WatermarkCornerPosition : Swift.RawRepresentable {}
+extension BanubaSdk.RenderBehavior : Swift.Equatable {}
+extension BanubaSdk.RenderBehavior : Swift.Hashable {}
+extension BanubaSdk.VoiceChangerError : Swift.Equatable {}
+extension BanubaSdk.VoiceChangerError : Swift.Hashable {}
+extension BanubaSdk.CameraSessionType : Swift.Equatable {}
+extension BanubaSdk.CameraSessionType : Swift.Hashable {}
+extension BanubaSdk.CameraSessionType : Swift.RawRepresentable {}
+extension BanubaSdk.RenderContentMode : Swift.Equatable {}
+extension BanubaSdk.RenderContentMode : Swift.Hashable {}
+extension BanubaSdk.RenderContentMode : Swift.RawRepresentable {}
