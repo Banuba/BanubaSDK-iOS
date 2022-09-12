@@ -22,15 +22,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wj/E8Yoe8wlV0Yyr+VTrdUQRsDc=
+		PKEECSLHhtSsZiYpxdcmWAZsNFc=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		p/EQGf1+WiHsKJU5f2h9aJtdBw0=
+		WU8t9Iuu4WecNh/77CAkzmAfB7M=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		KgX+4Mh2cljSPJPpcGp2N2Yeplo=
+		FRCjNtxAyCtLRZappckZAYRPUlA=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		F7+KgmXOq/tfFGMQCerqHjn8xUs=
+		CrruAIUXznhB+kkqp20xu2SqJYA=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sFiJ9DFJdV/m3pGehzgmEzuZOEY=
+		/gfhdtq3En3iLw7LU6EcbtS6sFg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -95,14 +95,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zD8Qz0PLwHDN5YS6D1E1mjI+4N7dI6hThTzCkfSHmaM=
+			m2cZA7ZAW9axYdcJmEq37Lg0e+JAD380l+BAytXk3c0=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+MJ1pyvWF8Xmay9bkvZ5lVQGKBSdAc5dQ9MSY+NJGYk=
+			otQhhj/GX/pL4HgDqh69KJ1QyDn/HJgrwk71YA9C7NU=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -123,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			baxLPv1orQjkhMr1t+O69cQ2skThRHnjW1yzJXutTcw=
+			G/4/uWPlOk+ZV+rMlY4mMN6gigRIdsy0+qNw607slkY=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J1OzDY/rVnh9lUlqwC5HkMEA0uBGjZ8a5L4DGE+WUNA=
+			TaMDZFY45oiRZ3q12Aqc1hkNT8gMOjDT6TB8/uZCnUM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
