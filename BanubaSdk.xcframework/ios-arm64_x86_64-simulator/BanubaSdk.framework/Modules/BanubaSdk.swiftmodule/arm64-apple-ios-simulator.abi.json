@@ -209,6 +209,53 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "isReadyToProvideData",
+            "printedName": "isReadyToProvideData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9BanubaSdk9PIPPlayerC20isReadyToProvideDataSbvp",
+            "mangledName": "$s9BanubaSdk9PIPPlayerC20isReadyToProvideDataSbvp",
+            "moduleName": "BanubaSdk",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9BanubaSdk9PIPPlayerC20isReadyToProvideDataSbvg",
+                "mangledName": "$s9BanubaSdk9PIPPlayerC20isReadyToProvideDataSbvg",
+                "moduleName": "BanubaSdk",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(asset:)",
@@ -479,6 +526,100 @@
             "mangledName": "$s9BanubaSdk9PIPPlayerC8viewport14fullRenderSize20relativeLeftTopPoint5scaleAA13MetalViewportVSgSo6CGSizeV_So7CGPointV12CoreGraphics7CGFloatVtF",
             "moduleName": "BanubaSdk",
             "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "observeValue",
+            "printedName": "observeValue(forKeyPath:of:change:context:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Foundation.NSKeyValueChangeKey : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Foundation.NSKeyValueChangeKey : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSKeyValueChangeKey",
+                        "printedName": "Foundation.NSKeyValueChangeKey",
+                        "usr": "c:@T@NSKeyValueChangeKey"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.UnsafeMutableRawPointer?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnsafeMutableRawPointer",
+                    "printedName": "Swift.UnsafeMutableRawPointer",
+                    "usr": "s:Sv"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BanubaSdk@objc(cs)PIPPlayer(im)observeValueForKeyPath:ofObject:change:context:",
+            "mangledName": "$s9BanubaSdk9PIPPlayerC12observeValue10forKeyPath2of6change7contextySSSg_ypSgSDySo05NSKeye6ChangeG0aypGSgSvSgtF",
+            "moduleName": "BanubaSdk",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "observeValueForKeyPath:ofObject:change:context:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -5452,6 +5593,58 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "isPIPPlayerReadyToProvideData",
+            "printedName": "isPIPPlayerReadyToProvideData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)isPIPPlayerReadyToProvideData",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC29isPIPPlayerReadyToProvideDataSbvp",
+            "moduleName": "BanubaSdk",
+            "isOpen": true,
+            "objc_name": "isPIPPlayerReadyToProvideData",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)isPIPPlayerReadyToProvideData",
+                "mangledName": "$s9BanubaSdk0A12CameraModuleC29isPIPPlayerReadyToProvideDataSbvg",
+                "moduleName": "BanubaSdk",
+                "isOpen": true,
+                "objc_name": "isPIPPlayerReadyToProvideData",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "setMaxFaces",
             "printedName": "setMaxFaces(facesCount:)",
@@ -6809,7 +7002,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6882,6 +7075,32 @@
                         "kind": "TypeNominal",
                         "name": "Void",
                         "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> Swift.Bool)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
@@ -6984,11 +7203,11 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC19startVideoCapturing7fileURL0e7TimeForF7Texture26externalAudioConfiguration8progress8didStart016periodicProgressJ8Interval13boundaryTimes0V7Handler13totalDuration04itemZ010completiony10Foundation0I0VSg_Sd0A12SDKServicing08ExternalnO0CSgySo6CMTimeacyycSgSdSaySo7NSValueCGyAYcS2dySb_s5Error_pSgtctF",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC19startVideoCapturing7fileURL0e7TimeForF7Texture26externalAudioConfiguration8progress8didStart15shouldSkipFrame016periodicProgressJ8Interval13boundaryTimes0Y7Handler13totalDuration12itemDuration10completiony10Foundation0I0VSg_Sd0A12SDKServicing08ExternalnO0CSgySo6CMTimeacyycSgSbycSgSdSaySo7NSValueCGyAZcS2dySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
             "isOpen": true,
-            "objc_name": "startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:",
+            "objc_name": "startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -12602,6 +12821,66 @@
                 "declKind": "Accessor",
                 "usr": "s:9BanubaSdk0aB7ManagerC31isPiPPlayerLandscapeOrientationSbSgvg",
                 "mangledName": "$s9BanubaSdk0aB7ManagerC31isPiPPlayerLandscapeOrientationSbSgvg",
+                "moduleName": "BanubaSdk",
+                "isOpen": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isPIPPlayerReadyToProvideData",
+            "printedName": "isPIPPlayerReadyToProvideData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9BanubaSdk0aB7ManagerC29isPIPPlayerReadyToProvideDataSbSgvp",
+            "mangledName": "$s9BanubaSdk0aB7ManagerC29isPIPPlayerReadyToProvideDataSbSgvp",
+            "moduleName": "BanubaSdk",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9BanubaSdk0aB7ManagerC29isPIPPlayerReadyToProvideDataSbSgvg",
+                "mangledName": "$s9BanubaSdk0aB7ManagerC29isPIPPlayerReadyToProvideDataSbSgvg",
                 "moduleName": "BanubaSdk",
                 "isOpen": true,
                 "isFromExtension": true,
@@ -18752,7 +19031,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -18813,6 +19092,32 @@
                         "kind": "TypeNominal",
                         "name": "Void",
                         "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> Swift.Bool)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
@@ -18925,8 +19230,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@BanubaSdk@objc(pl)OutputServicing(im)startVideoCapturingWithFileURL:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:",
-            "mangledName": "$s9BanubaSdk15OutputServicingP19startVideoCapturing7fileURL8progress8didStart28periodicProgressTimeInterval13boundaryTimes0Q7Handler13totalDuration10completiony10Foundation0I0VSg_ySo6CMTimeacSgyycSgSdSaySo7NSValueCGSgASSdySb_s5Error_pSgtctF",
+            "usr": "c:@M@BanubaSdk@objc(pl)OutputServicing(im)startVideoCapturingWithFileURL:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:",
+            "mangledName": "$s9BanubaSdk15OutputServicingP19startVideoCapturing7fileURL8progress8didStart15shouldSkipFrame28periodicProgressTimeInterval13boundaryTimes0T7Handler13totalDuration10completiony10Foundation0I0VSg_ySo6CMTimeacSgyycSgSbycSgSdSaySo7NSValueCGSgATSdySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
             "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.OutputServicing>",
             "sugared_genericSig": "<Self where Self : BanubaSdk.OutputServicing>",
@@ -18940,7 +19245,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -19015,6 +19320,32 @@
                         "kind": "TypeNominal",
                         "name": "Void",
                         "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> Swift.Bool)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
@@ -19133,8 +19464,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@BanubaSdk@objc(pl)OutputServicing(im)startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
-            "mangledName": "$s9BanubaSdk15OutputServicingP19startVideoCapturing7fileURL26externalAudioConfiguration8progress8didStart28periodicProgressTimeInterval13boundaryTimes0T7Handler13totalDuration13configuration10completiony10Foundation0I0VSg_0A12SDKServicing08ExternalkL0CSgySo6CMTimeacSgyycSgSdSaySo7NSValueCGSgAYSdAA0cL0CySb_s5Error_pSgtctF",
+            "usr": "c:@M@BanubaSdk@objc(pl)OutputServicing(im)startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
+            "mangledName": "$s9BanubaSdk15OutputServicingP19startVideoCapturing7fileURL26externalAudioConfiguration8progress8didStart15shouldSkipFrame28periodicProgressTimeInterval13boundaryTimes0W7Handler13totalDuration13configuration10completiony10Foundation0I0VSg_0A12SDKServicing08ExternalkL0CSgySo6CMTimeacSgyycSgSbycSgSdSaySo7NSValueCGSgAZSdAA0cL0CySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
             "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.OutputServicing>",
             "sugared_genericSig": "<Self where Self : BanubaSdk.OutputServicing>",
@@ -21190,7 +21521,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21251,6 +21582,32 @@
                         "kind": "TypeNominal",
                         "name": "Void",
                         "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> Swift.Bool)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
@@ -21363,11 +21720,11 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)OutputService(im)startVideoCapturingWithFileURL:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:",
-            "mangledName": "$s9BanubaSdk13OutputServiceC19startVideoCapturing7fileURL8progress8didStart28periodicProgressTimeInterval13boundaryTimes0Q7Handler13totalDuration10completiony10Foundation0I0VSg_ySo6CMTimeacSgyycSgSdSaySo7NSValueCGSgASSdySb_s5Error_pSgtctF",
+            "usr": "c:@CM@BanubaSdk@objc(cs)OutputService(im)startVideoCapturingWithFileURL:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:",
+            "mangledName": "$s9BanubaSdk13OutputServiceC19startVideoCapturing7fileURL8progress8didStart15shouldSkipFrame28periodicProgressTimeInterval13boundaryTimes0T7Handler13totalDuration10completiony10Foundation0I0VSg_ySo6CMTimeacSgyycSgSbycSgSdSaySo7NSValueCGSgATSdySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
             "isOpen": true,
-            "objc_name": "startVideoCapturingWithFileURL:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:",
+            "objc_name": "startVideoCapturingWithFileURL:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:completion:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -21379,7 +21736,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -21454,6 +21811,32 @@
                         "kind": "TypeNominal",
                         "name": "Void",
                         "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> Swift.Bool)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
@@ -21572,11 +21955,11 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)OutputService(im)startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
-            "mangledName": "$s9BanubaSdk13OutputServiceC19startVideoCapturing7fileURL26externalAudioConfiguration8progress8didStart28periodicProgressTimeInterval13boundaryTimes0T7Handler13totalDuration13configuration10completiony10Foundation0I0VSg_0A12SDKServicing08ExternalkL0CSgySo6CMTimeacSgyycSgSdSaySo7NSValueCGSgAYSdAA0cL0CySb_s5Error_pSgtctF",
+            "usr": "c:@CM@BanubaSdk@objc(cs)OutputService(im)startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
+            "mangledName": "$s9BanubaSdk13OutputServiceC19startVideoCapturing7fileURL26externalAudioConfiguration8progress8didStart15shouldSkipFrame28periodicProgressTimeInterval13boundaryTimes0W7Handler13totalDuration13configuration10completiony10Foundation0I0VSg_0A12SDKServicing08ExternalkL0CSgySo6CMTimeacSgyycSgSbycSgSdSaySo7NSValueCGSgAZSdAA0cL0CySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
             "isOpen": true,
-            "objc_name": "startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
+            "objc_name": "startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -32790,21 +33173,35 @@
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "StringLiteral",
-      "offset": 514,
+      "offset": 562,
       "length": 23,
       "value": "\"com.banuba.pip-player\""
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "StringLiteral",
-      "offset": 609,
+      "offset": 657,
       "length": 28,
       "value": "\"com.banuba.pip-player.sync\""
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 737,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "BooleanLiteral",
-      "offset": 782,
+      "offset": 861,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 918,
       "length": 5,
       "value": "false"
     },
@@ -32818,105 +33215,105 @@
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10306,
+      "offset": 11372,
       "length": 9,
       "value": "1"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10325,
+      "offset": 11391,
       "length": 10,
       "value": "2"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10345,
+      "offset": 11411,
       "length": 11,
       "value": "3"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10366,
+      "offset": 11432,
       "length": 11,
       "value": "4"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10387,
+      "offset": 11453,
       "length": 14,
       "value": "5"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10306,
+      "offset": 11372,
       "length": 9,
       "value": "1"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10325,
+      "offset": 11391,
       "length": 10,
       "value": "2"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10345,
+      "offset": 11411,
       "length": 11,
       "value": "3"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10366,
+      "offset": 11432,
       "length": 11,
       "value": "4"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10387,
+      "offset": 11453,
       "length": 14,
       "value": "5"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10306,
+      "offset": 11372,
       "length": 9,
       "value": "1"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10325,
+      "offset": 11391,
       "length": 10,
       "value": "2"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10345,
+      "offset": 11411,
       "length": 11,
       "value": "3"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10366,
+      "offset": 11432,
       "length": 11,
       "value": "4"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/PiP\/PIPPlayer.swift",
       "kind": "IntegerLiteral",
-      "offset": 10387,
+      "offset": 11453,
       "length": 14,
       "value": "5"
     },
@@ -33175,14 +33572,14 @@
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 23377,
+      "offset": 23595,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 23400,
+      "offset": 23618,
       "length": 5,
       "value": "false"
     },
@@ -33700,77 +34097,77 @@
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "StringLiteral",
-      "offset": 1740,
+      "offset": 1820,
       "length": 19,
       "value": "\"BanubaSdk.OutputConfiguration\""
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2757,
+      "offset": 2837,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2808,
+      "offset": 2888,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 2986,
+      "offset": 3066,
       "length": 12,
       "value": "[2, 1, 0, 3]"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 3039,
+      "offset": 3119,
       "length": 12,
       "value": "[1, 2, 3, 0]"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 3092,
+      "offset": 3172,
       "length": 12,
       "value": "[0, 1, 2, 3]"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 3145,
+      "offset": 3225,
       "length": 12,
       "value": "[3, 2, 1, 0]"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 3568,
+      "offset": 3648,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3762,
+      "offset": 3842,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3811,
+      "offset": 3891,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ivangulidov\/Workspace\/banuba_ve_sdk_ios\/banuba_ve_sdk_ios\/ios\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "StringLiteral",
-      "offset": 2657,
+      "offset": 2737,
       "length": 13,
       "value": "\"BanubaSdk.OutputService\""
     },
