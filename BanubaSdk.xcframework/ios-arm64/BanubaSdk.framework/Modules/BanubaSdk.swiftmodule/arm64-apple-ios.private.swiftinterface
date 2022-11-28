@@ -2,7 +2,6 @@
 // swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaSdk
 // swift-module-flags-ignorable: -enable-bare-slash-regex
-import ARKit
 import AVKit
 import Accelerate
 import BanubaEffectPlayer
@@ -71,11 +70,10 @@ import _StringProcessing
   @objc public var delayedCameraInitialization: Swift.Bool
   @objc public var orientation: BanubaEffectPlayer.BNBCameraOrientation
   @objc public var notificationCenter: Foundation.NotificationCenter
-  @objc public var useARKitWhenAvailable: Swift.Bool
   @objc public var fpsLimit: Swift.Double
   @objc override convenience dynamic public init()
-  @objc convenience public init(renderMode: BanubaSdk.EffectPlayerRenderMode, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
-  @objc public init(cameraMode: BanubaSdk.CameraSessionType, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, renderSize: CoreFoundation.CGSize, captureSessionPreset: AVFoundation.AVCaptureSession.Preset, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, flipVertically: Swift.Bool = true, useARKitWhenAvailable: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
+  @objc convenience public init(renderMode: BanubaSdk.EffectPlayerRenderMode, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
+  @objc public init(cameraMode: BanubaSdk.CameraSessionType, renderContentMode: BanubaSdk.RenderContentMode = .resizeAspect, renderSize: CoreFoundation.CGSize, captureSessionPreset: AVFoundation.AVCaptureSession.Preset, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, preferredRenderFrameRate: Swift.Int = EffectPlayerConfiguration.Defaults.defaultFrameRate, shouldAutoStartOnEnterForeground: Swift.Bool = true, isMirrored: Swift.Bool = false, flipVertically: Swift.Bool = true, fpsLimit: Swift.Double = 60, delayedCameraInitialization: Swift.Bool = false, notificationCenter: Foundation.NotificationCenter = NotificationCenter.default)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class BanubaCameraModule : ObjectiveC.NSObject {
@@ -195,8 +193,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKOutputServicing {
   @objc dynamic public var isEnoughDiskSpaceForRecording: Swift.Bool {
     @objc get
   }
-  @objc dynamic public func startVideoCapturing(fileURL: Foundation.URL?, progress: @escaping (CoreMedia.CMTime) -> Swift.Void, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
-  @objc dynamic public func startVideoCapturing(fileURL: Foundation.URL?, startTimeForVideoTexture: Swift.Double, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: @escaping (CoreMedia.CMTime) -> Swift.Void, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue], boundaryHandler: @escaping (CoreMedia.CMTime) -> Swift.Void, totalDuration: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc dynamic public func startVideoCapturing(fileURL: Foundation.URL?, startTimeForVideoTexture: Swift.Double, isMicrophoneEnabled: Swift.Bool, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: @escaping (CoreMedia.CMTime) -> Swift.Void, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue], boundaryHandler: @escaping (CoreMedia.CMTime) -> Swift.Void, totalDuration: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
   @objc dynamic public func stopVideoCapturing(cancel: Swift.Bool)
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing {
@@ -228,7 +225,6 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBeautyEffectManag
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   @objc dynamic public func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
-  public func willOutput(arFrame: ARKit.ARFrame)
   @objc dynamic public func willPresent(changedPixelBuffer: CoreVideo.CVPixelBuffer?)
 }
 extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListener {
@@ -446,8 +442,6 @@ public protocol PIPShapeable {
   @objc deinit
 }
 extension BanubaEffectPlayer.BNBFrameData {
-  @available(iOS 11.0, *)
-  public class func create(arFrame: ARKit.ARFrame, useBanubaTracking: Swift.Bool, faceOrientation: Swift.Int = 0, cameraOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, requireMirroring: Swift.Bool = false, fieldOfView: Swift.Float = 60) -> BanubaEffectPlayer.BNBFrameData?
   public class func create(cvBuffer: CoreVideo.CVPixelBuffer, faceOrientation: Swift.Int = 0, cameraOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg90, requireMirroring: Swift.Bool = false, fieldOfView: Swift.Float = 60) -> BanubaEffectPlayer.BNBFrameData?
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class EffectPlayerView : UIKit.UIView {
@@ -471,10 +465,7 @@ extension BanubaEffectPlayer.BNBFrameData {
   @objc func takeSnapshot(handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func takeSnapshot(configuration: BanubaSdk.OutputConfiguration, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func removeWatermark()
-  @objc func startVideoCapturing(fileURL: Foundation.URL?, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
-  @objc func startVideoCapturing(fileURL: Foundation.URL?, configuration: BanubaSdk.OutputConfiguration, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
-  @objc func startVideoCapturing(fileURL: Foundation.URL?, progress: ((CoreMedia.CMTime) -> Swift.Void)?, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue]?, boundaryHandler: ((CoreMedia.CMTime) -> Swift.Void)?, totalDuration: Foundation.TimeInterval, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
-  @objc func startVideoCapturing(fileURL: Foundation.URL?, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: ((CoreMedia.CMTime) -> Swift.Void)?, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue]?, boundaryHandler: ((CoreMedia.CMTime) -> Swift.Void)?, totalDuration: Foundation.TimeInterval, configuration: BanubaSdk.OutputConfiguration, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc func startVideoCapturing(fileURL: Foundation.URL?, isMicrophoneEnabled: Swift.Bool, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: ((CoreMedia.CMTime) -> Swift.Void)?, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, isFirstRun: Swift.Bool, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue]?, boundaryHandler: ((CoreMedia.CMTime) -> Swift.Void)?, totalDuration: Foundation.TimeInterval, configuration: BanubaSdk.OutputConfiguration, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
   @objc func stopVideoCapturing(cancel: Swift.Bool)
   @objc func reset()
   @objc func hasDiskCapacityForRecording() -> Swift.Bool
@@ -512,7 +503,6 @@ public typealias RotateCameraCallBack = () -> ()
   @objc var isCameraCapturing: Swift.Bool { get }
   @objc var currentCameraSessionType: BanubaSdk.CameraSessionType { get }
   @objc var exposurePointOfInterest: CoreFoundation.CGPoint { get }
-  @objc var useARKit: Swift.Bool { get }
   @objc var flipCamera: Swift.Bool { get set }
   @objc var cameraVideoOutput: AVFoundation.AVCaptureVideoDataOutput? { get }
   @objc func startCamera()
@@ -529,7 +519,6 @@ public typealias RotateCameraCallBack = () -> ()
   @objc func initiatePhotoCapture(cameraSettings: BanubaSdk.CameraPhotoSettings, completion: @escaping (CoreVideo.CVImageBuffer?, BanubaEffectPlayer.BNBFrameData?) -> Swift.Void)
   @objc func switchCamera(to type: BanubaSdk.CameraSessionType, completion: @escaping BanubaSdk.RotateCameraCallBack)
   @objc func restoreCurrentCameraSessionSettings(completion: (() -> Swift.Void)?)
-  @objc func setMaxFaces(_ maxFaces: Swift.Int)
 }
 @objc public protocol AudioCapturing {
   @objc func startAudioCapturing()

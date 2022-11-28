@@ -304,12 +304,6 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @end
 
 
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
@@ -322,14 +316,19 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
 @end
 
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
+@property (nonatomic) BOOL isBeautificationEnabled;
+- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class ExternalAudioConfiguration;
 @class NSValue;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
 @property (nonatomic, readonly) BOOL isRecording;
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nonnull)(CMTime))progress completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture isMicrophoneEnabled:(BOOL)isMicrophoneEnabled externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
@@ -589,7 +588,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 @property (nonatomic, readonly) BOOL isCameraCapturing;
 @property (nonatomic, readonly) enum CameraSessionType currentCameraSessionType;
 @property (nonatomic, readonly) CGPoint exposurePointOfInterest;
-@property (nonatomic, readonly) BOOL useARKit;
 @property (nonatomic) BOOL flipCamera;
 @property (nonatomic, readonly, strong) AVCaptureVideoDataOutput * _Nullable cameraVideoOutput;
 - (void)startCamera;
@@ -606,7 +604,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 - (void)initiatePhotoCaptureWithCameraSettings:(CameraPhotoSettings * _Nonnull)cameraSettings completion:(void (^ _Nonnull)(CVImageBufferRef _Nullable, BNBFrameData * _Nullable))completion;
 - (void)switchCameraTo:(enum CameraSessionType)type completion:(void (^ _Nonnull)(void))completion;
 - (void)restoreCurrentCameraSessionSettingsWithCompletion:(void (^ _Nullable)(void))completion;
-- (void)setMaxFaces:(NSInteger)maxFaces;
 @end
 
 typedef SWIFT_ENUM(NSInteger, CameraSessionType, open) {
@@ -644,7 +641,6 @@ SWIFT_CLASS("_TtC9BanubaSdk25EffectPlayerConfiguration")
 @property (nonatomic) BOOL delayedCameraInitialization;
 @property (nonatomic) BNBCameraOrientation orientation;
 @property (nonatomic, strong) NSNotificationCenter * _Nonnull notificationCenter;
-@property (nonatomic) BOOL useARKitWhenAvailable;
 @property (nonatomic) double fpsLimit;
 - (nonnull instancetype)init;
 /// CameraLutStage constructor
@@ -660,15 +656,13 @@ SWIFT_CLASS("_TtC9BanubaSdk25EffectPlayerConfiguration")
 ///
 /// \param isMirrored camera is mirrored
 ///
-/// \param useARKitWhenAvailable use ARKit when available
-///
 /// \param fpsLimit setup fps limit
 ///
 /// \param delayedCameraInitialization delayed сamera initialization
 ///
 /// \param notificationCenter setup notification center
 ///
-- (nonnull instancetype)initWithRenderMode:(enum EffectPlayerRenderMode)renderMode renderContentMode:(enum RenderContentMode)renderContentMode orientation:(BNBCameraOrientation)orientation preferredRenderFrameRate:(NSInteger)preferredRenderFrameRate shouldAutoStartOnEnterForeground:(BOOL)shouldAutoStartOnEnterForeground isMirrored:(BOOL)isMirrored useARKitWhenAvailable:(BOOL)useARKitWhenAvailable fpsLimit:(double)fpsLimit delayedCameraInitialization:(BOOL)delayedCameraInitialization notificationCenter:(NSNotificationCenter * _Nonnull)notificationCenter;
+- (nonnull instancetype)initWithRenderMode:(enum EffectPlayerRenderMode)renderMode renderContentMode:(enum RenderContentMode)renderContentMode orientation:(BNBCameraOrientation)orientation preferredRenderFrameRate:(NSInteger)preferredRenderFrameRate shouldAutoStartOnEnterForeground:(BOOL)shouldAutoStartOnEnterForeground isMirrored:(BOOL)isMirrored fpsLimit:(double)fpsLimit delayedCameraInitialization:(BOOL)delayedCameraInitialization notificationCenter:(NSNotificationCenter * _Nonnull)notificationCenter;
 /// CameraLutStage constructor
 /// \param cameraMode camera mode
 ///
@@ -688,15 +682,13 @@ SWIFT_CLASS("_TtC9BanubaSdk25EffectPlayerConfiguration")
 ///
 /// \param flipVertically setup flip vertically
 ///
-/// \param useARKitWhenAvailable use ARKit when available
-///
 /// \param fpsLimit setup fps limit
 ///
 /// \param delayedCameraInitialization delayed сamera initialization
 ///
 /// \param notificationCenter setup notification center
 ///
-- (nonnull instancetype)initWithCameraMode:(enum CameraSessionType)cameraMode renderContentMode:(enum RenderContentMode)renderContentMode renderSize:(CGSize)renderSize captureSessionPreset:(AVCaptureSessionPreset _Nonnull)captureSessionPreset orientation:(BNBCameraOrientation)orientation preferredRenderFrameRate:(NSInteger)preferredRenderFrameRate shouldAutoStartOnEnterForeground:(BOOL)shouldAutoStartOnEnterForeground isMirrored:(BOOL)isMirrored flipVertically:(BOOL)flipVertically useARKitWhenAvailable:(BOOL)useARKitWhenAvailable fpsLimit:(double)fpsLimit delayedCameraInitialization:(BOOL)delayedCameraInitialization notificationCenter:(NSNotificationCenter * _Nonnull)notificationCenter OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithCameraMode:(enum CameraSessionType)cameraMode renderContentMode:(enum RenderContentMode)renderContentMode renderSize:(CGSize)renderSize captureSessionPreset:(AVCaptureSessionPreset _Nonnull)captureSessionPreset orientation:(BNBCameraOrientation)orientation preferredRenderFrameRate:(NSInteger)preferredRenderFrameRate shouldAutoStartOnEnterForeground:(BOOL)shouldAutoStartOnEnterForeground isMirrored:(BOOL)isMirrored flipVertically:(BOOL)flipVertically fpsLimit:(double)fpsLimit delayedCameraInitialization:(BOOL)delayedCameraInitialization notificationCenter:(NSNotificationCenter * _Nonnull)notificationCenter OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -793,10 +785,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 - (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)takeSnapshotWithConfiguration:(OutputConfiguration * _Nonnull)configuration handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)removeWatermark;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL isMicrophoneEnabled:(BOOL)isMicrophoneEnabled externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame isFirstRun:(BOOL)isFirstRun periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 - (void)reset;
 - (BOOL)hasDiskCapacityForRecording SWIFT_WARN_UNUSED_RESULT;
