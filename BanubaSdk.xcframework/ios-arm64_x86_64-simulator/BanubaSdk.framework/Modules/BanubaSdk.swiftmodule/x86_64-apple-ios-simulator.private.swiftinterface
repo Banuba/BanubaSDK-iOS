@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaSdk
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVKit
@@ -36,7 +36,7 @@ import _StringProcessing
   public func startPlaying()
   public func stopPlaying()
   public func seek(to time: Foundation.TimeInterval)
-  public func draw(renderEncoder: Metal.MTLRenderCommandEncoder, fullRenderSize: CoreFoundation.CGSize, relativeLeftTopPoint: CoreFoundation.CGPoint, scale: CoreFoundation.CGFloat)
+  public func draw(renderEncoder: any Metal.MTLRenderCommandEncoder, fullRenderSize: CoreFoundation.CGSize, relativeLeftTopPoint: CoreFoundation.CGPoint, scale: CoreFoundation.CGFloat)
   @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @objc deinit
 }
@@ -87,10 +87,10 @@ import _StringProcessing
     @objc set
   }
   public static var arCloudPath: Swift.String?
-  public var beautyManager: BanubaSDKServicing.BeautyEffectManaging
+  public var beautyManager: any BanubaSDKServicing.BeautyEffectManaging
   @objc public var isLoaded: Swift.Bool
   @objc public var allowProcessing: Swift.Bool
-  @objc public var inputDelegate: BanubaSDKServicing.SDKInputServicingDelegate?
+  @objc public var inputDelegate: (any BanubaSDKServicing.SDKInputServicingDelegate)?
   public static var videoSize: CoreFoundation.CGSize! {
     get
   }
@@ -192,16 +192,16 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKOutputServicing {
   @objc dynamic public var isEnoughDiskSpaceForRecording: Swift.Bool {
     @objc get
   }
-  @objc dynamic public func startVideoCapturing(fileURL: Foundation.URL?, startTimeForVideoTexture: Swift.Double, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: @escaping (CoreMedia.CMTime) -> Swift.Void, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue], boundaryHandler: @escaping (CoreMedia.CMTime) -> Swift.Void, totalDuration: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc dynamic public func startVideoCapturing(fileURL: Foundation.URL?, startTimeForVideoTexture: Swift.Double, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: @escaping (CoreMedia.CMTime) -> Swift.Void, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue], boundaryHandler: @escaping (CoreMedia.CMTime) -> Swift.Void, totalDuration: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
   @objc dynamic public func stopVideoCapturing(cancel: Swift.Bool)
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing {
   @objc dynamic public func loadMask(name: Swift.String, synchronous: Swift.Bool)
   @objc dynamic public func unloadMask()
   @objc dynamic public func removeAllFilters()
-  @objc dynamic public func applyFilter(_ filter: BanubaSDKServicing.RenderEffect)
-  @objc dynamic public func removeFilter(_ filter: BanubaSDKServicing.RenderEffect)
-  @objc dynamic public func setEffectSubtypeModificationsEventListener(_ listener: BanubaSDKServicing.EffectSubtypeModificationsEventListener)
+  @objc dynamic public func applyFilter(_ filter: any BanubaSDKServicing.RenderEffect)
+  @objc dynamic public func removeFilter(_ filter: any BanubaSDKServicing.RenderEffect)
+  @objc dynamic public func setEffectSubtypeModificationsEventListener(_ listener: any BanubaSDKServicing.EffectSubtypeModificationsEventListener)
   @objc dynamic public func effectsPaths(includeBeautyEffect: Swift.Bool) -> [Swift.String]
   @objc dynamic public func effectDidBeginApplying()
   @objc dynamic public func effectDidEndApplying()
@@ -268,7 +268,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListen
   @objc func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float)
 }
 @_inheritsConvenienceInitializers @objc public class BanubaSdkManager : ObjectiveC.NSObject {
-  @objc weak public var delegate: BanubaSdk.BanubaSdkManagerDelegate?
+  @objc weak public var delegate: (any BanubaSdk.BanubaSdkManagerDelegate)?
   @objc public var effectPlayer: BanubaEffectPlayer.BNBEffectPlayer? {
     get
   }
@@ -280,17 +280,16 @@ extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListen
     @objc set
   }
   @objc public func loadEffect(_ effectUrl: Swift.String, synchronous: Swift.Bool = false) -> BanubaEffectPlayer.BNBEffect?
-  @objc public var featureParameters: [BanubaEffectPlayer.BNBFeatureParameter]?
   @objc public func currentEffect() -> BanubaEffectPlayer.BNBEffect?
   @objc public func setMaxFaces(_ maxFaces: Swift.Int32)
-  public var voiceChanger: BanubaSdk.VoiceChangeable? {
+  public var voiceChanger: (any BanubaSdk.VoiceChangeable)? {
     get
   }
-  @objc public var input: BanubaSdk.InputServicing {
+  @objc public var input: any BanubaSdk.InputServicing {
     @objc get
     @objc set
   }
-  @objc public var output: BanubaSdk.OutputServicing? {
+  @objc public var output: (any BanubaSdk.OutputServicing)? {
     @objc get
   }
   @objc public var renderTarget: BanubaSdk.RenderTarget?
@@ -326,24 +325,17 @@ extension BanubaSdk.BanubaCameraModule : BanubaEffectPlayer.BNBEffectEventListen
   @objc dynamic public func startEffectPlayer()
   @objc dynamic public func stopEffectPlayer()
   @objc dynamic public func destroyEffectPlayer()
-  @objc dynamic public func startEditingImage(_ image: UIKit.UIImage, recognizerIterations: Foundation.NSNumber? = nil, imageOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, requireMirroring: Swift.Bool = false, faceOrientation: Swift.Int = 0, fieldOfView: Swift.Float = 60, resetEffect: Swift.Bool = false, processParams: BanubaEffectPlayer.BNBProcessImageParams = BNBProcessImageParams(
-            acneProcessing: false,
-            acneUserAreas: nil,
-            faceDataJsonPath: nil), completion: ((Swift.Int, CoreFoundation.CGRect) -> Swift.Void)? = nil)
+  @objc dynamic public func startEditingImage(_ image: UIKit.UIImage, recognizerIterations: Foundation.NSNumber? = nil, imageOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, requireMirroring: Swift.Bool = false, faceOrientation: Swift.Int = 0, fieldOfView: Swift.Float = 60, resetEffect: Swift.Bool = false, processParams: BanubaEffectPlayer.BNBProcessImageParams = BNBProcessImageParams(faceDataJsonPath: nil), completion: ((Swift.Int, CoreFoundation.CGRect) -> Swift.Void)? = nil)
   @objc dynamic public func captureEditedImage(imageOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, resetEffect: Swift.Bool = false, completion: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc dynamic public func stopEditingImage(startCameraInput: Swift.Bool = false)
   @objc dynamic public func makeCameraPhoto(cameraSettings: BanubaSdk.CameraPhotoSettings, flipFrontCamera: Swift.Bool = false, srcImageHandler: ((CoreVideo.CVPixelBuffer) -> Swift.Void)? = nil, completion: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc dynamic public func processImageData(_ inputData: CoreVideo.CVImageBuffer, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, faceOrientation: Swift.Int = 0, fieldOfView: Swift.Float = 60, isMirrored: Swift.Bool = false, completion: @escaping (UIKit.UIImage?) -> Swift.Void)
-  @objc dynamic public func processImageData(_ imputImage: UIKit.UIImage, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, fieldOfView: Swift.Float = 60, isMirrored: Swift.Bool = false, params: BanubaEffectPlayer.BNBProcessImageParams = BNBProcessImageParams(acneProcessing: false, acneUserAreas:nil, faceDataJsonPath: nil), completion: @escaping (UIKit.UIImage?) -> Swift.Void)
+  @objc dynamic public func processImageData(_ imputImage: UIKit.UIImage, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, fieldOfView: Swift.Float = 60, isMirrored: Swift.Bool = false, params: BanubaEffectPlayer.BNBProcessImageParams = BNBProcessImageParams(faceDataJsonPath: nil), completion: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc dynamic public func configureWatermark(_ watermarkInfo: BanubaSdk.WatermarkInfo)
   @objc dynamic public func removeWatermark()
   @objc dynamic public func startVideoProcessing(width: Swift.UInt, height: Swift.UInt, orientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, resetEffect: Swift.Bool = false)
   @objc dynamic public func stopVideoProcessing(resetEffect: Swift.Bool = false)
-  @objc dynamic public func processVideoFrame(from: CoreVideo.CVPixelBuffer, to: CoreVideo.CVPixelBuffer, timeNs: Swift.Int64, iterations: Foundation.NSNumber? = nil, cameraOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, requireMirroring: Swift.Bool = false, faceOrientation: Swift.Int = 0, fieldOfView: Swift.Float = 60, processImageParams: BanubaEffectPlayer.BNBProcessImageParams = BNBProcessImageParams(
-            acneProcessing: false,
-            acneUserAreas: nil,
-            faceDataJsonPath: nil
-        ))
+  @objc dynamic public func processVideoFrame(from: CoreVideo.CVPixelBuffer, to: CoreVideo.CVPixelBuffer, timeNs: Swift.Int64, iterations: Foundation.NSNumber? = nil, cameraOrientation: BanubaEffectPlayer.BNBCameraOrientation = .deg0, requireMirroring: Swift.Bool = false, faceOrientation: Swift.Int = 0, fieldOfView: Swift.Float = 60, processImageParams: BanubaEffectPlayer.BNBProcessImageParams = BNBProcessImageParams(faceDataJsonPath: nil))
   @objc dynamic public var imageOrientationForCameraPhoto: BanubaEffectPlayer.BNBCameraOrientation {
     @objc get
   }
@@ -408,7 +400,7 @@ public protocol VoiceChangeable : AnyObject {
   var queue: Dispatch.DispatchQueue { get set }
   var volume: Swift.Float { get set }
   var isConfigured: Swift.Bool { get }
-  func process(file url: Foundation.URL, completion: ((Swift.Bool, Swift.Error?) -> Swift.Void)?)
+  func process(file url: Foundation.URL, completion: ((Swift.Bool, (any Swift.Error)?) -> Swift.Void)?)
   func process(file url: Foundation.URL) throws
 }
 public enum VoiceChangerError : Swift.Error {
@@ -429,7 +421,7 @@ public protocol PIPShape : AnyObject {
   var data: Swift.UnsafeMutablePointer<Swift.UInt8> { get }
 }
 public protocol PIPShapeable {
-  func set(shape: BanubaSdk.PIPShape?)
+  func set(shape: (any BanubaSdk.PIPShape)?)
   func set(shapeType: BanubaSdk.PIPShapeBuilder.PIPShapeType)
 }
 @_hasMissingDesignatedInitializers public class PIPShapeBuilder {
@@ -441,7 +433,7 @@ public protocol PIPShapeable {
     case roundSquare(radius: CoreFoundation.CGFloat)
     public static func == (a: BanubaSdk.PIPShapeBuilder.PIPShapeType, b: BanubaSdk.PIPShapeBuilder.PIPShapeType) -> Swift.Bool
   }
-  public static func buildShape(size: CoreFoundation.CGSize, path: CoreGraphics.CGPath) -> BanubaSdk.PIPShape
+  public static func buildShape(size: CoreFoundation.CGSize, path: CoreGraphics.CGPath) -> any BanubaSdk.PIPShape
   @objc deinit
 }
 extension BanubaEffectPlayer.BNBFrameData {
@@ -468,7 +460,7 @@ extension BanubaEffectPlayer.BNBFrameData {
   @objc func takeSnapshot(handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func takeSnapshot(configuration: BanubaSdk.OutputConfiguration, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func removeWatermark()
-  @objc func startVideoCapturing(fileURL: Foundation.URL?, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: ((CoreMedia.CMTime) -> Swift.Void)?, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, isFirstRun: Swift.Bool, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue]?, boundaryHandler: ((CoreMedia.CMTime) -> Swift.Void)?, totalDuration: Foundation.TimeInterval, configuration: BanubaSdk.OutputConfiguration, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc func startVideoCapturing(fileURL: Foundation.URL?, externalAudioConfiguration: BanubaSDKServicing.ExternalAudioConfiguration?, progress: ((CoreMedia.CMTime) -> Swift.Void)?, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, isFirstRun: Swift.Bool, periodicProgressTimeInterval: Foundation.TimeInterval, boundaryTimes: [Foundation.NSValue]?, boundaryHandler: ((CoreMedia.CMTime) -> Swift.Void)?, totalDuration: Foundation.TimeInterval, configuration: BanubaSdk.OutputConfiguration, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
   @objc func stopVideoCapturing(cancel: Swift.Bool)
   @objc func reset()
   @objc func hasDiskCapacityForRecording() -> Swift.Bool
@@ -493,14 +485,14 @@ extension BanubaEffectPlayer.BNBFrameData {
   @objc deinit
 }
 extension BanubaSdk.PIPShapeDrawer : BanubaSdk.PIPShapeable {
-  public func set(shape: BanubaSdk.PIPShape?)
+  public func set(shape: (any BanubaSdk.PIPShape)?)
   public func set(shapeType: BanubaSdk.PIPShapeBuilder.PIPShapeType)
 }
 @objc public protocol InputServicing : BanubaSdk.AudioCapturing, BanubaSdk.CameraServicing, BanubaSdk.CameraZoomable {
 }
 public typealias RotateCameraCallBack = () -> ()
 @objc public protocol CameraServicing {
-  @objc var delegate: BanubaSdk.InputServiceDelegate? { get set }
+  @objc var delegate: (any BanubaSdk.InputServiceDelegate)? { get set }
   @objc var isFrontCamera: Swift.Bool { get }
   @objc var isPhotoCameraSession: Swift.Bool { get }
   @objc var isCameraCapturing: Swift.Bool { get }
