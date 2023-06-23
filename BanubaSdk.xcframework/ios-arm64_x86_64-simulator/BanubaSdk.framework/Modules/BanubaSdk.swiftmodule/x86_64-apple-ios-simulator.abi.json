@@ -19462,6 +19462,27 @@
             "printedName": "_ExpressibleByImageLiteral",
             "usr": "s:s26_ExpressibleByImageLiteralP",
             "mangledName": "$ss26_ExpressibleByImageLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Placeholder",
+            "printedName": "Placeholder",
+            "usr": "s:15BanubaUtilities11PlaceholderP",
+            "mangledName": "$s15BanubaUtilities11PlaceholderP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CacheCostCalculable",
+            "printedName": "CacheCostCalculable",
+            "usr": "s:15BanubaUtilities19CacheCostCalculableP",
+            "mangledName": "$s15BanubaUtilities19CacheCostCalculableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "KingfisherCompatible",
+            "printedName": "KingfisherCompatible",
+            "usr": "s:15BanubaUtilities20KingfisherCompatibleP",
+            "mangledName": "$s15BanubaUtilities20KingfisherCompatibleP"
           }
         ]
       }
