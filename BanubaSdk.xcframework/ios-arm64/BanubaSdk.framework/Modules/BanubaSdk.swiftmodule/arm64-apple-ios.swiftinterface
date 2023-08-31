@@ -116,6 +116,7 @@ import _StringProcessing
     case stopMusic
     case hideInteractive
     case updatePreview
+    case enableBlur
     public init?(rawValue: Swift.String)
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
@@ -196,6 +197,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKOutputServicing {
   @objc dynamic public func stopVideoCapturing(cancel: Swift.Bool)
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing {
+  @objc dynamic public func enableBlur()
   @objc dynamic public func loadMask(name: Swift.String, synchronous: Swift.Bool)
   @objc dynamic public func unloadMask()
   @objc dynamic public func removeAllFilters()

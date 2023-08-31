@@ -364,10 +364,23 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
+@class UIImage;
+@class AVURLAsset;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
+- (void)setupDefaultImageTexture;
+- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
+- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
+- (void)stopVideoTextureIfNeeded;
+- (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
+- (void)unloadEffectTexture;
+@end
+
 @protocol RenderEffect;
 @protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)enableBlur;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
 - (void)unloadMask;
 - (void)removeAllFilters;
@@ -379,18 +392,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)effectDidEndApplying;
 - (void)effectDidResetApplying;
 - (void)effectDidChangeState;
-@end
-
-@class UIImage;
-@class AVURLAsset;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
-- (void)setupDefaultImageTexture;
-- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
-- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
-- (void)stopVideoTextureIfNeeded;
-- (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
-- (void)unloadEffectTexture;
 @end
 
 
@@ -1276,10 +1277,23 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
+@class UIImage;
+@class AVURLAsset;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
+- (void)setupDefaultImageTexture;
+- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
+- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
+- (void)stopVideoTextureIfNeeded;
+- (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
+- (void)unloadEffectTexture;
+@end
+
 @protocol RenderEffect;
 @protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)enableBlur;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
 - (void)unloadMask;
 - (void)removeAllFilters;
@@ -1291,18 +1305,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)effectDidEndApplying;
 - (void)effectDidResetApplying;
 - (void)effectDidChangeState;
-@end
-
-@class UIImage;
-@class AVURLAsset;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
-- (void)setupDefaultImageTexture;
-- (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image;
-- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset;
-- (void)stopVideoTextureIfNeeded;
-- (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
-- (void)unloadEffectTexture;
 @end
 
 
