@@ -198,6 +198,9 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKOutputServicing {
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing {
   @objc dynamic public func enableBlur()
+  @objc dynamic public var isMaskLoaded: Swift.Bool {
+    @objc get
+  }
   @objc dynamic public func loadMask(name: Swift.String, synchronous: Swift.Bool)
   @objc dynamic public func unloadMask()
   @objc dynamic public func removeAllFilters()

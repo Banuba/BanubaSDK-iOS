@@ -381,6 +381,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
 - (void)enableBlur;
+@property (nonatomic, readonly) BOOL isMaskLoaded;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
 - (void)unloadMask;
 - (void)removeAllFilters;
