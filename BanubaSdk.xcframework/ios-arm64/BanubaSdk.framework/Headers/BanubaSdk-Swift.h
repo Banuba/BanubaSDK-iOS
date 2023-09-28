@@ -618,14 +618,13 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 @property (nonatomic, strong) id <InputServiceDelegate> _Nullable delegate;
 @property (nonatomic, readonly) BOOL isFrontCamera;
 @property (nonatomic, readonly) BOOL isPhotoCameraSession;
-@property (nonatomic, readonly) BOOL isCameraCapturing;
 @property (nonatomic, readonly) enum CameraSessionType currentCameraSessionType;
 @property (nonatomic, readonly) CGPoint exposurePointOfInterest;
 @property (nonatomic) BOOL flipCamera;
 @property (nonatomic, readonly, strong) AVCaptureVideoDataOutput * _Nullable cameraVideoOutput;
+- (void)setupCamera;
 - (void)startCamera;
 - (void)stopCamera;
-- (void)initializeCameraInput;
 - (void)releaseAudioCaptureSession;
 - (void)setCameraSessionType:(enum CameraSessionType)type;
 - (void)setCameraSessionType:(enum CameraSessionType)type completion:(void (^ _Nonnull)(void))completion;
@@ -635,7 +634,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 - (AVCaptureTorchMode)toggleTorch SWIFT_WARN_UNUSED_RESULT;
 - (void)initiatePhotoCaptureWithCameraSettings:(CameraPhotoSettings * _Nonnull)cameraSettings completion:(void (^ _Nonnull)(CVImageBufferRef _Nullable, BNBFrameData * _Nullable))completion;
 - (void)switchCameraTo:(enum CameraSessionType)type completion:(void (^ _Nonnull)(void))completion;
-- (void)restoreCurrentCameraSessionSettingsWithCompletion:(void (^ _Nullable)(void))completion;
 @end
 
 typedef SWIFT_ENUM(NSInteger, CameraSessionType, open) {

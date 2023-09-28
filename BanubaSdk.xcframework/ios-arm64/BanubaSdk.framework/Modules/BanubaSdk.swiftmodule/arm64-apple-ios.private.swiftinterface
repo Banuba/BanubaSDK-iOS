@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaSdk
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaSdk
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVKit
 import Accelerate
@@ -500,14 +500,13 @@ public typealias RotateCameraCallBack = () -> ()
   @objc var delegate: (any BanubaSdk.InputServiceDelegate)? { get set }
   @objc var isFrontCamera: Swift.Bool { get }
   @objc var isPhotoCameraSession: Swift.Bool { get }
-  @objc var isCameraCapturing: Swift.Bool { get }
   @objc var currentCameraSessionType: BanubaSdk.CameraSessionType { get }
   @objc var exposurePointOfInterest: CoreFoundation.CGPoint { get }
   @objc var flipCamera: Swift.Bool { get set }
   @objc var cameraVideoOutput: AVFoundation.AVCaptureVideoDataOutput? { get }
+  @objc func setupCamera()
   @objc func startCamera()
   @objc func stopCamera()
-  @objc func initializeCameraInput()
   @objc func releaseAudioCaptureSession()
   @objc func setCameraSessionType(_ type: BanubaSdk.CameraSessionType)
   @objc func setCameraSessionType(_ type: BanubaSdk.CameraSessionType, completion: @escaping BanubaSdk.RotateCameraCallBack)
@@ -517,7 +516,6 @@ public typealias RotateCameraCallBack = () -> ()
   @objc func toggleTorch() -> AVFoundation.AVCaptureDevice.TorchMode
   @objc func initiatePhotoCapture(cameraSettings: BanubaSdk.CameraPhotoSettings, completion: @escaping (CoreVideo.CVImageBuffer?, BanubaEffectPlayer.BNBFrameData?) -> Swift.Void)
   @objc func switchCamera(to type: BanubaSdk.CameraSessionType, completion: @escaping BanubaSdk.RotateCameraCallBack)
-  @objc func restoreCurrentCameraSessionSettings(completion: (() -> Swift.Void)?)
 }
 @objc public protocol AudioCapturing {
   @objc func startAudioCapturing()
