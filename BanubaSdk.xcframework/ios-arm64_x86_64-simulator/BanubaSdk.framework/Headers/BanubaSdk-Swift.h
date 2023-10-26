@@ -278,7 +278,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import AVFoundation;
-@import BanubaEffectPlayer;
+@import BNBSdkCore;
 @import BanubaSDKServicing;
 @import BanubaUtilities;
 @import CoreFoundation;
@@ -351,12 +351,6 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @end
 
 
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
@@ -379,6 +373,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
+@end
+
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
+@property (nonatomic) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL supportsIntensity;
+@property (nonatomic) double intensity;
+- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
+- (void)resetIntensity;
 @end
 
 @class UIImage;
@@ -470,6 +473,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol OutputServicing;
 @class RenderTarget;
 @class EffectPlayerConfiguration;
+@class EffectPlayerView;
 @class CAMetalLayer;
 enum EffectPlayerRenderMode : NSInteger;
 enum RenderContentMode : NSInteger;
@@ -499,6 +503,7 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @property (nonatomic, readonly, strong) id <OutputServicing> _Nullable output;
 @property (nonatomic, strong) RenderTarget * _Nullable renderTarget;
 @property (nonatomic, readonly, strong) EffectPlayerConfiguration * _Nullable playerConfiguration;
+- (void)setRenderTargetWithView:(EffectPlayerView * _Nonnull)view playerConfiguration:(EffectPlayerConfiguration * _Nullable)playerConfiguration;
 - (void)setRenderTargetWithLayer:(CAMetalLayer * _Nonnull)layer renderMode:(enum EffectPlayerRenderMode)renderMode contentMode:(enum RenderContentMode)contentMode;
 - (void)setRenderTargetWithLayer:(CAMetalLayer * _Nonnull)layer contentMode:(enum RenderContentMode)contentMode playerConfiguration:(EffectPlayerConfiguration * _Nullable)playerConfiguration;
 - (void)removeRenderTarget;
@@ -521,6 +526,10 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 - (void)destroy;
 /// BNBEffectPlayer may crash on certain devices. So, we downscale the input image before processing.
 + (CVPixelBufferRef _Nullable)scaleBeforeProcessing:(CVPixelBufferRef _Nullable)buffer SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL isDrawOnDemandMode;
+@property (nonatomic, readonly) BOOL frameOnDemandRendered;
+- (void)setDrawOnDemandMode:(BOOL)mode;
+- (void)requestFrameDraw;
 @end
 
 
@@ -564,7 +573,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 
 
 @class NSNumber;
-@class BNBProcessImageParams;
 @class CameraPhotoSettings;
 @class WatermarkInfo;
 
@@ -589,17 +597,20 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 ///     Call stopEditingImage. After that moment user can switch to other render target and restore previous logic (push frames from camera), if needed.
 ///   </li>
 /// </ul>
-- (void)startEditingImage:(UIImage * _Nonnull)image recognizerIterations:(NSNumber * _Nullable)recognizerIterations imageOrientation:(BNBCameraOrientation)imageOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView resetEffect:(BOOL)resetEffect processParams:(BNBProcessImageParams * _Nonnull)processParams completion:(void (^ _Nullable)(NSInteger, CGRect))completion;
+- (void)startEditingImage:(UIImage * _Nonnull)image recognizerIterations:(NSNumber * _Nullable)recognizerIterations imageOrientation:(BNBCameraOrientation)imageOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView resetEffect:(BOOL)resetEffect completion:(void (^ _Nullable)(NSInteger, CGRect))completion;
+/// Helper method to fast image update during editing mode, when image is changed without modifying facial features,
+/// so framedata from previous image will be correct for new one.
+- (void)updateEditingFrameWithImage:(UIImage * _Nonnull)image imageOrientation:(BNBCameraOrientation)imageOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView completion:(void (^ _Nullable)(BOOL))completion;
 - (void)captureEditedImageWithImageOrientation:(BNBCameraOrientation)imageOrientation resetEffect:(BOOL)resetEffect completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 - (void)stopEditingImageWithStartCameraInput:(BOOL)startCameraInput;
 - (void)makeCameraPhotoWithCameraSettings:(CameraPhotoSettings * _Nonnull)cameraSettings flipFrontCamera:(BOOL)flipFrontCamera srcImageHandler:(void (^ _Nullable)(CVPixelBufferRef _Nonnull))srcImageHandler completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 - (void)processImageData:(CVImageBufferRef _Nonnull)inputData orientation:(BNBCameraOrientation)orientation faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView isMirrored:(BOOL)isMirrored completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
-- (void)processImageData:(UIImage * _Nonnull)imputImage orientation:(BNBCameraOrientation)orientation fieldOfView:(float)fieldOfView isMirrored:(BOOL)isMirrored params:(BNBProcessImageParams * _Nonnull)params completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
+- (void)processImageData:(UIImage * _Nonnull)imputImage orientation:(BNBCameraOrientation)orientation fieldOfView:(float)fieldOfView isMirrored:(BOOL)isMirrored completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 - (void)configureWatermark:(WatermarkInfo * _Nonnull)watermarkInfo;
 - (void)removeWatermark;
 - (void)startVideoProcessingWithWidth:(NSUInteger)width height:(NSUInteger)height orientation:(BNBCameraOrientation)orientation resetEffect:(BOOL)resetEffect;
 - (void)stopVideoProcessingWithResetEffect:(BOOL)resetEffect;
-- (void)processVideoFrameFrom:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to timeNs:(int64_t)timeNs iterations:(NSNumber * _Nullable)iterations cameraOrientation:(BNBCameraOrientation)cameraOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView processImageParams:(BNBProcessImageParams * _Nonnull)processImageParams;
+- (void)processVideoFrameFrom:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to timeNs:(int64_t)timeNs iterations:(NSNumber * _Nullable)iterations cameraOrientation:(BNBCameraOrientation)cameraOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView;
 @property (nonatomic, readonly) BNBCameraOrientation imageOrientationForCameraPhoto;
 @end
 
@@ -865,12 +876,12 @@ typedef SWIFT_ENUM(NSInteger, RenderContentMode, open) {
   RenderContentModeResize = 2,
 };
 
-@class OutputSettings;
+@class VEOutputSettings;
 
 SWIFT_CLASS("_TtC9BanubaSdk12RenderTarget")
 @interface RenderTarget : PIPShapeDrawer
 - (CVPixelBufferRef _Nullable)makeVideoPixelBuffer SWIFT_WARN_UNUSED_RESULT;
-- (UIImage * _Nullable)makeSnapshotWithSettings:(OutputSettings * _Nonnull)settings watermarkPixelBuffer:(CVPixelBufferRef _Nullable)watermarkPixelBuffer SWIFT_WARN_UNUSED_RESULT;
+- (UIImage * _Nullable)makeSnapshotWithSettings:(VEOutputSettings * _Nonnull)settings watermarkPixelBuffer:(CVPixelBufferRef _Nullable)watermarkPixelBuffer SWIFT_WARN_UNUSED_RESULT;
 - (void)activate;
 - (void)present:(void (^ _Nullable)(CVPixelBufferRef _Nullable))willPresentHandler;
 @end
@@ -914,7 +925,7 @@ SWIFT_CLASS("_TtC9BanubaSdk13WatermarkInfo")
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image corner:(enum WatermarkCornerPosition)corner offset:(CGPoint)offset targetNormalizedWidth:(CGFloat)targetNormalizedWidth OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image normalizedPosition:(CGPoint)normalizedPosition targetWidth:(CGFloat)targetWidth OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image normalizedPosition:(CGPoint)normalizedPosition targetNormalizedWidth:(CGFloat)targetNormalizedWidth OBJC_DESIGNATED_INITIALIZER;
-- (WatermarkDrawSettings * _Nonnull)drawSettingsWithBoundsSize:(CGSize)boundsSize outputSettings:(OutputSettings * _Nonnull)outputSettings SWIFT_WARN_UNUSED_RESULT;
+- (WatermarkDrawSettings * _Nonnull)drawSettingsWithBoundsSize:(CGSize)boundsSize outputSettings:(VEOutputSettings * _Nonnull)outputSettings SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1207,7 +1218,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import AVFoundation;
-@import BanubaEffectPlayer;
+@import BNBSdkCore;
 @import BanubaSDKServicing;
 @import BanubaUtilities;
 @import CoreFoundation;
@@ -1280,12 +1291,6 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @end
 
 
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
@@ -1308,6 +1313,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
+@end
+
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
+@property (nonatomic) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL supportsIntensity;
+@property (nonatomic) double intensity;
+- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
+- (void)resetIntensity;
 @end
 
 @class UIImage;
@@ -1399,6 +1413,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol OutputServicing;
 @class RenderTarget;
 @class EffectPlayerConfiguration;
+@class EffectPlayerView;
 @class CAMetalLayer;
 enum EffectPlayerRenderMode : NSInteger;
 enum RenderContentMode : NSInteger;
@@ -1428,6 +1443,7 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @property (nonatomic, readonly, strong) id <OutputServicing> _Nullable output;
 @property (nonatomic, strong) RenderTarget * _Nullable renderTarget;
 @property (nonatomic, readonly, strong) EffectPlayerConfiguration * _Nullable playerConfiguration;
+- (void)setRenderTargetWithView:(EffectPlayerView * _Nonnull)view playerConfiguration:(EffectPlayerConfiguration * _Nullable)playerConfiguration;
 - (void)setRenderTargetWithLayer:(CAMetalLayer * _Nonnull)layer renderMode:(enum EffectPlayerRenderMode)renderMode contentMode:(enum RenderContentMode)contentMode;
 - (void)setRenderTargetWithLayer:(CAMetalLayer * _Nonnull)layer contentMode:(enum RenderContentMode)contentMode playerConfiguration:(EffectPlayerConfiguration * _Nullable)playerConfiguration;
 - (void)removeRenderTarget;
@@ -1450,6 +1466,10 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 - (void)destroy;
 /// BNBEffectPlayer may crash on certain devices. So, we downscale the input image before processing.
 + (CVPixelBufferRef _Nullable)scaleBeforeProcessing:(CVPixelBufferRef _Nullable)buffer SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL isDrawOnDemandMode;
+@property (nonatomic, readonly) BOOL frameOnDemandRendered;
+- (void)setDrawOnDemandMode:(BOOL)mode;
+- (void)requestFrameDraw;
 @end
 
 
@@ -1493,7 +1513,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 
 
 @class NSNumber;
-@class BNBProcessImageParams;
 @class CameraPhotoSettings;
 @class WatermarkInfo;
 
@@ -1518,17 +1537,20 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 ///     Call stopEditingImage. After that moment user can switch to other render target and restore previous logic (push frames from camera), if needed.
 ///   </li>
 /// </ul>
-- (void)startEditingImage:(UIImage * _Nonnull)image recognizerIterations:(NSNumber * _Nullable)recognizerIterations imageOrientation:(BNBCameraOrientation)imageOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView resetEffect:(BOOL)resetEffect processParams:(BNBProcessImageParams * _Nonnull)processParams completion:(void (^ _Nullable)(NSInteger, CGRect))completion;
+- (void)startEditingImage:(UIImage * _Nonnull)image recognizerIterations:(NSNumber * _Nullable)recognizerIterations imageOrientation:(BNBCameraOrientation)imageOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView resetEffect:(BOOL)resetEffect completion:(void (^ _Nullable)(NSInteger, CGRect))completion;
+/// Helper method to fast image update during editing mode, when image is changed without modifying facial features,
+/// so framedata from previous image will be correct for new one.
+- (void)updateEditingFrameWithImage:(UIImage * _Nonnull)image imageOrientation:(BNBCameraOrientation)imageOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView completion:(void (^ _Nullable)(BOOL))completion;
 - (void)captureEditedImageWithImageOrientation:(BNBCameraOrientation)imageOrientation resetEffect:(BOOL)resetEffect completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 - (void)stopEditingImageWithStartCameraInput:(BOOL)startCameraInput;
 - (void)makeCameraPhotoWithCameraSettings:(CameraPhotoSettings * _Nonnull)cameraSettings flipFrontCamera:(BOOL)flipFrontCamera srcImageHandler:(void (^ _Nullable)(CVPixelBufferRef _Nonnull))srcImageHandler completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 - (void)processImageData:(CVImageBufferRef _Nonnull)inputData orientation:(BNBCameraOrientation)orientation faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView isMirrored:(BOOL)isMirrored completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
-- (void)processImageData:(UIImage * _Nonnull)imputImage orientation:(BNBCameraOrientation)orientation fieldOfView:(float)fieldOfView isMirrored:(BOOL)isMirrored params:(BNBProcessImageParams * _Nonnull)params completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
+- (void)processImageData:(UIImage * _Nonnull)imputImage orientation:(BNBCameraOrientation)orientation fieldOfView:(float)fieldOfView isMirrored:(BOOL)isMirrored completion:(void (^ _Nonnull)(UIImage * _Nullable))completion;
 - (void)configureWatermark:(WatermarkInfo * _Nonnull)watermarkInfo;
 - (void)removeWatermark;
 - (void)startVideoProcessingWithWidth:(NSUInteger)width height:(NSUInteger)height orientation:(BNBCameraOrientation)orientation resetEffect:(BOOL)resetEffect;
 - (void)stopVideoProcessingWithResetEffect:(BOOL)resetEffect;
-- (void)processVideoFrameFrom:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to timeNs:(int64_t)timeNs iterations:(NSNumber * _Nullable)iterations cameraOrientation:(BNBCameraOrientation)cameraOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView processImageParams:(BNBProcessImageParams * _Nonnull)processImageParams;
+- (void)processVideoFrameFrom:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to timeNs:(int64_t)timeNs iterations:(NSNumber * _Nullable)iterations cameraOrientation:(BNBCameraOrientation)cameraOrientation requireMirroring:(BOOL)requireMirroring faceOrientation:(NSInteger)faceOrientation fieldOfView:(float)fieldOfView;
 @property (nonatomic, readonly) BNBCameraOrientation imageOrientationForCameraPhoto;
 @end
 
@@ -1794,12 +1816,12 @@ typedef SWIFT_ENUM(NSInteger, RenderContentMode, open) {
   RenderContentModeResize = 2,
 };
 
-@class OutputSettings;
+@class VEOutputSettings;
 
 SWIFT_CLASS("_TtC9BanubaSdk12RenderTarget")
 @interface RenderTarget : PIPShapeDrawer
 - (CVPixelBufferRef _Nullable)makeVideoPixelBuffer SWIFT_WARN_UNUSED_RESULT;
-- (UIImage * _Nullable)makeSnapshotWithSettings:(OutputSettings * _Nonnull)settings watermarkPixelBuffer:(CVPixelBufferRef _Nullable)watermarkPixelBuffer SWIFT_WARN_UNUSED_RESULT;
+- (UIImage * _Nullable)makeSnapshotWithSettings:(VEOutputSettings * _Nonnull)settings watermarkPixelBuffer:(CVPixelBufferRef _Nullable)watermarkPixelBuffer SWIFT_WARN_UNUSED_RESULT;
 - (void)activate;
 - (void)present:(void (^ _Nullable)(CVPixelBufferRef _Nullable))willPresentHandler;
 @end
@@ -1843,7 +1865,7 @@ SWIFT_CLASS("_TtC9BanubaSdk13WatermarkInfo")
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image corner:(enum WatermarkCornerPosition)corner offset:(CGPoint)offset targetNormalizedWidth:(CGFloat)targetNormalizedWidth OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image normalizedPosition:(CGPoint)normalizedPosition targetWidth:(CGFloat)targetWidth OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithImage:(UIImage * _Nonnull)image normalizedPosition:(CGPoint)normalizedPosition targetNormalizedWidth:(CGFloat)targetNormalizedWidth OBJC_DESIGNATED_INITIALIZER;
-- (WatermarkDrawSettings * _Nonnull)drawSettingsWithBoundsSize:(CGSize)boundsSize outputSettings:(OutputSettings * _Nonnull)outputSettings SWIFT_WARN_UNUSED_RESULT;
+- (WatermarkDrawSettings * _Nonnull)drawSettingsWithBoundsSize:(CGSize)boundsSize outputSettings:(VEOutputSettings * _Nonnull)outputSettings SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
