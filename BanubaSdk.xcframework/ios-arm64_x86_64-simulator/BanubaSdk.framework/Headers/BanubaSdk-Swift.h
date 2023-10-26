@@ -536,15 +536,29 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
+- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@end
+
+
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
 - (void)onCameraPoiChanged:(float)x y:(float)y;
 @end
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
-- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@class BanubaVisualClipVideo;
+
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk))
++ (NSArray<NSString *> * _Nullable)createAutoCutVideosWith:(NSString * _Nonnull)musicDbPath visualEffects:(NSArray<NSString *> * _Nonnull)visualEffects transitionEffects:(NSArray<NSString *> * _Nonnull)transitionEffects videos:(NSArray<BanubaVisualClipVideo *> * _Nonnull)videos numFrames:(NSInteger)numFrames resultSize:(NSInteger)resultSize cancellation:(BOOL (^ _Nonnull)(double))cancellation SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
+@interface BanubaVisualClipVideo : NSObject
+- (nonnull instancetype)initWithPath:(NSString * _Nonnull)path startPosition:(float)startPosition duration:(float)duration OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
@@ -1476,15 +1490,29 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
+- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@end
+
+
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
 - (void)onCameraPoiChanged:(float)x y:(float)y;
 @end
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
-- (void)onFaceNumberChanged:(int32_t)faceNumber;
+@class BanubaVisualClipVideo;
+
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk))
++ (NSArray<NSString *> * _Nullable)createAutoCutVideosWith:(NSString * _Nonnull)musicDbPath visualEffects:(NSArray<NSString *> * _Nonnull)visualEffects transitionEffects:(NSArray<NSString *> * _Nonnull)transitionEffects videos:(NSArray<BanubaVisualClipVideo *> * _Nonnull)videos numFrames:(NSInteger)numFrames resultSize:(NSInteger)resultSize cancellation:(BOOL (^ _Nonnull)(double))cancellation SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
+@interface BanubaVisualClipVideo : NSObject
+- (nonnull instancetype)initWithPath:(NSString * _Nonnull)path startPosition:(float)startPosition duration:(float)duration OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")

@@ -397,6 +397,16 @@ extension BanubaSdk.BanubaSdkManager {
   public func resetSplitRender()
   public func setSplitRender()
 }
+extension BanubaSdk.BanubaSdkManager {
+  @objc public class BanubaVisualClipVideo : ObjectiveC.NSObject {
+    final public let path: Swift.String
+    final public let startPosition: Swift.Float
+    final public let duration: Swift.Float
+    @objc public init(path: Swift.String, startPosition: Swift.Float, duration: Swift.Float)
+    @objc deinit
+  }
+  @objc public static func createAutoCutVideos(with musicDbPath: Swift.String, visualEffects: [Swift.String], transitionEffects: [Swift.String], videos: [BanubaSdk.BanubaSdkManager.BanubaVisualClipVideo], numFrames: Swift.Int, resultSize: Swift.Int, cancellation: @escaping ((Swift.Double) -> Swift.Bool)) -> [Swift.String]?
+}
 extension BanubaSdk.BanubaSdkManager : BanubaUtilities.AppStateObserverDelegate {
   @objc dynamic public func applicationWillResignActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
   @objc dynamic public func applicationDidBecomeActive(_ appStateObserver: BanubaUtilities.AppStateObserver)
