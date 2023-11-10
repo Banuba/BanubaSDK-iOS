@@ -22,7 +22,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DXdbjE4LYe0bGYJVPgGXvj3ndtA=
+		fPD8nhh20DE9Z4mni7ec1llq0RI=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -594,51 +594,51 @@
 		</data>
 		<key>bnb-resources/flow/face_detector_offline.tflite.bbin</key>
 		<data>
-		RxzmYAB7itKAI1926iuGcZ/pOxU=
+		xVZf5pg/oK8BEYHCj72VjmKlojs=
 		</data>
 		<key>bnb-resources/flow/face_detector_online.tflite.bbin</key>
 		<data>
-		bO4N68ze8WqR5AsmXDXNh7zNlQ4=
+		fSxZIOmfh3QFr7NbTKpqgzsZ3VY=
 		</data>
 		<key>bnb-resources/flow/frx_prior.tflite.bbin</key>
 		<data>
-		NjX1TA3GMajWgETA04w2qF69sQ8=
+		EJxP5zQs452mKFCBWyTFRtgspmc=
 		</data>
 		<key>bnb-resources/flow/landmarks_224.tflite.bbin</key>
 		<data>
-		F293JLuE4R2LoonQ0qHL4llyxNg=
+		n/YxIx1CjsYDIWwl4TiEYVLeIpo=
 		</data>
 		<key>bnb-resources/flow/landmarks_contour_filter.tflite.bbin</key>
 		<data>
-		ztBlpbw/j4lmTNY5626ViTINjGM=
+		JXZyqlr43j7/O0jaEBnYrV7gZ0w=
 		</data>
 		<key>bnb-resources/flow/landmarks_contour_prior.tflite.bbin</key>
 		<data>
-		vFIK6H6D2nOukyg0gAbDiZLV71c=
+		BcykXkejpmtP6ITV89DdpomS160=
 		</data>
 		<key>bnb-resources/flow/landmarks_ears.tflite.bbin</key>
 		<data>
-		5L+gQ+UnyhkOkTKYUbF40q/jluM=
+		IDW6llxllActnMfBJfUo1+nC/gM=
 		</data>
 		<key>bnb-resources/flow/landmarks_eyes.tflite.bbin</key>
 		<data>
-		W4ZE+X9t9+ipD0AQc/KHSuT7FWc=
+		fwavaPRRxZN7ve2dAI9AJKyimWk=
 		</data>
 		<key>bnb-resources/flow/landmarks_lips_fast.tflite.bbin</key>
 		<data>
-		Yh3hcVrI4PBxY7/HKzEUkTDFVJQ=
+		7RWLJlHd6aBMFzejCKliiohMfuk=
 		</data>
 		<key>bnb-resources/flow/landmarks_lips_filter.tflite.bbin</key>
 		<data>
-		tDjTYJKudJJ/QCRrAK2XJcFr6Es=
+		r/j3wJz1PGw5gtlojve32HxAyq8=
 		</data>
 		<key>bnb-resources/flow/lips_segmentation.tflite.bbin</key>
 		<data>
-		sh6YXUDNH59EBJPULWe/FIWsUBc=
+		Qb8XougUKeawUD+Ko1E25Sd9xCE=
 		</data>
 		<key>bnb-resources/flow/vision_gelu_tanh_float16.tflite.bbin</key>
 		<data>
-		sV0WXIg4fLhmf4RbHrquKuDFLII=
+		QasTu9mxORl4Ur8XHqS0Md/BO1o=
 		</data>
 		<key>bnb-resources/frx/frx.js</key>
 		<data>
@@ -1689,84 +1689,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M90b6uAqX157qcraGQ8H/klvt+q5FsaxNXFF2Y/HeHQ=
+			J5bv3XXKj2EyJImJudULmcBdPi4W9FHAm8wXQ+te0qc=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/face_detector_online.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V68n250qGRLJABta4g2ATLs3szYCVZIgiAVdQUhOggA=
+			ekhCedjD4fkUNBGaOjxQLiuzyf3LMlzaqnyWAKAJXqg=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/frx_prior.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zNPYFiS49pt4rwQKRJ9U89YM6th3OkHqZ4S/YU9i5pw=
+			eVPeuHzvZVHwd5xeNObPCZKRs5Le+Xz/5v1FZhVXxQQ=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_224.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			g0qyqFD8j5VmygkFSgbq40m6Dnb0icoJKvMypkwvp4k=
+			sDg/45pbihE2XmrLvroGv+aq4/Dx0r4SJO+/xj/FeIM=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_contour_filter.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uSgQfVb1BMDzLgirJPdNGDHt82pnTtmMvqD5/UfLAjI=
+			8f8/L6NeACcx+OVv/sBH+jYk+8WB7hbWhB/vuzPzeLQ=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_contour_prior.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YdBcMjQ6Zqs6f3xC2M+GOeoovCqDXFFnL1FWi79H8x4=
+			DLMk/MlDpVL6RcLzNV4FvjL/1oxzbwJKn0gperCxa5U=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_ears.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			caV36rj1wwAzSwZ9fp7tEXaCiWq6Vt7poI/WTTNJalc=
+			9+5tnWjUApUVxBtlQwJPqSAld9W+liOdAjZS4tOM/mw=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_eyes.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4RijbwfzSxbQe0GtcV9ogaloTqdxt+vFFA515JdVGjA=
+			M2GqkNpMiRe60Fe6YznTBb4yXc8o9f6pDLyQGwqcQHA=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_lips_fast.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yVVDNnedupvNqN0SBw92RbvjrwFBMDz/lx9tPCw7a+4=
+			JDRxRtsYZ2qhva/GcuczKTrObdPZMPTiu88hL6wHKyI=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_lips_filter.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XXL7RPEx+xRtGWSf4ZQqF/veAwrOi8uxUHIydDMcEWY=
+			j3UAwnrmLNmhMrQ1f4PRhIXY1qqewvsMgEgT5lpoERM=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/lips_segmentation.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+dSPKBudv8Nlq2R/nz4RD6if5DJVxspvlofJpTiyLdw=
+			ztksW6COotgXVEKGNEY59yoNMvNAKRx2uXjZH93549g=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/vision_gelu_tanh_float16.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zBHSPnj+jwVnDe7RkFEdPQqA8/pdI7SGrwmd/OMxJ6s=
+			PhV8zV8kVGxQoWGsyvIJ0lP8Eg+T5bnK1w5HNVFp+KI=
 			</data>
 		</dict>
 		<key>bnb-resources/frx/frx.js</key>
