@@ -1,6 +1,6 @@
 ---
 triple:          'x86_64-apple-darwin'
-binary-path:     '/Users/user/Library/Developer/Xcode/DerivedData/VideoEditorSDKSandbox-dvbqgkbyffpndzghkkiwcffgdpts/Build/Intermediates.noindex/ArchiveIntermediates/BanubaSdk/InstallationBuildProductsLocation/Library/Frameworks/BanubaSdk.framework/BanubaSdk'
+binary-path:     '/Users/user/Library/Developer/Xcode/DerivedData/VideoEditorSDKSandbox-apczolamkvzvcugwxnswrghnwlmi/Build/Intermediates.noindex/ArchiveIntermediates/BanubaSdk/InstallationBuildProductsLocation/Library/Frameworks/BanubaSdk.framework/BanubaSdk'
 relocations:
   - { offsetInCU: 0x34, offset: 0xF346B, size: 0x8, addend: 0x0, symName: _BanubaSdkVersionString, symObjAddr: 0x0, symBinAddr: 0x4DB40, symSize: 0x0 }
   - { offsetInCU: 0x69, offset: 0xF34A0, size: 0x8, addend: 0x0, symName: _BanubaSdkVersionNumber, symObjAddr: 0x38, symBinAddr: 0x4DB78, symSize: 0x0 }
@@ -10,7 +10,7 @@ relocations:
   - { offsetInCU: 0x41, offset: 0xF37ED, size: 0x8, addend: 0x0, symName: _kVideoWriterErrorDomain, symObjAddr: 0x2860, symBinAddr: 0x64658, symSize: 0x0 }
   - { offsetInCU: 0x61, offset: 0xF380D, size: 0x8, addend: 0x0, symName: _kUnknownRecordingErrorCode, symObjAddr: 0x28C8, symBinAddr: 0x4DBB8, symSize: 0x0 }
   - { offsetInCU: 0x83, offset: 0xF382F, size: 0x8, addend: 0x0, symName: _kNotEnoughSpaceForRecordingErrorCode, symObjAddr: 0x28D0, symBinAddr: 0x4DBC0, symSize: 0x0 }
-  - { offsetInCU: 0xF9, offset: 0xF38A5, size: 0x8, addend: 0x0, symName: _externalAudioSamples, symObjAddr: 0xEFF0, symBinAddr: 0x7B248, symSize: 0x0 }
+  - { offsetInCU: 0xF9, offset: 0xF38A5, size: 0x8, addend: 0x0, symName: _externalAudioSamples, symObjAddr: 0xEFE8, symBinAddr: 0x7B248, symSize: 0x0 }
   - { offsetInCU: 0x4C9, offset: 0xF3C75, size: 0x8, addend: 0x0, symName: '-[SBVideoWriter initWithOutputSettings:recorderSettings:externalAudioConfiguration:]', symObjAddr: 0x0, symBinAddr: 0x3DA9, symSize: 0x183 }
   - { offsetInCU: 0x605, offset: 0xF3DB1, size: 0x8, addend: 0x0, symName: '-[SBVideoWriter dealloc]', symObjAddr: 0x183, symBinAddr: 0x3F2C, symSize: 0x3F }
   - { offsetInCU: 0x638, offset: 0xF3DE4, size: 0x8, addend: 0x0, symName: '-[SBVideoWriter startCapturingScreenWithUrl:progress:didStart:shouldSkipFrame:isFirstRun:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:limitReachedHandler:completion:]', symObjAddr: 0x1C2, symBinAddr: 0x3F6B, symSize: 0x136 }
@@ -1105,9 +1105,9 @@ relocations:
   - { offsetInCU: 0x57, offset: 0x1202C8, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk13MetalViewportVwet', symObjAddr: 0x60, symBinAddr: 0x3AA80, symSize: 0x20 }
   - { offsetInCU: 0x6B, offset: 0x1202DC, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk13MetalViewportVwst', symObjAddr: 0x80, symBinAddr: 0x3AAA0, symSize: 0x30 }
   - { offsetInCU: 0x7F, offset: 0x1202F0, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk13MetalViewportVMa', symObjAddr: 0xB0, symBinAddr: 0x3AAD0, symSize: 0xA }
-  - { offsetInCU: 0x4F, offset: 0x1205D8, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk12InputServiceC8DefaultsV29availablePixelFormatRemappingSDys6UInt32VSays5UInt8VGGvpZ', symObjAddr: 0x372F8, symBinAddr: 0x7B290, symSize: 0x0 }
+  - { offsetInCU: 0x4F, offset: 0x1205D8, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk12InputServiceC8DefaultsV29availablePixelFormatRemappingSDys6UInt32VSays5UInt8VGGvpZ', symObjAddr: 0x372E8, symBinAddr: 0x7B290, symSize: 0x0 }
   - { offsetInCU: 0x6A, offset: 0x1205F3, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk12InputServiceC16observingContext33_6D17083369233DA4ECD6ACC2ECD3052ELLSivpZ', symObjAddr: 0x7FA0, symBinAddr: 0x7A928, symSize: 0x0 }
-  - { offsetInCU: 0x85, offset: 0x12060E, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk12InputServiceC13ObservingKeysV21adjustingFocusKeyPathSSvpZ', symObjAddr: 0x37300, symBinAddr: 0x7B298, symSize: 0x0 }
+  - { offsetInCU: 0x85, offset: 0x12060E, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk12InputServiceC13ObservingKeysV21adjustingFocusKeyPathSSvpZ', symObjAddr: 0x372F0, symBinAddr: 0x7B298, symSize: 0x0 }
   - { offsetInCU: 0x93, offset: 0x12061C, size: 0x8, addend: 0x0, symName: '_$sIeyB_Ieg_TR', symObjAddr: 0x0, symBinAddr: 0x3AAE0, symSize: 0x10 }
   - { offsetInCU: 0xB2, offset: 0x12063B, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk15CameraServicingPAAE06toggleC010completionyyyc_tF', symObjAddr: 0x10, symBinAddr: 0x3AAF0, symSize: 0x100 }
   - { offsetInCU: 0x29C, offset: 0x120825, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk19CameraPhotoSettingsC26photoQualityPrioritization9flashModeACSo09AVCapturedgH0V_So0k5FlashJ0VtcfC', symObjAddr: 0x2F0, symBinAddr: 0x3ADD0, symSize: 0x50 }
@@ -1292,7 +1292,7 @@ relocations:
   - { offsetInCU: 0xB09, offset: 0x129058, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk25MaskPostprocessingServiceC17processVideoFrame_2to4timeySo11CVBufferRefa_AHSo6CMTimeatFyyXEfU_TA', symObjAddr: 0x1070, symBinAddr: 0x43FE0, symSize: 0x20 }
   - { offsetInCU: 0xB1D, offset: 0x12906C, size: 0x8, addend: 0x0, symName: '_$sIg_Ieg_TRTA', symObjAddr: 0x10B0, symBinAddr: 0x44020, symSize: 0x20 }
   - { offsetInCU: 0x2B, offset: 0x1294AD, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk17MetalHelperHolderC6shared_WZ', symObjAddr: 0x0, symBinAddr: 0x44060, symSize: 0x40 }
-  - { offsetInCU: 0x4F, offset: 0x1294D1, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk17MetalHelperHolderC6sharedACvpZ', symObjAddr: 0x3DB0, symBinAddr: 0x7B2A8, symSize: 0x0 }
+  - { offsetInCU: 0x4F, offset: 0x1294D1, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk17MetalHelperHolderC6sharedACvpZ', symObjAddr: 0x3DA0, symBinAddr: 0x7B2A8, symSize: 0x0 }
   - { offsetInCU: 0x7A, offset: 0x1294FC, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk17MetalHelperHolderCACyc33_F641BAA2D09D8542E069C2FACD8ED5E3Llfc', symObjAddr: 0x40, symBinAddr: 0x440A0, symSize: 0x80 }
   - { offsetInCU: 0xF1, offset: 0x129573, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk17MetalHelperHolderCfD', symObjAddr: 0xC0, symBinAddr: 0x44120, symSize: 0x20 }
   - { offsetInCU: 0x13D, offset: 0x1295BF, size: 0x8, addend: 0x0, symName: '_$s9BanubaSdk17MetalHelperHolderC6shared_WZ', symObjAddr: 0x0, symBinAddr: 0x44060, symSize: 0x40 }
