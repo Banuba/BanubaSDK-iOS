@@ -26,6 +26,7 @@
 0.38.2 flow/hair_horiz.tflite
 1.6.0 flow/skin_segm.tflite
 1.3.0 flow/face_segm.tflite
+1.9.2 flow/face_skin_segm.tflite
 1.4.0 flow/landmarks_contour_filter.tflite
 1.4.0 flow/landmarks_lips_filter.tflite
 1.5.0 flow/landmarks_contour.tflite

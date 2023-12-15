@@ -22,15 +22,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ghTEbtgZAURfcK388luBU+rTAHg=
+		ste5nqgEgfCwh2n3FzYLMPt7yhU=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZG6nfYlecLth1e73BVrUupT57Go=
+		ZnzURmbCwLaLJeKs5mHR1rdIdzM=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		mkk/6OibPiuMv6Ci1Z8JNGQCqxE=
+		xJMhtbqS4g4pK8g8PH90takpcOU=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,19 +38,19 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		mkk/6OibPiuMv6Ci1Z8JNGQCqxE=
+		xJMhtbqS4g4pK8g8PH90takpcOU=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qt1S8c3tQxxqnwP/QyYjHkny1NA=
+		fgFX5/vGGo6jhfS4KhE22iIaEGA=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZG6nfYlecLth1e73BVrUupT57Go=
+		ZnzURmbCwLaLJeKs5mHR1rdIdzM=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kQTRh82nitG4i4vmIS0RPLaG5vM=
+		nhVKWcVdpC749L8aw8wbGnFyscQ=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kQTRh82nitG4i4vmIS0RPLaG5vM=
+		nhVKWcVdpC749L8aw8wbGnFyscQ=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		D3UUp5frQhuQBu9eHrVM830nXYo=
+		S+pB0l5/o+7S4iQ96Ardrc5cfjQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -594,51 +594,55 @@
 		</data>
 		<key>bnb-resources/flow/face_detector_offline.tflite.bbin</key>
 		<data>
-		xVZf5pg/oK8BEYHCj72VjmKlojs=
+		Lxt3x2HRXZGfqokCfNYrraDILMk=
 		</data>
 		<key>bnb-resources/flow/face_detector_online.tflite.bbin</key>
 		<data>
-		fSxZIOmfh3QFr7NbTKpqgzsZ3VY=
+		Gvj2vBLNytkpCv+onQhijiTaYrw=
+		</data>
+		<key>bnb-resources/flow/face_skin_segm.tflite.bbin</key>
+		<data>
+		7YjJ+0ts5is9r6r51qJcCIPZEvs=
 		</data>
 		<key>bnb-resources/flow/frx_prior.tflite.bbin</key>
 		<data>
-		EJxP5zQs452mKFCBWyTFRtgspmc=
+		vhgCJEjHHacQua4HI3p4FMpKlhc=
 		</data>
 		<key>bnb-resources/flow/landmarks_224.tflite.bbin</key>
 		<data>
-		n/YxIx1CjsYDIWwl4TiEYVLeIpo=
+		8ivLHfmXV6ubIPIjONYlwZ/DgB0=
 		</data>
 		<key>bnb-resources/flow/landmarks_contour_filter.tflite.bbin</key>
 		<data>
-		JXZyqlr43j7/O0jaEBnYrV7gZ0w=
+		vBZ3TcrLChcxomtREcd8+ESP+PU=
 		</data>
 		<key>bnb-resources/flow/landmarks_contour_prior.tflite.bbin</key>
 		<data>
-		BcykXkejpmtP6ITV89DdpomS160=
+		8Iq8H7l1uDynALt3ic9ppvNs6gs=
 		</data>
 		<key>bnb-resources/flow/landmarks_ears.tflite.bbin</key>
 		<data>
-		IDW6llxllActnMfBJfUo1+nC/gM=
+		FW5AaZzly20e6bz5/9GH2yq0k1w=
 		</data>
 		<key>bnb-resources/flow/landmarks_eyes.tflite.bbin</key>
 		<data>
-		fwavaPRRxZN7ve2dAI9AJKyimWk=
+		9jX5mxBBpRvwN+tdiFIaeRoOYLU=
 		</data>
 		<key>bnb-resources/flow/landmarks_lips_fast.tflite.bbin</key>
 		<data>
-		7RWLJlHd6aBMFzejCKliiohMfuk=
+		Ws8PwUOV3fXxiFno32LUWS13wXY=
 		</data>
 		<key>bnb-resources/flow/landmarks_lips_filter.tflite.bbin</key>
 		<data>
-		r/j3wJz1PGw5gtlojve32HxAyq8=
+		rsgfaesgrUpoxsgOPCgRwnTp0ic=
 		</data>
 		<key>bnb-resources/flow/lips_segmentation.tflite.bbin</key>
 		<data>
-		Qb8XougUKeawUD+Ko1E25Sd9xCE=
+		ObL7SaUMi/nuoT4S/aUeCW1Qrjo=
 		</data>
 		<key>bnb-resources/flow/vision_gelu_tanh_float16.tflite.bbin</key>
 		<data>
-		QasTu9mxORl4Ur8XHqS0Md/BO1o=
+		COhI4ZmOC+OVrlQsC2RJZf0JRCE=
 		</data>
 		<key>bnb-resources/frx/frx.js</key>
 		<data>
@@ -646,7 +650,7 @@
 		</data>
 		<key>bnb-resources/resources-versions.txt</key>
 		<data>
-		SAjgA5epnhacRcsiJzKKEcV4V9A=
+		JuoxrrhhT1XqH87nq+/ngnf7vWk=
 		</data>
 		<key>bnb-resources/watermark.png</key>
 		<data>
@@ -695,14 +699,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f3SM39RL+/grXZeJ8wbY8NJXj27W69g0l+Ny6NlVvnc=
+			YePYvkkOzyy08k0z1iXx6iC7zQynjxlcyl6bAITnvX4=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rbvtc8HnV791jzAG3YaCYK9bSKL5Gwxgs4G6Pe9qmds=
+			JU2WPngoty5tjsgPYdiRZCe99WaCZDxqvb/AuCJTpKE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -716,28 +720,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rbvtc8HnV791jzAG3YaCYK9bSKL5Gwxgs4G6Pe9qmds=
+			JU2WPngoty5tjsgPYdiRZCe99WaCZDxqvb/AuCJTpKE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+nvI+oyFtSLZHd4Ks4NvJsak36Wg/iSdq9VMdLKYK44=
+			otdqY7hKYJ4pdRpldDgrys430CodUayIUP4zah8LmPw=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f3SM39RL+/grXZeJ8wbY8NJXj27W69g0l+Ny6NlVvnc=
+			YePYvkkOzyy08k0z1iXx6iC7zQynjxlcyl6bAITnvX4=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xpmjbIY/4DSbCQoZa7/YO8dLCkIpKe7BibhQQ2GGhZc=
+			7kVZgzQ3JoiSmmSNEMglFC3+v5a/pPEnlTHVjK0Jzyk=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -751,14 +755,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xpmjbIY/4DSbCQoZa7/YO8dLCkIpKe7BibhQQ2GGhZc=
+			7kVZgzQ3JoiSmmSNEMglFC3+v5a/pPEnlTHVjK0Jzyk=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TICvq/1Y4WEyDVQPGQbWpbUpZ5tYKfFaD3Iq/85VDcI=
+			ZG4XLrd1cbwZMqJxXMBvGTTfGpLMnYkDdfzfZT1dFd8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1689,84 +1693,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J5bv3XXKj2EyJImJudULmcBdPi4W9FHAm8wXQ+te0qc=
+			u6oSr0wH9EV7xp0XuUtgsYPjuYtOaawHSiBwxqRtbjM=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/face_detector_online.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ekhCedjD4fkUNBGaOjxQLiuzyf3LMlzaqnyWAKAJXqg=
+			YnddmkyycWXRWiquJ1gN970DekVk58VZuPTHnsOkHgQ=
+			</data>
+		</dict>
+		<key>bnb-resources/flow/face_skin_segm.tflite.bbin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lyjJqNgF9drE2LjqA4rvTVnOEgw02ftcTycU1ClFqYA=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/frx_prior.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eVPeuHzvZVHwd5xeNObPCZKRs5Le+Xz/5v1FZhVXxQQ=
+			RHFdPr6ow9fVpXhwwAupBDW3qQp0Psc63kNurJWX0ns=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_224.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sDg/45pbihE2XmrLvroGv+aq4/Dx0r4SJO+/xj/FeIM=
+			SUUl+q0pN6jSp9I1W3AO6NjU7LLvI4ykG93D6hrseGc=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_contour_filter.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8f8/L6NeACcx+OVv/sBH+jYk+8WB7hbWhB/vuzPzeLQ=
+			awWoCp5u5YOOaSWCAMm002cwEjHP1TQBEa0I5ERMvRQ=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_contour_prior.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DLMk/MlDpVL6RcLzNV4FvjL/1oxzbwJKn0gperCxa5U=
+			SM36nJdBkXIOpmZpvqs+18gFYmDMbzY7NBSIe6b4jSg=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_ears.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9+5tnWjUApUVxBtlQwJPqSAld9W+liOdAjZS4tOM/mw=
+			56oFdwczLwmRTTDV1DkalF3eUR6h0vviYExdTEePXcw=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_eyes.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M2GqkNpMiRe60Fe6YznTBb4yXc8o9f6pDLyQGwqcQHA=
+			cY+5dy5+rYE2lT3kHTv2qKGrDJlNFteRe8/hOn9PtD8=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_lips_fast.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JDRxRtsYZ2qhva/GcuczKTrObdPZMPTiu88hL6wHKyI=
+			f+2dcEkPt067/UhyjrOYCK9clhjIVf29k5w3QWTV9eY=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/landmarks_lips_filter.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			j3UAwnrmLNmhMrQ1f4PRhIXY1qqewvsMgEgT5lpoERM=
+			9Jwa3KCIRLQbd5bmOBBD+vvDciuP0wx3V3GK5F+84xU=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/lips_segmentation.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ztksW6COotgXVEKGNEY59yoNMvNAKRx2uXjZH93549g=
+			BU3KgAJNLBO2ifbLwPzcqbEs8ZA52b5/i3NnfVJ2Bfg=
 			</data>
 		</dict>
 		<key>bnb-resources/flow/vision_gelu_tanh_float16.tflite.bbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PhV8zV8kVGxQoWGsyvIJ0lP8Eg+T5bnK1w5HNVFp+KI=
+			NhcHZYs4HquBae7ls0djOeTdwAMMvxUnFMJS8w6dhS4=
 			</data>
 		</dict>
 		<key>bnb-resources/frx/frx.js</key>
@@ -1780,7 +1791,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bm3oW/2FZo8x4YcGNA4RgkenvpUoLA7X7PSVYoqe9OU=
+			s5nXaCb7yLDeHC2X+0VFJoFWkMX7FsYXViCiV2eOsVQ=
 			</data>
 		</dict>
 		<key>bnb-resources/watermark.png</key>
