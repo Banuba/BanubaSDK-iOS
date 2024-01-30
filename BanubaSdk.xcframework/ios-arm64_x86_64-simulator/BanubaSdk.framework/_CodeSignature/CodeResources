@@ -22,11 +22,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZZ6Q39rJD/RoYdevn43x0YCOlsc=
+		R95Otn0j1LKoDAeaRw1qbSPFv+4=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZnzURmbCwLaLJeKs5mHR1rdIdzM=
+		H39jpPnZa4AJPp68kFmSuGBpIbg=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fgFX5/vGGo6jhfS4KhE22iIaEGA=
+		qOwoknbJLXtpEF2Q/Wi/XU590HQ=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZnzURmbCwLaLJeKs5mHR1rdIdzM=
+		H39jpPnZa4AJPp68kFmSuGBpIbg=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -62,11 +62,15 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		S+pB0l5/o+7S4iQ96Ardrc5cfjQ=
+		ubZgTwnKAjvnatyK81i2yHfqZxc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		kmKmMQOwwqN+E1YseZPKRFubX28=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		sJIvzooo4/ncRGhaxDfXYusWBjU=
 		</data>
 		<key>default.metallib</key>
 		<data>
@@ -107,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YePYvkkOzyy08k0z1iXx6iC7zQynjxlcyl6bAITnvX4=
+			8e9aaBLmbYm2wR2hl+T/YkHL9yB4fLyu4zy3mrQjShA=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -135,14 +139,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			otdqY7hKYJ4pdRpldDgrys430CodUayIUP4zah8LmPw=
+			9zRd1sYJ/YrO1hA68C4y65vJ/4W4zLIGIlyvlNj8/iM=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YePYvkkOzyy08k0z1iXx6iC7zQynjxlcyl6bAITnvX4=
+			8e9aaBLmbYm2wR2hl+T/YkHL9yB4fLyu4zy3mrQjShA=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -170,7 +174,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZG4XLrd1cbwZMqJxXMBvGTTfGpLMnYkDdfzfZT1dFd8=
+			696yc35T9SGTqqgqtIIaKRfYQ8Vl+JBWy6EGLlVyIsU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -178,6 +182,13 @@
 			<key>hash2</key>
 			<data>
 			gE2XaEm2fyIbDl6WeJpzOBZBktmyyzlFh7YhhyIH2Bw=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tSNX3Chr64u1c6vGW4JHZTL3u9qKHXWtbI2Pitf7pYw=
 			</data>
 		</dict>
 		<key>default.metallib</key>
