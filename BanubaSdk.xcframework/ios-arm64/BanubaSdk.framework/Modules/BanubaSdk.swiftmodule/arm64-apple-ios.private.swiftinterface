@@ -137,9 +137,6 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.CameraModule {
     @objc get
     @objc set
   }
-  @objc dynamic public var playerViewSize: CoreFoundation.CGSize {
-    @objc get
-  }
   @objc dynamic public var isPIPPlayerReadyToProvideData: Swift.Bool {
     @objc get
   }

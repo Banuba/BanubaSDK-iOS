@@ -450,7 +450,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <CameraModule>
 @property (nonatomic, readonly, strong) dispatch_queue_t _Nullable renderQueue;
 @property (nonatomic) BOOL autoStart;
-@property (nonatomic, readonly) CGSize playerViewSize;
 @property (nonatomic, readonly) BOOL isPIPPlayerReadyToProvideData;
 - (void)addFPSListener:(void (^ _Nullable)(NSAttributedString * _Nonnull))listener;
 - (void)setMaxFacesWithFacesCount:(int32_t)facesCount;
