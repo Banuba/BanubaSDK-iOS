@@ -1,9 +1,11 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
+
 import PackageDescription
+
 let package = Package(
   name: "BanubaSdk",
   platforms: [
-    .iOS(.v12)
+    .iOS(.v15)
   ],
   products: [
     .library(
@@ -13,5 +15,7 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BanubaSdk",
-      path: "BanubaSdk.xcframework")
-  ])
+      path: "BanubaSdk.xcframework"
+    )
+  ]
+)
