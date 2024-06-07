@@ -12233,7 +12233,7 @@
           {
             "kind": "Function",
             "name": "createAutoCutVideos",
-            "printedName": "createAutoCutVideos(with:visualEffects:transitionEffects:videos:numFrames:resultSize:cancellation:)",
+            "printedName": "createAutoCutVideos(with:effectsTemplatesPath:videos:numFrames:resultSize:cancellation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -12265,31 +12265,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Swift.String]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Swift.String]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sa"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -12338,11 +12316,11 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaSdkManager(cm)createAutoCutVideosWith:visualEffects:transitionEffects:videos:numFrames:resultSize:cancellation:",
-            "mangledName": "$s9BanubaSdk0aB7ManagerC19createAutoCutVideos4with13visualEffects010transitionJ06videos9numFrames10resultSize12cancellationSaySSGSgSS_A2LSayAC0A15VisualClipVideoCGS2iSbSdctFZ",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaSdkManager(cm)createAutoCutVideosWith:effectsTemplatesPath:videos:numFrames:resultSize:cancellation:",
+            "mangledName": "$s9BanubaSdk0aB7ManagerC19createAutoCutVideos4with20effectsTemplatesPath6videos9numFrames10resultSize12cancellationSaySSGSgSS_SSSayAC0A15VisualClipVideoCGS2iSbSdctFZ",
             "moduleName": "BanubaSdk",
             "static": true,
-            "objc_name": "createAutoCutVideosWith:visualEffects:transitionEffects:videos:numFrames:resultSize:cancellation:",
+            "objc_name": "createAutoCutVideosWith:effectsTemplatesPath:videos:numFrames:resultSize:cancellation:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -24213,49 +24191,49 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "BooleanLiteral",
-      "offset": 16748,
+      "offset": 16737,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "BooleanLiteral",
-      "offset": 16895,
+      "offset": 16884,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 17982,
+      "offset": 17971,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 18409,
+      "offset": 18398,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 19003,
+      "offset": 18992,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 19356,
+      "offset": 19345,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 19816,
+      "offset": 19805,
       "length": 2,
       "value": "[]"
     },

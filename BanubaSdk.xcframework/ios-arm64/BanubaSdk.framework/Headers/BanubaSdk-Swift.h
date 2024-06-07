@@ -549,7 +549,7 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @class BanubaVisualClipVideo;
 
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk))
-+ (NSArray<NSString *> * _Nullable)createAutoCutVideosWith:(NSString * _Nonnull)musicDbPath visualEffects:(NSArray<NSString *> * _Nonnull)visualEffects transitionEffects:(NSArray<NSString *> * _Nonnull)transitionEffects videos:(NSArray<BanubaVisualClipVideo *> * _Nonnull)videos numFrames:(NSInteger)numFrames resultSize:(NSInteger)resultSize cancellation:(BOOL (^ _Nonnull)(double))cancellation SWIFT_WARN_UNUSED_RESULT;
++ (NSArray<NSString *> * _Nullable)createAutoCutVideosWith:(NSString * _Nonnull)musicDbPath effectsTemplatesPath:(NSString * _Nonnull)effectsTemplatesPath videos:(NSArray<BanubaVisualClipVideo *> * _Nonnull)videos numFrames:(NSInteger)numFrames resultSize:(NSInteger)resultSize cancellation:(BOOL (^ _Nonnull)(double))cancellation SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
