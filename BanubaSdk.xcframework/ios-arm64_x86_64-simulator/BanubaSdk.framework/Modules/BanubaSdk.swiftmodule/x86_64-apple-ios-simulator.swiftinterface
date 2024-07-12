@@ -9,7 +9,9 @@ import BNBSdkCore
 import BanubaSDKServicing
 @_exported import BanubaSdk
 import BanubaUtilities
+import CoreMedia
 import CoreMotion
+import CoreVideo
 import Foundation
 import MediaPlayer
 import Metal
@@ -174,6 +176,13 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKInputServicing {
   @objc dynamic public var currentCameraSessionType: BanubaSDKServicing.CameraModuleSessionType {
     @objc get
   }
+  @objc dynamic public var isMultiCamSupported: Swift.Bool {
+    @objc get
+  }
+  @objc dynamic public var isMultiCamEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @objc dynamic public func focus(at point: CoreFoundation.CGPoint, useContinuousDetection: Swift.Bool)
   @objc dynamic public func setZoomFactor(_ zoomFactor: Swift.Float) -> Swift.Float
   @objc dynamic public func toggleCamera(completion: @escaping () -> ())
@@ -237,7 +246,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBeautyEffectManag
 extension BanubaSdk.BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   @objc dynamic public func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
   @objc dynamic public func willPresent(changedPixelBuffer: CoreVideo.CVPixelBuffer?)
-  @objc dynamic public func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float)
+  @objc dynamic public func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float, systemPressureStateLevel: Swift.String)
 }
 extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
   @objc dynamic public func onEffectEvent(_ name: Swift.String, params: [Swift.String : Swift.String])
@@ -276,7 +285,7 @@ extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
 @objc public protocol BanubaSdkManagerDelegate {
   @objc func willPresent(changedPixelBuffer: CoreVideo.CVPixelBuffer?)
   @objc func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
-  @objc func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float)
+  @objc func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float, systemPressureStateLevel: Swift.String)
 }
 @_inheritsConvenienceInitializers @objc public class BanubaSdkManager : ObjectiveC.NSObject {
   @objc weak public var delegate: (any BanubaSdk.BanubaSdkManagerDelegate)?
@@ -530,8 +539,11 @@ public typealias RotateCameraCallBack = () -> ()
   @objc var exposurePointOfInterest: CoreFoundation.CGPoint { get }
   @objc var flipCamera: Swift.Bool { get set }
   @objc var cameraVideoOutput: AVFoundation.AVCaptureVideoDataOutput? { get }
+  @objc var systemPressureStateLevel: Swift.String { get }
+  @objc var isMultiCamSupported: Swift.Bool { get }
+  @objc var isMultiCamEnabled: Swift.Bool { get set }
   @objc func setupCamera()
-  @objc func startCamera()
+  @objc func startCamera(_ completion: @escaping () -> Swift.Void)
   @objc func stopCamera()
   @objc func releaseAudioCaptureSession()
   @objc func setCameraSessionType(_ type: BanubaSdk.CameraSessionType)
@@ -542,6 +554,9 @@ public typealias RotateCameraCallBack = () -> ()
   @objc func toggleTorch() -> AVFoundation.AVCaptureDevice.TorchMode
   @objc func initiatePhotoCapture(cameraSettings: BanubaSdk.CameraPhotoSettings, completion: @escaping (CoreVideo.CVImageBuffer?, BNBSdkCore.BNBFrameData?) -> Swift.Void)
   @objc func switchCamera(to type: BanubaSdk.CameraSessionType, completion: @escaping BanubaSdk.RotateCameraCallBack)
+}
+extension BanubaSdk.CameraServicing {
+  public func startCamera()
 }
 @objc public protocol AudioCapturing {
   @objc func startAudioCapturing()

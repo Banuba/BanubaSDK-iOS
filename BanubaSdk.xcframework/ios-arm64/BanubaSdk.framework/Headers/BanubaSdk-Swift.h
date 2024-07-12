@@ -355,14 +355,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
-- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS;
+- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS systemPressureStateLevel:(NSString * _Nonnull)systemPressureStateLevel;
 @end
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BanubaSdkManagerDelegate>
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
-- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS;
+- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS systemPressureStateLevel:(NSString * _Nonnull)systemPressureStateLevel;
 @end
 
 @class ExternalAudioConfiguration;
@@ -417,22 +417,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @end
 
 
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKInputServicing>
-@property (nonatomic, readonly) float zoomFactor;
-@property (nonatomic, readonly) BOOL isFrontCamera;
-@property (nonatomic, readonly) enum CameraModuleSessionType currentCameraSessionType;
-- (void)focusAt:(CGPoint)point useContinuousDetection:(BOOL)useContinuousDetection;
-- (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
-- (void)toggleCameraWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)startCamera;
-- (void)startAudioCapturing;
-- (void)stopAudioCapturing;
-- (void)setCameraSessionType:(enum CameraModuleSessionType)type;
-- (AVCaptureTorchMode)setTorchWithMode:(AVCaptureTorchMode)mode SWIFT_WARN_UNUSED_RESULT;
-- (AVCaptureTorchMode)toggleTorch SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
 - (void)seekPIPPlayerTo:(NSTimeInterval)time;
 - (void)startPIPPlayer;
@@ -443,6 +427,24 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)applyPIPCameraSettingIfNeeded:(PIPCameraLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPPlayerSettingIfNeeded:(PIPPlayerLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPSwitchSettingIfNeeded:(PIPSwitchLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
+@end
+
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKInputServicing>
+@property (nonatomic, readonly) float zoomFactor;
+@property (nonatomic, readonly) BOOL isFrontCamera;
+@property (nonatomic, readonly) enum CameraModuleSessionType currentCameraSessionType;
+@property (nonatomic, readonly) BOOL isMultiCamSupported;
+@property (nonatomic) BOOL isMultiCamEnabled;
+- (void)focusAt:(CGPoint)point useContinuousDetection:(BOOL)useContinuousDetection;
+- (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
+- (void)toggleCameraWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)startCamera;
+- (void)startAudioCapturing;
+- (void)stopAudioCapturing;
+- (void)setCameraSessionType:(enum CameraModuleSessionType)type;
+- (AVCaptureTorchMode)setTorchWithMode:(AVCaptureTorchMode)mode SWIFT_WARN_UNUSED_RESULT;
+- (AVCaptureTorchMode)toggleTorch SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NSAttributedString;
@@ -664,8 +666,11 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 @property (nonatomic, readonly) CGPoint exposurePointOfInterest;
 @property (nonatomic) BOOL flipCamera;
 @property (nonatomic, readonly, strong) AVCaptureVideoDataOutput * _Nullable cameraVideoOutput;
+@property (nonatomic, readonly, copy) NSString * _Nonnull systemPressureStateLevel;
+@property (nonatomic, readonly) BOOL isMultiCamSupported;
+@property (nonatomic) BOOL isMultiCamEnabled;
 - (void)setupCamera;
-- (void)startCamera;
+- (void)startCamera:(void (^ _Nonnull)(void))completion;
 - (void)stopCamera;
 - (void)releaseAudioCaptureSession;
 - (void)setCameraSessionType:(enum CameraSessionType)type;
