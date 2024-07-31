@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BanubaSdk
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name BanubaSdk
 import AVKit
 import Accelerate
 import BNBSdkApi
@@ -166,6 +165,10 @@ extension BanubaSdk.BanubaCameraModule {
   @objc dynamic public func applyPIPPlayerSettingIfNeeded(_ setting: BanubaSDKServicing.PIPPlayerLayoutSetting, restoreSession: Swift.Bool)
   @objc dynamic public func applyPIPSwitchSettingIfNeeded(_ setting: BanubaSDKServicing.PIPSwitchLayoutSetting, restoreSession: Swift.Bool)
 }
+extension BanubaSdk.BanubaCameraModule {
+  @objc dynamic public func startPiPMixer(completion: (() -> Swift.Void)?)
+  @objc dynamic public func stopPiPMixer(completion: (() -> Swift.Void)?)
+}
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKInputServicing {
   @objc dynamic public var zoomFactor: Swift.Float {
     @objc get
@@ -214,14 +217,13 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing 
   @objc dynamic public func applyFilter(_ filter: any BanubaSDKServicing.RenderEffect)
   @objc dynamic public func removeFilter(_ filter: any BanubaSDKServicing.RenderEffect)
   @objc dynamic public func setEffectSubtypeModificationsEventListener(_ listener: any BanubaSDKServicing.EffectSubtypeModificationsEventListener)
-  @objc dynamic public func effectsPaths(includeBeautyEffect: Swift.Bool) -> [Swift.String]
+  @objc dynamic public func effectsPaths() -> [Swift.String]
   @objc dynamic public func effectDidBeginApplying()
   @objc dynamic public func effectDidEndApplying()
   @objc dynamic public func effectDidResetApplying()
   @objc dynamic public func effectDidChangeState()
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsTextureServicing {
-  @objc dynamic public func setupDefaultImageTexture()
   @objc dynamic public func effectAddImageTexture(image: UIKit.UIImage, backgroundColor: UIKit.UIColor)
   @objc dynamic public func effectAddVideoTexture(asset: AVFoundation.AVURLAsset, backgroundColor: UIKit.UIColor)
   @objc dynamic public func stopVideoTextureIfNeeded()
@@ -242,6 +244,16 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBeautyEffectManag
   }
   @objc dynamic public func toggleBeautification() -> Swift.Bool
   @objc dynamic public func resetIntensity()
+}
+extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBackgroundEffectManaging {
+  @objc dynamic public var isBackgroundEnabled: Swift.Bool {
+    @objc get
+  }
+  @objc dynamic public var embeddedImages: [BanubaSDKServicing.EmbeddedBackgroundImage] {
+    @objc get
+  }
+  @objc dynamic public func enableBackground(completion: @escaping () -> Swift.Void)
+  @objc dynamic public func disableBackground()
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   @objc dynamic public func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
@@ -274,6 +286,10 @@ extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
   @objc public init(image: UIKit.UIImage, normalizedPosition: CoreFoundation.CGPoint, targetWidth: CoreFoundation.CGFloat)
   @objc public init(image: UIKit.UIImage, normalizedPosition: CoreFoundation.CGPoint, targetNormalizedWidth: CoreFoundation.CGFloat)
   @objc public func drawSettingsWithBoundsSize(_ boundsSize: CoreFoundation.CGSize, outputSettings: BanubaSDKServicing.VEOutputSettings) -> BanubaSdk.WatermarkDrawSettings
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PiPMixer : BanubaSdk.PIPShapeDrawer {
+  public func draw(renderEncoder: any Metal.MTLRenderCommandEncoder, fullRenderSize: CoreFoundation.CGSize, relativeLeftTopPoint: CoreFoundation.CGPoint, scale: CoreFoundation.CGFloat)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class MetalVerticesAndUVData {
@@ -390,14 +406,18 @@ extension BanubaSdk.BanubaSdkManager {
     get
   }
   public func createPIPPlayer(withVideoURL url: Foundation.URL, completion: (() -> Swift.Void)?)
+  public func startPIPMixer(completion: (() -> Swift.Void)?)
+  public func stopPIPMixer(completion: (() -> Swift.Void)?)
   public func startPIPPlayer()
   public func stopPIPPlayer()
   public func setPIPPlayerVolume(_ volume: Swift.Float)
   public func seekPIPPlayer(to time: Foundation.TimeInterval)
-  public func setPIPPlayer(renderBehaviour: BanubaSdk.RenderBehavior)
-  public func setPIPPlayer(shapeType type: BanubaSdk.PIPShapeBuilder.PIPShapeType)
-  public func setRenderTarget(shapeType type: BanubaSdk.PIPShapeBuilder.PIPShapeType)
+  public func setRenderBehaviuor(_ renderBehaviour: BanubaSdk.RenderBehavior)
+  public func setPIPPlayerShapeType(_ shapeType: BanubaSdk.PIPShapeBuilder.PIPShapeType)
+  public func setPIPMixerShapeType(_ shapeType: BanubaSdk.PIPShapeBuilder.PIPShapeType)
+  public func setRenderTargetShapeType(_ type: BanubaSdk.PIPShapeBuilder.PIPShapeType)
   public func setPIPPlayer(centerPoint point: CoreFoundation.CGPoint)
+  public func setPIPMixer(centerPoint point: CoreFoundation.CGPoint)
   public func resetSplitRender()
   public func setSplitRender()
 }
@@ -430,6 +450,7 @@ public enum RenderBehavior {
   case horizontalSplitLeft
   case horizontalSplitRight
   case pip
+  case pipMixer
   public static func == (a: BanubaSdk.RenderBehavior, b: BanubaSdk.RenderBehavior) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -636,6 +657,8 @@ public protocol PixelBufferProvider {
   public var renderBehaviour: BanubaSdk.RenderBehavior
   public var pipPlayer: BanubaSdk.PIPPlayer?
   public var pipPlayerRelativeLeftTopPoint: CoreFoundation.CGPoint
+  public var pipMixer: BanubaSdk.PiPMixer?
+  public var pipMixerRelativeLeftTopPoint: CoreFoundation.CGPoint
   public var splitRenderOffset: CoreFoundation.CGPoint
   public var playerRect: CoreFoundation.CGRect {
     get

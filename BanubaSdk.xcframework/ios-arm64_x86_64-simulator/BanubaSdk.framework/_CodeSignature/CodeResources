@@ -4,9 +4,129 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Effects/Background/config.js</key>
+		<data>
+		NmODvNfMlPMZ1Y9ZSm9IHJ0GFJM=
+		</data>
+		<key>Effects/Background/config.json</key>
+		<data>
+		bxE5URnjqOURa3drm/ciI4Urfgs=
+		</data>
+		<key>Effects/Background/images/green_screen.jpg</key>
+		<data>
+		oun0Xvqf8kzYNm49ZJvAAkxJkm4=
+		</data>
+		<key>Effects/Background/images/mountain.jpg</key>
+		<data>
+		2YRegCPfooqMBlfrJF4+iMutJr4=
+		</data>
+		<key>Effects/Background/images/oceane.jpg</key>
+		<data>
+		SAaqvgawTZ+5bToU/0XwCbk6Mf8=
+		</data>
+		<key>Effects/Background/images/office.jpg</key>
+		<data>
+		0LhZq5kXpr2NxsBtHmpKO3V0yWo=
+		</data>
+		<key>Effects/BeautyEffects/config.js</key>
+		<data>
+		4yJ0lX3hlg2fXsoNuOlVg4/GCPc=
+		</data>
+		<key>Effects/BeautyEffects/config.json</key>
+		<data>
+		3gV/Xz+48rb5bgfuKw9IamQ7hGc=
+		</data>
+		<key>Effects/BeautyEffects/images/flare66.png</key>
+		<data>
+		S//brOP45TkeclLokGdUCPG5FZg=
+		</data>
+		<key>Effects/BeautyEffects/images/lut3d_EYES_medium.png</key>
+		<data>
+		DPTbwhNgEOHqyJgMeP7dFlQQ2A4=
+		</data>
+		<key>Effects/BeautyEffects/images/lut3d_TEETH_medium.png</key>
+		<data>
+		s+H5OjlQlf/6m6HXjEEkZj5s0Dw=
+		</data>
+		<key>Effects/BeautyEffects/images/no_Base_Color.png</key>
+		<data>
+		m+UVI9rvGvfLC7nvM7JcKMQ4aYU=
+		</data>
+		<key>Effects/BeautyEffects/images/no_Metallic.png</key>
+		<data>
+		PsJz/p1AHZOnb0DqWaVJx0G7WS4=
+		</data>
+		<key>Effects/BeautyEffects/images/no_Normal.png</key>
+		<data>
+		VjgbqYKCLL9vaop3YPH4ASi2twc=
+		</data>
+		<key>Effects/BeautyEffects/images/no_Roughness.png</key>
+		<data>
+		WaDZV+oBOQRW06dwiMyHppVGSTM=
+		</data>
+		<key>Effects/BeautyEffects/images/null_image.png</key>
+		<data>
+		ZXJtL/PG9CWr9mi2KoRu/Ka/1R0=
+		</data>
+		<key>Effects/BeautyEffects/images/null_lut.png</key>
+		<data>
+		4xSIT6wkuD1oJV3VNRBqApiZ/2U=
+		</data>
+		<key>Effects/BeautyEffects/images/preview.png</key>
+		<data>
+		m578I5W/S3/7oGc2hONtcUB3/Pg=
+		</data>
+		<key>Effects/BeautyEffects/images/soft3.png</key>
+		<data>
+		ynBcqq4a5vkZ4J7NbfH7NFNg/P4=
+		</data>
+		<key>Effects/BeautyEffects/meshes/face.bsm2</key>
+		<data>
+		7hI49Mr6IKHdZKyHJg0OaDrSMHg=
+		</data>
+		<key>Effects/BeautyEffects/shaders/retouch.frag</key>
+		<data>
+		aUAOW1p6v02dGW4x0sOSsZcQ/Zo=
+		</data>
+		<key>Effects/BeautyEffects/shaders/retouch.vert</key>
+		<data>
+		mchAL09AcXM7LbuTkHRt3bXVg74=
+		</data>
+		<key>Effects/BeautyEffects/smooth/hblur.frag</key>
+		<data>
+		l3jO6czWND+ngj6uPhlbI5Vx+IU=
+		</data>
+		<key>Effects/BeautyEffects/smooth/hblur.vert</key>
+		<data>
+		1VR1Okrq51ipwKn5yz8lovAzdIs=
+		</data>
+		<key>Effects/BeautyEffects/smooth/smooth.frag</key>
+		<data>
+		5qqwFhPLJiX77naP294fe8hSDLo=
+		</data>
+		<key>Effects/BeautyEffects/smooth/smooth.vert</key>
+		<data>
+		ah6e+37WwBvjI0KR/CT0uThwWFw=
+		</data>
+		<key>Effects/BeautyEffects/smooth/soft_skin.frag</key>
+		<data>
+		kP+zqTZMRTZVD9u2Gv2sPi6qnrY=
+		</data>
+		<key>Effects/BeautyEffects/smooth/soft_skin.vert</key>
+		<data>
+		kTkHp78UoPi3QErbUmmjWCDoIxw=
+		</data>
+		<key>Effects/BeautyEffects/smooth/vblur.frag</key>
+		<data>
+		M8Hpx3RAiWN+kDaUqx/1z2YAIno=
+		</data>
+		<key>Effects/BeautyEffects/smooth/vblur.vert</key>
+		<data>
+		1VR1Okrq51ipwKn5yz8lovAzdIs=
+		</data>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<data>
-		rh2FrJ3LxkS+2K+XfamCJCjaJto=
+		CsAxQTItOhfS2V1JaY9OEas4PdQ=
 		</data>
 		<key>Headers/BanubaSdk.h</key>
 		<data>
@@ -22,47 +142,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fmpBSj39svOEbkuANbOAcbcolCY=
+		Yik9J+WSOQ9gLtgeyVpsqhQ2gVE=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		EsyrkNAUTItULd3lc14k8lh+jJE=
+		YPXxnVQmkyC5WOtecByjejwHswM=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PH7j37jMx4HML7XrvseFCQYSxZc=
+		3Am4tnqbopLOWF0whJDmqdGIoVE=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ffvPxGBNt+bdXKCz/7qeaLRcqgo=
+		D9AJHYxFTQB1XTxMTFdh85PIfK0=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PH7j37jMx4HML7XrvseFCQYSxZc=
+		3Am4tnqbopLOWF0whJDmqdGIoVE=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		G8hNBs1K1JFu/Lg/03Uw3LAvUVk=
+		HVQvh+N06yQzMCIgXQxnHRCof2E=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		EsyrkNAUTItULd3lc14k8lh+jJE=
+		YPXxnVQmkyC5WOtecByjejwHswM=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Qur9qTyCbLhrsfW9wHsrL8tQbbE=
+		wrKcKUgVlRHAaUnbSqXyLgSV+k4=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		gPq+k0ZMWCZeKf/b65gGj7pwuwY=
+		lKmFK0BE9JI1E78Vr0BSY+nx9Bg=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Qur9qTyCbLhrsfW9wHsrL8tQbbE=
+		wrKcKUgVlRHAaUnbSqXyLgSV+k4=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wd+g1Kg8vD5Hss1kGpZTK/SWDEE=
+		HRWu3QSKwq1Qa1VxvoMKeGWPPac=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,16 +194,226 @@
 		</data>
 		<key>default.metallib</key>
 		<data>
-		/tJcQQiQRPN3SuwgWdz2XOsB+Ao=
+		wbRfeUADKzxiZYBYgpkG8QshKCE=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Effects/Background/config.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ynByNhHp/owbjnuKLQooLbuGxpm64t+93PyGYTuwJl4=
+			</data>
+		</dict>
+		<key>Effects/Background/config.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			U/62qSYG/nUsAeYRy4oqvIH0Z6CUfvgsK8kKhJCmzeg=
+			</data>
+		</dict>
+		<key>Effects/Background/images/green_screen.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9crB4nTMy6EXh4JdOU0EcCick+w9XwXBKvq8cfrtCho=
+			</data>
+		</dict>
+		<key>Effects/Background/images/mountain.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FUR8yZudCcO6fcmZgg10PueTtmno0m4kSYnxM5AFTKM=
+			</data>
+		</dict>
+		<key>Effects/Background/images/oceane.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			khYmwitIZnINkbeDAyA3l4ek9ORFt46Tvx+7+jFjRWA=
+			</data>
+		</dict>
+		<key>Effects/Background/images/office.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			M24ibYZR97p7O9kFqXRCmtaaDwfHJFgzxzqQw0w7z5E=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/config.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			z1901Ew8pRTQLB9gGo2m9TqtOvSDy4AuUvounVy0h6w=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/config.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QDbDiqrQxQLxktFcl7LEBKqRqRISlIL6Ow4wfv8ebm0=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/flare66.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+tQwRhUn7//bssJNnb7mhBh/j+z8T3W4jHFYXY7rFc0=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/lut3d_EYES_medium.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Jh2OLfrehcKmywKat8qn+qK1JnidbPy6U0NVUtiXS6w=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/lut3d_TEETH_medium.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			c0dxIxit45S5Eeud8euBZyLg8EjSU3jUut83CDbVNV8=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/no_Base_Color.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xnbscatt7CrsjvS1EsMdCMjVaIYZAP5DkratmUCRePE=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/no_Metallic.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Wiff17aozsnkjVN41dtNZtxCFfKMwk+Zq1cyYBE4X+s=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/no_Normal.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cH8FkCN8mP9WZex+KHyIX4k2U9Vm3bt4TcjBIoim8c4=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/no_Roughness.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7bsGHGnNmkhuWUc/M3NAohtIcRh078TBc/Zcu9FWPvM=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/null_image.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XolzPYqOBVEAzaaL96cSqw4bJP7+5+OXkrR8tf98PLE=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/null_lut.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NSfNqNUnt/q/m4V7Odq7KiZbyuxAfYd1JdudvqP059I=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/preview.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AA+Pk7AmspkjhJrxmyuAJQqqpMeU2gXrimLeAtwDu5Y=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/images/soft3.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ipadAOFJotPBJuPmz9rqg9NwZVoXLyjM5pL4gBMcXzQ=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/meshes/face.bsm2</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sVksu1OTxHpFN4jo/HAr+k3FxLZ1oKzFupTcmX275V4=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/shaders/retouch.frag</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZE2WiYxm8rzZLUpSGDl0GltBFKFvZJ/rUGScE2Sgabs=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/shaders/retouch.vert</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			x2fAYGXP1MXZKVblNOVjmmoMnCd2+xBUO0QYoU+EMCk=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/hblur.frag</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			74Q/BF3V4EXhMDVaKKPmE4a+o1iv47KUv9GyLc7Oen8=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/hblur.vert</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cx+QlcfM4xtrGWSWOaEIK9dojQSdTYUh8bqHOc0pEkY=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/smooth.frag</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0AIGQqdqM4rkDKfwLV2xmv+m0j2+j9AM+zDPyriMLoU=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/smooth.vert</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kck8TAsdSz+jbVUaVoL1nRC4WVc3Kj8BXkL07yJRGao=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/soft_skin.frag</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q4YulLPQwTsagyB7ka9M3rHQ/ghwNc+rJuJaAka2MmY=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/soft_skin.vert</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7t1mZ2bE9JuwgBgbkfz612kfxXeS0to0mcH64qNbh34=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/vblur.frag</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wo4uvcBMjt3hVymqFDLtCQp1ZAuam2tvREG3QY2gDTE=
+			</data>
+		</dict>
+		<key>Effects/BeautyEffects/smooth/vblur.vert</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cx+QlcfM4xtrGWSWOaEIK9dojQSdTYUh8bqHOc0pEkY=
+			</data>
+		</dict>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oFFCnZ769cY5bnTw6c0MI5AJymVmpjWNS/gUnY2orqE=
+			ht4T4vvOzIayPx8NvGf2b11s/C9YMT44NGc1HiCzM1s=
 			</data>
 		</dict>
 		<key>Headers/BanubaSdk.h</key>
@@ -111,70 +441,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K1/D61UZUVcCpBAgE9R6/gyNg3F//zafKxZZwYLDBm8=
+			J1ndsYOzLmBAegyAiae8NeAEMvs/Iy8zydxDMt+cH5c=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5rFw3oyMhH5QKD7l1NrWGy4P2DgzSpslXWClvQ5ct+Y=
+			0lJ9hXBO81lS85RA5O4gqr0VbHOwhbfgM1EnwcB4uHE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vTiIUyPbh/vq0tIESKkFZIMaeu+h5uRdajYh6q4UoAk=
+			Awe9JNQIKoARlXNF7ShEQA8lFo/e4mrSOzUYyI7lTKY=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5rFw3oyMhH5QKD7l1NrWGy4P2DgzSpslXWClvQ5ct+Y=
+			0lJ9hXBO81lS85RA5O4gqr0VbHOwhbfgM1EnwcB4uHE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vsQzQgf6QPOeC+3NMXzbS/oLHta5VGijHQ4QKlX0VQk=
+			DoptNptVlpeHZ7xNuG29e193cuFkpEYCDiOyyTWC2iE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K1/D61UZUVcCpBAgE9R6/gyNg3F//zafKxZZwYLDBm8=
+			J1ndsYOzLmBAegyAiae8NeAEMvs/Iy8zydxDMt+cH5c=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MZJyNr4gy3uDrn/FMvHm/tat7CToiycxOoOCq8DaGms=
+			9bvZUBh+m4L8y9OcGgvHbARH3n8U2wqVSePXnU09MM4=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sEm9iXQlXo0nxcCUl5fNWZ+sfw+q0FMcbO9WnNwwCJU=
+			3sQyZJCSeT252z3y9zbDpogcm/a/1zvvYtq5m+V4+tY=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MZJyNr4gy3uDrn/FMvHm/tat7CToiycxOoOCq8DaGms=
+			9bvZUBh+m4L8y9OcGgvHbARH3n8U2wqVSePXnU09MM4=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ANHM52QYYMh238CAeVV6YeAwzcqbdz8H48kUCjTKA80=
+			UVxTLbyXHCZwg8+t5sgXeoDADgXRN+wJ6qRbGuB7dcw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -195,7 +525,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pqAuZn4Ot707AeMrMdzS9NKGj3KysAxo+dNtteMqK34=
+			SyP11DajUJxn0H3NaihcBwnyCBeU7sBhLANGHR64Pkg=
 			</data>
 		</dict>
 	</dict>
