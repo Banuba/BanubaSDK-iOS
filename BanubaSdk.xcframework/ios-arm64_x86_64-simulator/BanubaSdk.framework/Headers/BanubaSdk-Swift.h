@@ -341,7 +341,7 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
-+ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder arCloudPath:(NSString * _Nullable)arCloudPath;
++ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -411,25 +411,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)unloadEffectTexture;
 @end
 
-@protocol RenderEffect;
-@protocol EffectSubtypeModificationsEventListener;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
-- (void)enableBlur;
-@property (nonatomic, readonly) BOOL isMaskLoaded;
-- (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
-- (void)unloadMask;
-- (void)removeAllFilters;
-- (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
-- (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
-- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
-- (NSArray<NSString *> * _Nonnull)effectsPaths SWIFT_WARN_UNUSED_RESULT;
-- (void)effectDidBeginApplying;
-- (void)effectDidEndApplying;
-- (void)effectDidResetApplying;
-- (void)effectDidChangeState;
-@end
-
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
 - (void)seekPIPPlayerTo:(NSTimeInterval)time;
@@ -441,6 +422,26 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)applyPIPCameraSettingIfNeeded:(PIPCameraLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPPlayerSettingIfNeeded:(PIPPlayerLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPSwitchSettingIfNeeded:(PIPSwitchLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
+@end
+
+@protocol RenderEffect;
+@protocol EffectSubtypeModificationsEventListener;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)enableBlur;
+@property (nonatomic, readonly) BOOL isMaskLoaded;
+- (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
+- (void)callEffectMethod:(NSString * _Nonnull)method;
+- (void)unloadMask;
+- (void)removeAllFilters;
+- (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
+- (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
+- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
+- (NSArray<NSString *> * _Nonnull)effectsPaths SWIFT_WARN_UNUSED_RESULT;
+- (void)effectDidBeginApplying;
+- (void)effectDidEndApplying;
+- (void)effectDidResetApplying;
+- (void)effectDidChangeState;
 @end
 
 
@@ -1319,7 +1320,7 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
-+ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder arCloudPath:(NSString * _Nullable)arCloudPath;
++ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1389,25 +1390,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)unloadEffectTexture;
 @end
 
-@protocol RenderEffect;
-@protocol EffectSubtypeModificationsEventListener;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
-- (void)enableBlur;
-@property (nonatomic, readonly) BOOL isMaskLoaded;
-- (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
-- (void)unloadMask;
-- (void)removeAllFilters;
-- (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
-- (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
-- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
-- (NSArray<NSString *> * _Nonnull)effectsPaths SWIFT_WARN_UNUSED_RESULT;
-- (void)effectDidBeginApplying;
-- (void)effectDidEndApplying;
-- (void)effectDidResetApplying;
-- (void)effectDidChangeState;
-@end
-
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
 - (void)seekPIPPlayerTo:(NSTimeInterval)time;
@@ -1419,6 +1401,26 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)applyPIPCameraSettingIfNeeded:(PIPCameraLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPPlayerSettingIfNeeded:(PIPPlayerLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
 - (void)applyPIPSwitchSettingIfNeeded:(PIPSwitchLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
+@end
+
+@protocol RenderEffect;
+@protocol EffectSubtypeModificationsEventListener;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)enableBlur;
+@property (nonatomic, readonly) BOOL isMaskLoaded;
+- (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
+- (void)callEffectMethod:(NSString * _Nonnull)method;
+- (void)unloadMask;
+- (void)removeAllFilters;
+- (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
+- (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
+- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
+- (NSArray<NSString *> * _Nonnull)effectsPaths SWIFT_WARN_UNUSED_RESULT;
+- (void)effectDidBeginApplying;
+- (void)effectDidEndApplying;
+- (void)effectDidResetApplying;
+- (void)effectDidChangeState;
 @end
 
 

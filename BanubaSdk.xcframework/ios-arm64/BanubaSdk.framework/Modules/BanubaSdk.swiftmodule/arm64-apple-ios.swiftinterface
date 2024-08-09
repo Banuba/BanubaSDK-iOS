@@ -89,7 +89,7 @@ import os
     @objc get
     @objc set
   }
-  public static var arCloudPath: Swift.String?
+  public static var additionalEffectsPaths: [Swift.String]?
   @objc public var isLoaded: Swift.Bool
   @objc public var allowProcessing: Swift.Bool
   @objc public var inputDelegate: (any BanubaSDKServicing.SDKInputServicingDelegate)?
@@ -99,7 +99,7 @@ import os
   public static var videoPreset: AVFoundation.AVCaptureSession.Preset! {
     get
   }
-  @objc public static func initialize(sdkToken: Swift.String, videoSize: CoreFoundation.CGSize, videoPreset: AVFoundation.AVCaptureSession.Preset, useHEVCCodecIfPossibleForRecorder: Swift.Bool, arCloudPath: Swift.String? = nil)
+  @objc public static func initialize(sdkToken: Swift.String, videoSize: CoreFoundation.CGSize, videoPreset: AVFoundation.AVCaptureSession.Preset, useHEVCCodecIfPossibleForRecorder: Swift.Bool, additionalEffectsPaths: [Swift.String]? = nil)
   @objc required override dynamic public init()
   public enum MethodInJson : Swift.String {
     case changeAxis
@@ -212,6 +212,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing 
     @objc get
   }
   @objc dynamic public func loadMask(name: Swift.String, synchronous: Swift.Bool)
+  @objc dynamic public func callEffectMethod(_ method: Swift.String)
   @objc dynamic public func unloadMask()
   @objc dynamic public func removeAllFilters()
   @objc dynamic public func applyFilter(_ filter: any BanubaSDKServicing.RenderEffect)
