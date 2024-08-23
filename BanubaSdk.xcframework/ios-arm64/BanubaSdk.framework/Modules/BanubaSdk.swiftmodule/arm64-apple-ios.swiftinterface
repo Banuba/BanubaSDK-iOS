@@ -223,6 +223,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing 
   @objc dynamic public func effectDidEndApplying()
   @objc dynamic public func effectDidResetApplying()
   @objc dynamic public func effectDidChangeState()
+  @objc dynamic public func setDoubleTapGestureEnabled(_ isEnabled: Swift.Bool)
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsTextureServicing {
   @objc dynamic public func effectAddImageTexture(image: UIKit.UIImage, backgroundColor: UIKit.UIColor)
@@ -502,6 +503,10 @@ extension BNBSdkCore.BNBFrameData {
   public class func create(cvBuffer: CoreVideo.CVPixelBuffer, faceOrientation: Swift.Int = 0, cameraOrientation: BNBSdkCore.BNBCameraOrientation = .deg90, requireMirroring: Swift.Bool = false, fieldOfView: Swift.Float = 60) -> BNBSdkCore.BNBFrameData?
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class EffectPlayerView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public var isDoubleTapHandlingEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
     @objc get

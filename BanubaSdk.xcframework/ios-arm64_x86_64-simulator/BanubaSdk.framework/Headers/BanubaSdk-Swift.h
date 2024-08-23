@@ -442,6 +442,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)effectDidEndApplying;
 - (void)effectDidResetApplying;
 - (void)effectDidChangeState;
+- (void)setDoubleTapGestureEnabled:(BOOL)isEnabled;
 @end
 
 
@@ -811,6 +812,7 @@ typedef SWIFT_ENUM(NSInteger, EffectPlayerRenderMode, open) {
 
 SWIFT_CLASS("_TtC9BanubaSdk16EffectPlayerView")
 @interface EffectPlayerView : UIView
+@property (nonatomic) BOOL isDoubleTapHandlingEnabled;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
@@ -1421,6 +1423,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)effectDidEndApplying;
 - (void)effectDidResetApplying;
 - (void)effectDidChangeState;
+- (void)setDoubleTapGestureEnabled:(BOOL)isEnabled;
 @end
 
 
@@ -1790,6 +1793,7 @@ typedef SWIFT_ENUM(NSInteger, EffectPlayerRenderMode, open) {
 
 SWIFT_CLASS("_TtC9BanubaSdk16EffectPlayerView")
 @interface EffectPlayerView : UIView
+@property (nonatomic) BOOL isDoubleTapHandlingEnabled;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
