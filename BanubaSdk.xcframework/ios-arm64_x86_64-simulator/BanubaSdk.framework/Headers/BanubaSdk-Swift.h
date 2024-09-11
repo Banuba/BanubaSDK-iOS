@@ -356,28 +356,20 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 - (void)stopPiPMixerWithCompletion:(void (^ _Nullable)(void))completion;
 @end
 
+@class CapturingPerfomanceInfo;
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
-- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS systemPressureStateLevel:(NSString * _Nonnull)systemPressureStateLevel;
+- (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BanubaSdkManagerDelegate>
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
-- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS systemPressureStateLevel:(NSString * _Nonnull)systemPressureStateLevel;
-@end
-
-@class EmbeddedBackgroundImage;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly) BOOL isBackgroundEnabled;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
-- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)disableBackground;
+- (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
 @class ExternalAudioConfiguration;
@@ -388,6 +380,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
+@end
+
+@class EmbeddedBackgroundImage;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
+@property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
+- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)disableBackground;
 @end
 
 
@@ -502,19 +503,20 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @property (nonatomic, weak) id <BanubaSdkManagerDelegate> _Nullable delegate;
 /// Access to current instance of BNBEffectPlayer
 @property (nonatomic, readonly, strong) BNBEffectPlayer * _Nullable effectPlayer;
-/// Face orintation in frame (degrees).
+/// Face orintation in frame (degrees)
 @property (nonatomic) NSInteger faceOrientation;
-/// Setup the camera if needed.
+/// Setup the camera if needed
 @property (nonatomic) BOOL isCameraEnabled;
-- (BNBEffectManager * _Nullable)effectManager SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, strong) BNBEffectManager * _Nullable effectManager;
 /// Enable autorotation mode. Camera orientation and render size should change along with UI orientation
 @property (nonatomic) BOOL autoRotationEnabled;
+/// Load effect using url
 /// \param effectUrl path to effect relative to resource paths passed to <code>initialize</code>.
 ///
 /// \param synchronous block the call until effect is loaded.
 ///
 - (BNBEffect * _Nullable)loadEffect:(NSString * _Nonnull)effectUrl synchronous:(BOOL)synchronous SWIFT_WARN_UNUSED_RESULT;
-- (BNBEffect * _Nullable)currentEffect SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, strong) BNBEffect * _Nullable currentEffect;
 /// Maximum number of faces to trace simultaneously
 - (void)setMaxFaces:(int32_t)maxFaces;
 @property (nonatomic, strong) id <InputServicing> _Nonnull input;
@@ -554,15 +556,14 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
-@end
-
-
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
 - (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
+
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
+@end
 
 @class BanubaVisualClipVideo;
 
@@ -577,6 +578,7 @@ SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
@@ -715,6 +717,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @property (nonatomic, readonly) float maxZoomFactor;
 @property (nonatomic, readonly) float zoomFactor;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// Represents capturing perfomance info
+SWIFT_CLASS("_TtC9BanubaSdk23CapturingPerfomanceInfo")
+@interface CapturingPerfomanceInfo : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class NSNotificationCenter;
@@ -1337,28 +1347,20 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 - (void)stopPiPMixerWithCompletion:(void (^ _Nullable)(void))completion;
 @end
 
+@class CapturingPerfomanceInfo;
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol BanubaSdkManagerDelegate
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
-- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS systemPressureStateLevel:(NSString * _Nonnull)systemPressureStateLevel;
+- (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BanubaSdkManagerDelegate>
 - (void)willOutputWithPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer;
 - (void)willPresentWithChangedPixelBuffer:(CVPixelBufferRef _Nullable)changedPixelBuffer;
-- (void)didReceiveFPSInfo:(float)cameraFPS recognizerFPS:(float)recognizerFPS renderFPS:(float)renderFPS systemPressureStateLevel:(NSString * _Nonnull)systemPressureStateLevel;
-@end
-
-@class EmbeddedBackgroundImage;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly) BOOL isBackgroundEnabled;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
-- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)disableBackground;
+- (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
 @class ExternalAudioConfiguration;
@@ -1369,6 +1371,15 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
+@end
+
+@class EmbeddedBackgroundImage;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
+@property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
+- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)disableBackground;
 @end
 
 
@@ -1483,19 +1494,20 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 @property (nonatomic, weak) id <BanubaSdkManagerDelegate> _Nullable delegate;
 /// Access to current instance of BNBEffectPlayer
 @property (nonatomic, readonly, strong) BNBEffectPlayer * _Nullable effectPlayer;
-/// Face orintation in frame (degrees).
+/// Face orintation in frame (degrees)
 @property (nonatomic) NSInteger faceOrientation;
-/// Setup the camera if needed.
+/// Setup the camera if needed
 @property (nonatomic) BOOL isCameraEnabled;
-- (BNBEffectManager * _Nullable)effectManager SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, strong) BNBEffectManager * _Nullable effectManager;
 /// Enable autorotation mode. Camera orientation and render size should change along with UI orientation
 @property (nonatomic) BOOL autoRotationEnabled;
+/// Load effect using url
 /// \param effectUrl path to effect relative to resource paths passed to <code>initialize</code>.
 ///
 /// \param synchronous block the call until effect is loaded.
 ///
 - (BNBEffect * _Nullable)loadEffect:(NSString * _Nonnull)effectUrl synchronous:(BOOL)synchronous SWIFT_WARN_UNUSED_RESULT;
-- (BNBEffect * _Nullable)currentEffect SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, strong) BNBEffect * _Nullable currentEffect;
 /// Maximum number of faces to trace simultaneously
 - (void)setMaxFaces:(int32_t)maxFaces;
 @property (nonatomic, strong) id <InputServicing> _Nonnull input;
@@ -1535,15 +1547,14 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
-@end
-
-
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
 - (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
+
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
+@end
 
 @class BanubaVisualClipVideo;
 
@@ -1558,6 +1569,7 @@ SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
@@ -1696,6 +1708,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @property (nonatomic, readonly) float maxZoomFactor;
 @property (nonatomic, readonly) float zoomFactor;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// Represents capturing perfomance info
+SWIFT_CLASS("_TtC9BanubaSdk23CapturingPerfomanceInfo")
+@interface CapturingPerfomanceInfo : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class NSNotificationCenter;

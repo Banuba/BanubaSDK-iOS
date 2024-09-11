@@ -7681,8 +7681,8 @@
           },
           {
             "kind": "Function",
-            "name": "didReceiveFPSInfo",
-            "printedName": "didReceiveFPSInfo(_:recognizerFPS:renderFPS:systemPressureStateLevel:)",
+            "name": "didProduceCapturingPerfomanceInfo",
+            "printedName": "didProduceCapturingPerfomanceInfo(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7691,34 +7691,16 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "CapturingPerfomanceInfo",
+                "printedName": "BanubaSdk.CapturingPerfomanceInfo",
+                "usr": "c:@M@BanubaSdk@objc(cs)CapturingPerfomanceInfo"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)didReceiveFPSInfo:recognizerFPS:renderFPS:systemPressureStateLevel:",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC17didReceiveFPSInfo_13recognizerFPS06renderI024systemPressureStateLevelySf_S2fSStF",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)didProduceCapturingPerfomanceInfo:",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC33didProduceCapturingPerfomanceInfoyyAA0ghI0CF",
             "moduleName": "BanubaSdk",
-            "objc_name": "didReceiveFPSInfo:recognizerFPS:renderFPS:systemPressureStateLevel:",
+            "objc_name": "didProduceCapturingPerfomanceInfo:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -9121,13 +9103,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "BanubaSdk"
-      },
-      {
-        "kind": "Import",
         "name": "BNBSdkCore",
         "printedName": "BNBSdkCore",
         "declKind": "Import",
@@ -9229,8 +9204,8 @@
           },
           {
             "kind": "Function",
-            "name": "didReceiveFPSInfo",
-            "printedName": "didReceiveFPSInfo(_:recognizerFPS:renderFPS:systemPressureStateLevel:)",
+            "name": "didProduceCapturingPerfomanceInfo",
+            "printedName": "didProduceCapturingPerfomanceInfo(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9239,32 +9214,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "CapturingPerfomanceInfo",
+                "printedName": "BanubaSdk.CapturingPerfomanceInfo",
+                "usr": "c:@M@BanubaSdk@objc(cs)CapturingPerfomanceInfo"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@BanubaSdk@objc(pl)BanubaSdkManagerDelegate(im)didReceiveFPSInfo:recognizerFPS:renderFPS:systemPressureStateLevel:",
-            "mangledName": "$s9BanubaSdk0aB15ManagerDelegateP17didReceiveFPSInfo_13recognizerFPS06renderI024systemPressureStateLevelySf_S2fSStF",
+            "usr": "c:@M@BanubaSdk@objc(pl)BanubaSdkManagerDelegate(im)didProduceCapturingPerfomanceInfo:",
+            "mangledName": "$s9BanubaSdk0aB15ManagerDelegateP33didProduceCapturingPerfomanceInfoyyAA0ghI0CF",
             "moduleName": "BanubaSdk",
             "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.BanubaSdkManagerDelegate>",
             "sugared_genericSig": "<Self where Self : BanubaSdk.BanubaSdkManagerDelegate>",
@@ -9285,6 +9242,300 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CapturingPerfomanceInfo",
+        "printedName": "CapturingPerfomanceInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "cameraFPS",
+            "printedName": "cameraFPS",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC9cameraFPSSfvp",
+            "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC9cameraFPSSfvp",
+            "moduleName": "BanubaSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC9cameraFPSSfvg",
+                "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC9cameraFPSSfvg",
+                "moduleName": "BanubaSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "recognizerFPS",
+            "printedName": "recognizerFPS",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC13recognizerFPSSfvp",
+            "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC13recognizerFPSSfvp",
+            "moduleName": "BanubaSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC13recognizerFPSSfvg",
+                "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC13recognizerFPSSfvg",
+                "moduleName": "BanubaSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "renderFPS",
+            "printedName": "renderFPS",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC9renderFPSSfvp",
+            "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC9renderFPSSfvp",
+            "moduleName": "BanubaSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC9renderFPSSfvg",
+                "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC9renderFPSSfvg",
+                "moduleName": "BanubaSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "systemPressureStateLevel",
+            "printedName": "systemPressureStateLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC24systemPressureStateLevelSSvp",
+            "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC24systemPressureStateLevelSSvp",
+            "moduleName": "BanubaSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9BanubaSdk23CapturingPerfomanceInfoC24systemPressureStateLevelSSvg",
+                "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC24systemPressureStateLevelSSvg",
+                "moduleName": "BanubaSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CapturingPerfomanceInfo",
+                "printedName": "BanubaSdk.CapturingPerfomanceInfo",
+                "usr": "c:@M@BanubaSdk@objc(cs)CapturingPerfomanceInfo"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BanubaSdk@objc(cs)CapturingPerfomanceInfo(im)init",
+            "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoCACycfc",
+            "moduleName": "BanubaSdk",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BanubaSdk@objc(cs)CapturingPerfomanceInfo",
+        "mangledName": "$s9BanubaSdk23CapturingPerfomanceInfoC",
+        "moduleName": "BanubaSdk",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -9657,9 +9908,9 @@
             ]
           },
           {
-            "kind": "Function",
+            "kind": "Var",
             "name": "effectManager",
-            "printedName": "effectManager()",
+            "printedName": "effectManager",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9676,15 +9927,45 @@
                 "usr": "s:Sq"
               }
             ],
-            "declKind": "Func",
-            "usr": "c:@M@BanubaSdk@objc(cs)BanubaSdkManager(im)effectManager",
-            "mangledName": "$s9BanubaSdk0aB7ManagerC06effectC0So09BNBEffectC0CSgyF",
+            "declKind": "Var",
+            "usr": "c:@M@BanubaSdk@objc(cs)BanubaSdkManager(py)effectManager",
+            "mangledName": "$s9BanubaSdk0aB7ManagerC06effectC0So09BNBEffectC0CSgvp",
             "moduleName": "BanubaSdk",
             "declAttributes": [
               "AccessControl",
               "ObjC"
             ],
-            "funcSelfKind": "NonMutating"
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BNBSdkCore.BNBEffectManager?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BNBEffectManager",
+                        "printedName": "BNBSdkCore.BNBEffectManager",
+                        "usr": "c:objc(cs)BNBEffectManager"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BanubaSdk@objc(cs)BanubaSdkManager(im)effectManager",
+                "mangledName": "$s9BanubaSdk0aB7ManagerC06effectC0So09BNBEffectC0CSgvg",
+                "moduleName": "BanubaSdk",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Var",
@@ -9825,9 +10106,9 @@
             "funcSelfKind": "NonMutating"
           },
           {
-            "kind": "Function",
+            "kind": "Var",
             "name": "currentEffect",
-            "printedName": "currentEffect()",
+            "printedName": "currentEffect",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9844,15 +10125,45 @@
                 "usr": "s:Sq"
               }
             ],
-            "declKind": "Func",
-            "usr": "c:@M@BanubaSdk@objc(cs)BanubaSdkManager(im)currentEffect",
-            "mangledName": "$s9BanubaSdk0aB7ManagerC13currentEffectSo9BNBEffectCSgyF",
+            "declKind": "Var",
+            "usr": "c:@M@BanubaSdk@objc(cs)BanubaSdkManager(py)currentEffect",
+            "mangledName": "$s9BanubaSdk0aB7ManagerC13currentEffectSo9BNBEffectCSgvp",
             "moduleName": "BanubaSdk",
             "declAttributes": [
               "AccessControl",
               "ObjC"
             ],
-            "funcSelfKind": "NonMutating"
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BNBSdkCore.BNBEffect?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BNBEffect",
+                        "printedName": "BNBSdkCore.BNBEffect",
+                        "usr": "c:objc(cs)BNBEffect"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BanubaSdk@objc(cs)BanubaSdkManager(im)currentEffect",
+                "mangledName": "$s9BanubaSdk0aB7ManagerC13currentEffectSo9BNBEffectCSgvg",
+                "moduleName": "BanubaSdk",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Function",
@@ -22019,14 +22330,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 25324,
+      "offset": 25244,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 25347,
+      "offset": 25267,
       "length": 5,
       "value": "false"
     },
@@ -22123,316 +22434,323 @@
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
+      "kind": "StringLiteral",
+      "offset": 376,
+      "length": 23,
+      "value": "\"BanubaSdk.CapturingPerfomanceInfo\""
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 736,
+      "offset": 1395,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 837,
+      "offset": 1482,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1238,
+      "offset": 1846,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1129,
+      "offset": 1737,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1518,
+      "offset": 2148,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2518,
+      "offset": 3075,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2791,
+      "offset": 3348,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2847,
+      "offset": 3404,
       "length": 3,
       "value": "720"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2860,
+      "offset": 3417,
       "length": 4,
       "value": "1280"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2904,
-      "length": 18,
-      "value": "\"onTakePhotoStart\""
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
-      "kind": "StringLiteral",
-      "offset": 2959,
-      "length": 16,
-      "value": "\"onTakePhotoEnd\""
+      "kind": "BooleanLiteral",
+      "offset": 3543,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3744,
+      "offset": 3639,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4288,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4242,
+      "offset": 4786,
       "length": 38,
       "value": "\"com.banuba.sdk.synchronization-queue\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4392,
+      "offset": 4936,
       "length": 41,
       "value": "\"com.banuba.sdk.drawondemand-state-queue\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8355,
+      "offset": 8901,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8503,
+      "offset": 9048,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "Array",
-      "offset": 9009,
+      "offset": 9554,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11345,
+      "offset": 11953,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11352,
+      "offset": 11960,
       "length": 3,
       "value": "768"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12380,
+      "offset": 12988,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12444,
+      "offset": 13052,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 18012,
+      "offset": 18628,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18050,
+      "offset": 18666,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18082,
+      "offset": 18698,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 18114,
+      "offset": 18730,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21003,
+      "offset": 21619,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21077,
+      "offset": 21693,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21145,
+      "offset": 21761,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 22185,
+      "offset": 22801,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 23570,
+      "offset": 24306,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 24068,
+      "offset": 24804,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 26207,
+      "offset": 26943,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 26239,
+      "offset": 26975,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 26270,
+      "offset": 27006,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 28416,
+      "offset": 29144,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 28447,
+      "offset": 29175,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 30736,
+      "offset": 31226,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 31209,
+      "offset": 31699,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 31632,
+      "offset": 32122,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 31670,
+      "offset": 32160,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 31702,
+      "offset": 32192,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "FloatLiteral",
-      "offset": 38531,
+      "offset": 39019,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 38572,
+      "offset": 39060,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 38842,
+      "offset": 39330,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "StringLiteral",
-      "offset": 45098,
+      "offset": 46138,
       "length": 21,
       "value": "\"BanubaSdk.BanubaVisualClipVideo\""
     },

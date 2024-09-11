@@ -260,7 +260,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBackgroundEffectM
 extension BanubaSdk.BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   @objc dynamic public func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
   @objc dynamic public func willPresent(changedPixelBuffer: CoreVideo.CVPixelBuffer?)
-  @objc dynamic public func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float, systemPressureStateLevel: Swift.String)
+  @objc dynamic public func didProduceCapturingPerfomanceInfo(_ info: BanubaSdk.CapturingPerfomanceInfo)
 }
 extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
   @objc dynamic public func onEffectEvent(_ name: Swift.String, params: [Swift.String : Swift.String])
@@ -303,7 +303,14 @@ extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
 @objc public protocol BanubaSdkManagerDelegate {
   @objc func willPresent(changedPixelBuffer: CoreVideo.CVPixelBuffer?)
   @objc func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
-  @objc func didReceiveFPSInfo(_ cameraFPS: Swift.Float, recognizerFPS: Swift.Float, renderFPS: Swift.Float, systemPressureStateLevel: Swift.String)
+  @objc func didProduceCapturingPerfomanceInfo(_ info: BanubaSdk.CapturingPerfomanceInfo)
+}
+@_hasMissingDesignatedInitializers @objc public class CapturingPerfomanceInfo : ObjectiveC.NSObject {
+  final public let cameraFPS: Swift.Float
+  final public let recognizerFPS: Swift.Float
+  final public let renderFPS: Swift.Float
+  final public let systemPressureStateLevel: Swift.String
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class BanubaSdkManager : ObjectiveC.NSObject {
   @objc weak public var delegate: (any BanubaSdk.BanubaSdkManagerDelegate)?
@@ -312,13 +319,17 @@ extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
   }
   @objc public var faceOrientation: Swift.Int
   @objc public var isCameraEnabled: Swift.Bool
-  @objc public func effectManager() -> BNBSdkCore.BNBEffectManager?
+  @objc public var effectManager: BNBSdkCore.BNBEffectManager? {
+    @objc get
+  }
   @objc public var autoRotationEnabled: Swift.Bool {
     @objc get
     @objc set
   }
   @objc public func loadEffect(_ effectUrl: Swift.String, synchronous: Swift.Bool = false) -> BNBSdkCore.BNBEffect?
-  @objc public func currentEffect() -> BNBSdkCore.BNBEffect?
+  @objc public var currentEffect: BNBSdkCore.BNBEffect? {
+    @objc get
+  }
   @objc public func setMaxFaces(_ maxFaces: Swift.Int32)
   public var voiceChanger: (any BanubaSdk.VoiceChangeable)? {
     get
