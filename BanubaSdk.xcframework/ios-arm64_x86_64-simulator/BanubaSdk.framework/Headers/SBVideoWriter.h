@@ -29,8 +29,6 @@ FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
                     shouldSkipFrame:(bool (^_Nullable)(void))shouldSkipFrame
                          isFirstRun:(bool)isFirstRun
        periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval
-                      boundaryTimes:(NSArray<NSValue*>* _Nullable)boundaryTimes
-                    boundaryHandler:(void (^_Nullable)(CMTime))boundaryHandler
                       totalDuration:(NSTimeInterval)totalDuration
                 limitReachedHandler:(void (^_Nullable)(void))limitReachedHandler
                          completion:(void (^)(BOOL, NSError*))completionHandler;
@@ -40,8 +38,6 @@ FOUNDATION_EXPORT NSInteger const kNotEnoughSpaceForRecordingErrorCode;
                          shouldSkipFrame:(bool (^_Nullable)(void))shouldSkipFrame
                               isFirstRun:(bool)isFirstRun
             periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval
-                           boundaryTimes:(NSArray<NSValue*>* _Nullable)boundaryTimes
-                         boundaryHandler:(void (^_Nullable)(CMTime))boundaryHandler
                            totalDuration:(NSTimeInterval)totalDuration
                      limitReachedHandler:(void (^_Nullable)(void))limitReachedHandler
                               completion:(void (^)(BOOL, NSError*))completionHandler;

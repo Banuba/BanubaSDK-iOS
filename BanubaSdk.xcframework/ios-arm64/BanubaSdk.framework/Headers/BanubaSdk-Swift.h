@@ -373,12 +373,11 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @end
 
 @class ExternalAudioConfiguration;
-@class NSValue;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
 @property (nonatomic, readonly) BOOL isRecording;
 @property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nonnull)boundaryTimes boundaryHandler:(void (^ _Nonnull)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
@@ -885,7 +884,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 - (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)takeSnapshotWithConfiguration:(OutputConfiguration * _Nonnull)configuration handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)removeWatermark;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame isFirstRun:(BOOL)isFirstRun periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval boundaryTimes:(NSArray<NSValue *> * _Nullable)boundaryTimes boundaryHandler:(void (^ _Nullable)(CMTime))boundaryHandler totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame isFirstRun:(BOOL)isFirstRun periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 - (void)reset;
 - (BOOL)hasDiskCapacityForRecording SWIFT_WARN_UNUSED_RESULT;

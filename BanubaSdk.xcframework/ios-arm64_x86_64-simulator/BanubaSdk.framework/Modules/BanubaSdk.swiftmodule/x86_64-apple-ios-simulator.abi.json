@@ -6331,7 +6331,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:totalDuration:itemDuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -6449,38 +6449,6 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[Foundation.NSValue]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSValue",
-                    "printedName": "Foundation.NSValue",
-                    "usr": "c:objc(cs)NSValue"
-                  }
-                ],
-                "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(CoreMedia.CMTime) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CMTime",
-                    "printedName": "CoreMedia.CMTime",
-                    "usr": "c:@SA@CMTime"
-                  }
-                ]
-              },
-              {
-                "kind": "TypeNominal",
                 "name": "Double",
                 "printedName": "Swift.Double",
                 "usr": "s:Sd"
@@ -6532,10 +6500,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC19startVideoCapturing7fileURL0e7TimeForF7Texture26externalAudioConfiguration8progress8didStart15shouldSkipFrame016periodicProgressJ8Interval13boundaryTimes0Y7Handler13totalDuration12itemDuration10completiony10Foundation0I0VSg_Sd0A12SDKServicing08ExternalnO0CSgySo6CMTimeacyycSgSbycSgSdSaySo7NSValueCGyAZcS2dySb_s5Error_pSgtctF",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:totalDuration:itemDuration:completion:",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC19startVideoCapturing7fileURL0e7TimeForF7Texture26externalAudioConfiguration8progress8didStart15shouldSkipFrame016periodicProgressJ8Interval13totalDuration04itemZ010completiony10Foundation0I0VSg_Sd0A12SDKServicing08ExternalnO0CSgySo6CMTimeacyycSgSbycSgS3dySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
-            "objc_name": "startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:itemDuration:completion:",
+            "objc_name": "startVideoCapturingWithFileURL:startTimeForVideoTexture:externalAudioConfiguration:progress:didStart:shouldSkipFrame:periodicProgressTimeInterval:totalDuration:itemDuration:completion:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -10192,67 +10160,6 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "voiceChanger",
-            "printedName": "voiceChanger",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(any BanubaSdk.VoiceChangeable)?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "VoiceChangeable",
-                    "printedName": "any BanubaSdk.VoiceChangeable",
-                    "usr": "s:9BanubaSdk15VoiceChangeableP"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9BanubaSdk0aB7ManagerC12voiceChangerAA15VoiceChangeable_pSgvp",
-            "mangledName": "$s9BanubaSdk0aB7ManagerC12voiceChangerAA15VoiceChangeable_pSgvp",
-            "moduleName": "BanubaSdk",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "SetterAccess",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "(any BanubaSdk.VoiceChangeable)?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "VoiceChangeable",
-                        "printedName": "any BanubaSdk.VoiceChangeable",
-                        "usr": "s:9BanubaSdk15VoiceChangeableP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk0aB7ManagerC12voiceChangerAA15VoiceChangeable_pSgvg",
-                "mangledName": "$s9BanubaSdk0aB7ManagerC12voiceChangerAA15VoiceChangeable_pSgvg",
-                "moduleName": "BanubaSdk",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
           },
           {
             "kind": "Var",
@@ -14071,583 +13978,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "BanubaSdk"
-      },
-      {
-        "kind": "Import",
-        "name": "BNBSdkCore",
-        "printedName": "BNBSdkCore",
-        "declKind": "Import",
-        "moduleName": "BanubaSdk"
-      },
-      {
-        "kind": "Import",
-        "name": "BNBSdkApi",
-        "printedName": "BNBSdkApi",
-        "declKind": "Import",
-        "moduleName": "BanubaSdk"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "VoiceChangeable",
-        "printedName": "VoiceChangeable",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "queue",
-            "printedName": "queue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DispatchQueue",
-                "printedName": "Dispatch.DispatchQueue",
-                "usr": "c:objc(cs)OS_dispatch_queue"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0Cvp",
-            "mangledName": "$s9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0Cvp",
-            "moduleName": "BanubaSdk",
-            "protocolReq": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DispatchQueue",
-                    "printedName": "Dispatch.DispatchQueue",
-                    "usr": "c:objc(cs)OS_dispatch_queue"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0Cvg",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0Cvg",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DispatchQueue",
-                    "printedName": "Dispatch.DispatchQueue",
-                    "usr": "c:objc(cs)OS_dispatch_queue"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0Cvs",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0Cvs",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0CvM",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP5queueSo012OS_dispatch_E0CvM",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "implicit": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "volume",
-            "printedName": "volume",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Float",
-                "printedName": "Swift.Float",
-                "usr": "s:Sf"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9BanubaSdk15VoiceChangeableP6volumeSfvp",
-            "mangledName": "$s9BanubaSdk15VoiceChangeableP6volumeSfvp",
-            "moduleName": "BanubaSdk",
-            "protocolReq": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Float",
-                    "printedName": "Swift.Float",
-                    "usr": "s:Sf"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP6volumeSfvg",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP6volumeSfvg",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Float",
-                    "printedName": "Swift.Float",
-                    "usr": "s:Sf"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP6volumeSfvs",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP6volumeSfvs",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP6volumeSfvM",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP6volumeSfvM",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "implicit": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "isConfigured",
-            "printedName": "isConfigured",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9BanubaSdk15VoiceChangeableP12isConfiguredSbvp",
-            "mangledName": "$s9BanubaSdk15VoiceChangeableP12isConfiguredSbvp",
-            "moduleName": "BanubaSdk",
-            "protocolReq": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk15VoiceChangeableP12isConfiguredSbvg",
-                "mangledName": "$s9BanubaSdk15VoiceChangeableP12isConfiguredSbvg",
-                "moduleName": "BanubaSdk",
-                "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-                "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-                "protocolReq": true,
-                "reqNewWitnessTableEntry": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "process",
-            "printedName": "process(file:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((Swift.Bool, (any Swift.Error)?) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(Swift.Bool, (any Swift.Error)?) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Tuple",
-                        "printedName": "(Swift.Bool, (any Swift.Error)?)",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Bool",
-                            "printedName": "Swift.Bool",
-                            "usr": "s:Sb"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "(any Swift.Error)?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Error",
-                                "printedName": "any Swift.Error",
-                                "usr": "s:s5ErrorP"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:9BanubaSdk15VoiceChangeableP7process4file10completiony10Foundation3URLV_ySb_s5Error_pSgtcSgtF",
-            "mangledName": "$s9BanubaSdk15VoiceChangeableP7process4file10completiony10Foundation3URLV_ySb_s5Error_pSgtcSgtF",
-            "moduleName": "BanubaSdk",
-            "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-            "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "process",
-            "printedName": "process(file:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "URL",
-                "printedName": "Foundation.URL",
-                "usr": "s:10Foundation3URLV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:9BanubaSdk15VoiceChangeableP7process4filey10Foundation3URLV_tKF",
-            "mangledName": "$s9BanubaSdk15VoiceChangeableP7process4filey10Foundation3URLV_tKF",
-            "moduleName": "BanubaSdk",
-            "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.VoiceChangeable>",
-            "sugared_genericSig": "<Self where Self : BanubaSdk.VoiceChangeable>",
-            "protocolReq": true,
-            "throwing": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:9BanubaSdk15VoiceChangeableP",
-        "mangledName": "$s9BanubaSdk15VoiceChangeableP",
-        "moduleName": "BanubaSdk",
-        "genericSig": "<τ_0_0 : AnyObject>",
-        "sugared_genericSig": "<Self : AnyObject>",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "VoiceChangerError",
-        "printedName": "VoiceChangerError",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "cantCreateAssetExportSession",
-            "printedName": "cantCreateAssetExportSession",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(BanubaSdk.VoiceChangerError.Type) -> BanubaSdk.VoiceChangerError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "VoiceChangerError",
-                    "printedName": "BanubaSdk.VoiceChangerError",
-                    "usr": "s:9BanubaSdk17VoiceChangerErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "BanubaSdk.VoiceChangerError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "VoiceChangerError",
-                        "printedName": "BanubaSdk.VoiceChangerError",
-                        "usr": "s:9BanubaSdk17VoiceChangerErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:9BanubaSdk17VoiceChangerErrorO28cantCreateAssetExportSessionyA2CmF",
-            "mangledName": "$s9BanubaSdk17VoiceChangerErrorO28cantCreateAssetExportSessionyA2CmF",
-            "moduleName": "BanubaSdk"
-          },
-          {
-            "kind": "Var",
-            "name": "exportSessionCantExportAudio",
-            "printedName": "exportSessionCantExportAudio",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(BanubaSdk.VoiceChangerError.Type) -> BanubaSdk.VoiceChangerError",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "VoiceChangerError",
-                    "printedName": "BanubaSdk.VoiceChangerError",
-                    "usr": "s:9BanubaSdk17VoiceChangerErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "BanubaSdk.VoiceChangerError.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "VoiceChangerError",
-                        "printedName": "BanubaSdk.VoiceChangerError",
-                        "usr": "s:9BanubaSdk17VoiceChangerErrorO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:9BanubaSdk17VoiceChangerErrorO28exportSessionCantExportAudioyA2CmF",
-            "mangledName": "$s9BanubaSdk17VoiceChangerErrorO28exportSessionCantExportAudioyA2CmF",
-            "moduleName": "BanubaSdk"
-          },
-          {
-            "kind": "Function",
-            "name": "==",
-            "printedName": "==(_:_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VoiceChangerError",
-                "printedName": "BanubaSdk.VoiceChangerError",
-                "usr": "s:9BanubaSdk17VoiceChangerErrorO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "VoiceChangerError",
-                "printedName": "BanubaSdk.VoiceChangerError",
-                "usr": "s:9BanubaSdk17VoiceChangerErrorO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:9BanubaSdk17VoiceChangerErrorO2eeoiySbAC_ACtFZ",
-            "mangledName": "$s9BanubaSdk17VoiceChangerErrorO2eeoiySbAC_ACtFZ",
-            "moduleName": "BanubaSdk",
-            "static": true,
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:9BanubaSdk17VoiceChangerErrorO9hashValueSivp",
-            "mangledName": "$s9BanubaSdk17VoiceChangerErrorO9hashValueSivp",
-            "moduleName": "BanubaSdk",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:9BanubaSdk17VoiceChangerErrorO9hashValueSivg",
-                "mangledName": "$s9BanubaSdk17VoiceChangerErrorO9hashValueSivg",
-                "moduleName": "BanubaSdk",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:9BanubaSdk17VoiceChangerErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s9BanubaSdk17VoiceChangerErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "BanubaSdk",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Enum",
-        "usr": "s:9BanubaSdk17VoiceChangerErrorO",
-        "mangledName": "$s9BanubaSdk17VoiceChangerErrorO",
-        "moduleName": "BanubaSdk",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Error",
-            "printedName": "Error",
-            "usr": "s:s5ErrorP",
-            "mangledName": "$ss5ErrorP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "MetalKit",
         "printedName": "MetalKit",
         "declKind": "Import",
@@ -16114,7 +15444,7 @@
           {
             "kind": "Function",
             "name": "startVideoCapturing",
-            "printedName": "startVideoCapturing(fileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:isFirstRun:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:)",
+            "printedName": "startVideoCapturing(fileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:isFirstRun:periodicProgressTimeInterval:totalDuration:configuration:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -16240,54 +15570,6 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Foundation.NSValue]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Foundation.NSValue]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "NSValue",
-                        "printedName": "Foundation.NSValue",
-                        "usr": "c:objc(cs)NSValue"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "((CoreMedia.CMTime) -> ())?",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CoreMedia.CMTime) -> ()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "CMTime",
-                        "printedName": "CoreMedia.CMTime",
-                        "usr": "c:@SA@CMTime"
-                      }
-                    ]
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
                 "name": "Double",
                 "printedName": "Swift.Double",
                 "usr": "s:Sd"
@@ -16339,8 +15621,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@BanubaSdk@objc(pl)OutputServicing(im)startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:isFirstRun:periodicProgressTimeInterval:boundaryTimes:boundaryHandler:totalDuration:configuration:completion:",
-            "mangledName": "$s9BanubaSdk15OutputServicingP19startVideoCapturing7fileURL26externalAudioConfiguration8progress8didStart15shouldSkipFrame10isFirstRun28periodicProgressTimeInterval13boundaryTimes0Z7Handler13totalDuration13configuration10completiony10Foundation0I0VSg_0A12SDKServicing08ExternalkL0CSgySo6CMTimeacSgyycSgSbycSgSbSdSaySo7NSValueCGSgA_SdAA0cL0CySb_s5Error_pSgtctF",
+            "usr": "c:@M@BanubaSdk@objc(pl)OutputServicing(im)startVideoCapturingWithFileURL:externalAudioConfiguration:progress:didStart:shouldSkipFrame:isFirstRun:periodicProgressTimeInterval:totalDuration:configuration:completion:",
+            "mangledName": "$s9BanubaSdk15OutputServicingP19startVideoCapturing7fileURL26externalAudioConfiguration8progress8didStart15shouldSkipFrame10isFirstRun28periodicProgressTimeInterval13totalDuration13configuration10completiony10Foundation0I0VSg_0A12SDKServicing08ExternalkL0CSgySo6CMTimeacSgyycSgSbycSgSbS2dAA0cL0CySb_s5Error_pSgtctF",
             "moduleName": "BanubaSdk",
             "genericSig": "<τ_0_0 where τ_0_0 : BanubaSdk.OutputServicing>",
             "sugared_genericSig": "<Self where Self : BanubaSdk.OutputServicing>",
@@ -22330,14 +21612,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 25244,
+      "offset": 25091,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 25267,
+      "offset": 25114,
       "length": 5,
       "value": "false"
     },
@@ -22505,282 +21787,254 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3543,
+      "offset": 3484,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3639,
+      "offset": 3580,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4288,
+      "offset": 4229,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4786,
+      "offset": 4727,
       "length": 38,
       "value": "\"com.banuba.sdk.synchronization-queue\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "StringLiteral",
-      "offset": 4936,
+      "offset": 4877,
       "length": 41,
       "value": "\"com.banuba.sdk.drawondemand-state-queue\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8901,
+      "offset": 8842,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9048,
+      "offset": 8989,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "Array",
-      "offset": 9554,
+      "offset": 9495,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11953,
+      "offset": 11894,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11960,
+      "offset": 11901,
       "length": 3,
       "value": "768"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12988,
+      "offset": 12929,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13052,
+      "offset": 12993,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 18628,
+      "offset": 18569,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18666,
+      "offset": 18607,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18698,
+      "offset": 18639,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 18730,
+      "offset": 18671,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21619,
+      "offset": 21560,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21693,
+      "offset": 21634,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21761,
+      "offset": 21702,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 22801,
+      "offset": 22742,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 24306,
+      "offset": 24247,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 24804,
+      "offset": 24745,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 26943,
+      "offset": 26884,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 26975,
+      "offset": 26916,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 27006,
+      "offset": 26947,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 29144,
+      "offset": 29085,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 29175,
+      "offset": 29116,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 31226,
+      "offset": 31167,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 31699,
+      "offset": 31640,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 32122,
+      "offset": 32063,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 32160,
+      "offset": 32101,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 32192,
+      "offset": 32133,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "FloatLiteral",
-      "offset": 39019,
+      "offset": 38905,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 39060,
+      "offset": 38946,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 39330,
+      "offset": 39216,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "StringLiteral",
-      "offset": 46138,
+      "offset": 46024,
       "length": 21,
       "value": "\"BanubaSdk.BanubaVisualClipVideo\""
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Audio\/VoiceChanger.swift",
-      "kind": "FloatLiteral",
-      "offset": 1024,
-      "length": 3,
-      "value": "0.2"
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Audio\/VoiceChanger.swift",
-      "kind": "StringLiteral",
-      "offset": 1064,
-      "length": 20,
-      "value": "\"extractedAudio.m4a\""
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Audio\/VoiceChanger.swift",
-      "kind": "StringLiteral",
-      "offset": 1241,
-      "length": 20,
-      "value": "\"processedAudio.wav\""
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Audio\/VoiceChanger.swift",
-      "kind": "StringLiteral",
-      "offset": 1428,
-      "length": 12,
-      "value": "\"result.mp4\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/Metal\/MetalHelper.swift",
@@ -22883,77 +22137,77 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "StringLiteral",
-      "offset": 1193,
+      "offset": 1112,
       "length": 19,
       "value": "\"BanubaSdk.OutputConfiguration\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2210,
+      "offset": 2156,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2261,
+      "offset": 2207,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 2439,
+      "offset": 2385,
       "length": 12,
       "value": "[2, 1, 0, 3]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 2492,
+      "offset": 2438,
       "length": 12,
       "value": "[1, 2, 3, 0]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 2545,
+      "offset": 2491,
       "length": 12,
       "value": "[0, 1, 2, 3]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "Array",
-      "offset": 2598,
+      "offset": 2544,
       "length": 12,
       "value": "[3, 2, 1, 0]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 3021,
+      "offset": 2967,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3217,
+      "offset": 3163,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3266,
+      "offset": 3211,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/OutputService.swift",
       "kind": "StringLiteral",
-      "offset": 2110,
+      "offset": 2035,
       "length": 13,
       "value": "\"BanubaSdk.OutputService\""
     },
