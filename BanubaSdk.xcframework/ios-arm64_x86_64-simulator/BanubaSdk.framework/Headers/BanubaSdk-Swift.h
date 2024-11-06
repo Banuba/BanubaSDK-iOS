@@ -352,8 +352,8 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
-- (void)startPiPMixerWithCompletion:(void (^ _Nullable)(void))completion;
-- (void)stopPiPMixerWithCompletion:(void (^ _Nullable)(void))completion;
+- (void)startMultiCamMixingWithIsPresenterMode:(BOOL)isPresenterMode completion:(void (^ _Nullable)(void))completion;
+- (void)stopMultiCamMixingWithCompletion:(void (^ _Nullable)(void))completion;
 @end
 
 @class CapturingPerfomanceInfo;
@@ -582,14 +582,14 @@ SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 @protocol InputServiceDelegate
-- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer;
+- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer isMainCamera:(BOOL)isMainCamera;
 - (void)pushWithCmBuffer:(CMSampleBufferRef _Nonnull)cmBuffer;
 @end
 
 
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <InputServiceDelegate>
 - (void)pushWithCmBuffer:(CMSampleBufferRef _Nonnull)cmBuffer;
-- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer;
+- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer isMainCamera:(BOOL)isMainCamera;
 @end
 
 
@@ -863,6 +863,18 @@ SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @end
 
 
+SWIFT_CLASS("_TtC9BanubaSdk14PIPShapeDrawer")
+@interface PIPShapeDrawer : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC9BanubaSdk13MultiCamMixer")
+@interface MultiCamMixer : PIPShapeDrawer
+@end
+
+
 
 SWIFT_CLASS("_TtC9BanubaSdk19OutputConfiguration")
 @interface OutputConfiguration : NSObject
@@ -896,13 +908,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 @end
 
 
-SWIFT_CLASS("_TtC9BanubaSdk14PIPShapeDrawer")
-@interface PIPShapeDrawer : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 SWIFT_CLASS("_TtC9BanubaSdk9PIPPlayer")
 @interface PIPPlayer : PIPShapeDrawer
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
@@ -910,11 +915,6 @@ SWIFT_CLASS("_TtC9BanubaSdk9PIPPlayer")
 
 
 
-
-
-SWIFT_CLASS("_TtC9BanubaSdk8PiPMixer")
-@interface PiPMixer : PIPShapeDrawer
-@end
 
 /// Options how to resize the result of effect player to display it on a target layer.
 typedef SWIFT_ENUM(NSInteger, RenderContentMode, open) {
@@ -1342,8 +1342,8 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
-- (void)startPiPMixerWithCompletion:(void (^ _Nullable)(void))completion;
-- (void)stopPiPMixerWithCompletion:(void (^ _Nullable)(void))completion;
+- (void)startMultiCamMixingWithIsPresenterMode:(BOOL)isPresenterMode completion:(void (^ _Nullable)(void))completion;
+- (void)stopMultiCamMixingWithCompletion:(void (^ _Nullable)(void))completion;
 @end
 
 @class CapturingPerfomanceInfo;
@@ -1572,14 +1572,14 @@ SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
 @protocol InputServiceDelegate
-- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer;
+- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer isMainCamera:(BOOL)isMainCamera;
 - (void)pushWithCmBuffer:(CMSampleBufferRef _Nonnull)cmBuffer;
 @end
 
 
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <InputServiceDelegate>
 - (void)pushWithCmBuffer:(CMSampleBufferRef _Nonnull)cmBuffer;
-- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer;
+- (void)pushWithCvBuffer:(CVPixelBufferRef _Nonnull)cvBuffer isMainCamera:(BOOL)isMainCamera;
 @end
 
 
@@ -1853,6 +1853,18 @@ SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @end
 
 
+SWIFT_CLASS("_TtC9BanubaSdk14PIPShapeDrawer")
+@interface PIPShapeDrawer : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC9BanubaSdk13MultiCamMixer")
+@interface MultiCamMixer : PIPShapeDrawer
+@end
+
+
 
 SWIFT_CLASS("_TtC9BanubaSdk19OutputConfiguration")
 @interface OutputConfiguration : NSObject
@@ -1886,13 +1898,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 @end
 
 
-SWIFT_CLASS("_TtC9BanubaSdk14PIPShapeDrawer")
-@interface PIPShapeDrawer : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
 SWIFT_CLASS("_TtC9BanubaSdk9PIPPlayer")
 @interface PIPPlayer : PIPShapeDrawer
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
@@ -1900,11 +1905,6 @@ SWIFT_CLASS("_TtC9BanubaSdk9PIPPlayer")
 
 
 
-
-
-SWIFT_CLASS("_TtC9BanubaSdk8PiPMixer")
-@interface PiPMixer : PIPShapeDrawer
-@end
 
 /// Options how to resize the result of effect player to display it on a target layer.
 typedef SWIFT_ENUM(NSInteger, RenderContentMode, open) {

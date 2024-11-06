@@ -8,7 +8,6 @@ import BNBSdkCore
 import BanubaSDKServicing
 @_exported import BanubaSdk
 import BanubaUtilities
-import CoreMedia
 import CoreMotion
 import CoreVideo
 import Foundation
@@ -166,8 +165,8 @@ extension BanubaSdk.BanubaCameraModule {
   @objc dynamic public func applyPIPSwitchSettingIfNeeded(_ setting: BanubaSDKServicing.PIPSwitchLayoutSetting, restoreSession: Swift.Bool)
 }
 extension BanubaSdk.BanubaCameraModule {
-  @objc dynamic public func startPiPMixer(completion: (() -> Swift.Void)?)
-  @objc dynamic public func stopPiPMixer(completion: (() -> Swift.Void)?)
+  @objc dynamic public func startMultiCamMixing(isPresenterMode: Swift.Bool, completion: (() -> Swift.Void)?)
+  @objc dynamic public func stopMultiCamMixing(completion: (() -> Swift.Void)?)
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKInputServicing {
   @objc dynamic public var zoomFactor: Swift.Float {
@@ -290,7 +289,7 @@ extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
   @objc public func drawSettingsWithBoundsSize(_ boundsSize: CoreFoundation.CGSize, outputSettings: BanubaSDKServicing.VEOutputSettings) -> BanubaSdk.WatermarkDrawSettings
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PiPMixer : BanubaSdk.PIPShapeDrawer {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MultiCamMixer : BanubaSdk.PIPShapeDrawer {
   public func draw(renderEncoder: any Metal.MTLRenderCommandEncoder, fullRenderSize: CoreFoundation.CGSize, relativeLeftTopPoint: CoreFoundation.CGPoint, scale: CoreFoundation.CGFloat)
   @objc deinit
 }
@@ -374,7 +373,7 @@ extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
 }
 @objc extension BanubaSdk.BanubaSdkManager : BanubaSdk.InputServiceDelegate {
   @objc dynamic public func push(cmBuffer: CoreMedia.CMSampleBuffer)
-  @objc dynamic public func push(cvBuffer: CoreVideo.CVPixelBuffer)
+  @objc dynamic public func push(cvBuffer: CoreVideo.CVPixelBuffer, isMainCamera: Swift.Bool)
 }
 @objc extension BanubaSdk.BanubaSdkManager {
   @objc dynamic public func startEffectPlayer()
@@ -416,7 +415,7 @@ extension BanubaSdk.BanubaSdkManager {
     get
   }
   public func createPIPPlayer(withVideoURL url: Foundation.URL, completion: (() -> Swift.Void)?)
-  public func startPIPMixer(completion: (() -> Swift.Void)?)
+  public func startPIPMixer(isPresenterMode: Swift.Bool, completion: (() -> Swift.Void)?)
   public func stopPIPMixer(completion: (() -> Swift.Void)?)
   public func startPIPPlayer()
   public func stopPIPPlayer()
@@ -460,7 +459,7 @@ public enum RenderBehavior {
   case horizontalSplitLeft
   case horizontalSplitRight
   case pip
-  case pipMixer
+  case multiCamMixer
   public static func == (a: BanubaSdk.RenderBehavior, b: BanubaSdk.RenderBehavior) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -590,7 +589,7 @@ extension BanubaSdk.CameraServicing {
   @objc func setZoomFactor(_ zoomFactor: Swift.Float) -> Swift.Float
 }
 @objc public protocol InputServiceDelegate {
-  @objc func push(cvBuffer: CoreVideo.CVPixelBuffer)
+  @objc func push(cvBuffer: CoreVideo.CVPixelBuffer, isMainCamera: Swift.Bool)
   @objc func push(cmBuffer: CoreMedia.CMSampleBuffer)
 }
 @objc public enum CameraSessionType : Swift.Int {
@@ -655,8 +654,8 @@ public protocol PixelBufferProvider {
   public var renderBehaviour: BanubaSdk.RenderBehavior
   public var pipPlayer: BanubaSdk.PIPPlayer?
   public var pipPlayerRelativeLeftTopPoint: CoreFoundation.CGPoint
-  public var pipMixer: BanubaSdk.PiPMixer?
-  public var pipMixerRelativeLeftTopPoint: CoreFoundation.CGPoint
+  public var multiCamMixer: BanubaSdk.MultiCamMixer?
+  public var multiCamMixerRelativeLeftTopPoint: CoreFoundation.CGPoint
   public var splitRenderOffset: CoreFoundation.CGPoint
   public var playerRect: CoreFoundation.CGRect {
     get
