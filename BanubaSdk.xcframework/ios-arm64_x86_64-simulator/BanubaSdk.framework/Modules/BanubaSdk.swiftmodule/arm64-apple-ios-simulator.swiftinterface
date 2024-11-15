@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name BanubaSdk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVKit
 import Accelerate
 import BNBSdkApi
@@ -448,7 +449,7 @@ extension BanubaSdk.BanubaSdkManager : BanubaUtilities.AppStateObserverDelegate 
   @objc dynamic public func applicationWillTerminateNotification(_ appStateObserver: BanubaUtilities.AppStateObserver)
 }
 extension UIKit.UITouch {
-  @_Concurrency.MainActor(unsafe) public var id: Swift.Int64 {
+  @_Concurrency.MainActor @preconcurrency public var id: Swift.Int64 {
     get
   }
 }
@@ -493,24 +494,24 @@ public protocol PIPShapeable {
 extension BNBSdkCore.BNBFrameData {
   public class func create(cvBuffer: CoreVideo.CVPixelBuffer, faceOrientation: Swift.Int = 0, cameraOrientation: BNBSdkCore.BNBCameraOrientation = .deg90, requireMirroring: Swift.Bool = false, fieldOfView: Swift.Float = 60) -> BNBSdkCore.BNBFrameData?
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class EffectPlayerView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) public var isDoubleTapHandlingEnabled: Swift.Bool {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class EffectPlayerView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency public var isDoubleTapHandlingEnabled: Swift.Bool {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public class var layerClass: Swift.AnyClass {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc @_Concurrency.MainActor(unsafe) public func onLongTapGesture(gesture: UIKit.UITapGestureRecognizer)
-  @objc @_Concurrency.MainActor(unsafe) public func onDoubleTapGesture(gesture: UIKit.UITapGestureRecognizer)
-  @objc @_Concurrency.MainActor(unsafe) public func onScaleGesture(gesture: UIKit.UIPinchGestureRecognizer)
-  @objc @_Concurrency.MainActor(unsafe) public func onRotationGesture(gesture: UIKit.UIRotationGestureRecognizer)
-  @objc @_Concurrency.MainActor(unsafe) public func onSwipeGesture(gesture: UIKit.UISwipeGestureRecognizer)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc @_Concurrency.MainActor @preconcurrency public func onLongTapGesture(gesture: UIKit.UITapGestureRecognizer)
+  @objc @_Concurrency.MainActor @preconcurrency public func onDoubleTapGesture(gesture: UIKit.UITapGestureRecognizer)
+  @objc @_Concurrency.MainActor @preconcurrency public func onScaleGesture(gesture: UIKit.UIPinchGestureRecognizer)
+  @objc @_Concurrency.MainActor @preconcurrency public func onRotationGesture(gesture: UIKit.UIRotationGestureRecognizer)
+  @objc @_Concurrency.MainActor @preconcurrency public func onSwipeGesture(gesture: UIKit.UISwipeGestureRecognizer)
   @objc deinit
 }
 @objc public protocol OutputServicing {
