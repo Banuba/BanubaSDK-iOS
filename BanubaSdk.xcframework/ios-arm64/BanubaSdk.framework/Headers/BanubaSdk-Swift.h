@@ -410,6 +410,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
+- (void)enableBackgroundBlur;
 - (void)stopVideoTextureIfNeeded;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
 - (void)unloadEffectTexture;

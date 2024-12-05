@@ -110,6 +110,7 @@ import os
     case onFinish
     case setBgTexture
     case setBgVideo
+    case enableBgBlur
     case playVideo
     case pauseVideo
     case rotateBg
@@ -228,6 +229,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsServicing 
 extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKEffectsTextureServicing {
   @objc dynamic public func effectAddImageTexture(image: UIKit.UIImage, backgroundColor: UIKit.UIColor)
   @objc dynamic public func effectAddVideoTexture(asset: AVFoundation.AVURLAsset, backgroundColor: UIKit.UIColor)
+  @objc dynamic public func enableBackgroundBlur()
   @objc dynamic public func stopVideoTextureIfNeeded()
   @objc dynamic public func effectReloadTexturePreview(startTime: Foundation.TimeInterval, endTime: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval)
   @objc dynamic public func unloadEffectTexture()
