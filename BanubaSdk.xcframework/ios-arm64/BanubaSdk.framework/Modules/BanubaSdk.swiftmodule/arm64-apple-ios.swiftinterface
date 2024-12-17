@@ -239,9 +239,6 @@ extension BanubaSdk.BanubaCameraModule : BanubaSDKServicing.SDKBeautyEffectManag
     @objc get
     @objc set
   }
-  @objc dynamic public var supportsIntensity: Swift.Bool {
-    @objc get
-  }
   @objc dynamic public var intensity: Swift.Double {
     @objc get
     @objc set

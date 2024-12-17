@@ -7359,56 +7359,6 @@
           },
           {
             "kind": "Var",
-            "name": "supportsIntensity",
-            "printedName": "supportsIntensity",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)supportsIntensity",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC17supportsIntensitySbvp",
-            "moduleName": "BanubaSdk",
-            "objc_name": "supportsIntensity",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)supportsIntensity",
-                "mangledName": "$s9BanubaSdk0A12CameraModuleC17supportsIntensitySbvg",
-                "moduleName": "BanubaSdk",
-                "objc_name": "supportsIntensity",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "intensity",
             "printedName": "intensity",
             "children": [

@@ -376,15 +376,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
-@class ExternalAudioConfiguration;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
-@property (nonatomic, readonly) BOOL isRecording;
-@property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
-- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)stopVideoCapturingWithCancel:(BOOL)cancel;
-@end
-
 @class EmbeddedBackgroundImage;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
@@ -394,10 +385,18 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)disableBackground;
 @end
 
+@class ExternalAudioConfiguration;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
+@property (nonatomic, readonly) BOOL isRecording;
+@property (nonatomic, readonly) BOOL isEnoughDiskSpaceForRecording;
+- (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL startTimeForVideoTexture:(double)startTimeForVideoTexture externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nonnull)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval totalDuration:(NSTimeInterval)totalDuration itemDuration:(NSTimeInterval)itemDuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)stopVideoCapturingWithCancel:(BOOL)cancel;
+@end
+
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
 @property (nonatomic) BOOL isBeautificationEnabled;
-@property (nonatomic, readonly) BOOL supportsIntensity;
 @property (nonatomic) double intensity;
 - (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
 - (void)resetIntensity;
