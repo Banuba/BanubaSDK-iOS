@@ -376,15 +376,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
-@class EmbeddedBackgroundImage;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly) BOOL isBackgroundEnabled;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
-- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)disableBackground;
-@end
-
 @class ExternalAudioConfiguration;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
@@ -394,9 +385,19 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
+@class EmbeddedBackgroundImage;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
+@property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
+- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)disableBackground;
+@end
+
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
 @property (nonatomic) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL supportsIntensity;
 @property (nonatomic) double intensity;
 - (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
 - (void)resetIntensity;
@@ -409,7 +410,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
-- (void)enableBackgroundBlur;
 - (void)stopVideoTextureIfNeeded;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
 - (void)unloadEffectTexture;

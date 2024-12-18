@@ -4235,43 +4235,6 @@
               },
               {
                 "kind": "Var",
-                "name": "enableBgBlur",
-                "printedName": "enableBgBlur",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(BanubaSdk.BanubaCameraModule.MethodInJson.Type) -> BanubaSdk.BanubaCameraModule.MethodInJson",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "MethodInJson",
-                        "printedName": "BanubaSdk.BanubaCameraModule.MethodInJson",
-                        "usr": "s:9BanubaSdk0A12CameraModuleC12MethodInJsonO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "BanubaSdk.BanubaCameraModule.MethodInJson.Type",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "MethodInJson",
-                            "printedName": "BanubaSdk.BanubaCameraModule.MethodInJson",
-                            "usr": "s:9BanubaSdk0A12CameraModuleC12MethodInJsonO"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "EnumElement",
-                "usr": "s:9BanubaSdk0A12CameraModuleC12MethodInJsonO12enableBgBluryA2EmF",
-                "mangledName": "$s9BanubaSdk0A12CameraModuleC12MethodInJsonO12enableBgBluryA2EmF",
-                "moduleName": "BanubaSdk"
-              },
-              {
-                "kind": "Var",
                 "name": "playVideo",
                 "printedName": "playVideo",
                 "children": [
@@ -7166,30 +7129,6 @@
           },
           {
             "kind": "Function",
-            "name": "enableBackgroundBlur",
-            "printedName": "enableBackgroundBlur()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)enableBackgroundBlur",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC20enableBackgroundBluryyF",
-            "moduleName": "BanubaSdk",
-            "objc_name": "enableBackgroundBlur",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "stopVideoTextureIfNeeded",
             "printedName": "stopVideoTextureIfNeeded()",
             "children": [
@@ -7354,6 +7293,56 @@
                 ],
                 "isFromExtension": true,
                 "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "supportsIntensity",
+            "printedName": "supportsIntensity",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)supportsIntensity",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC17supportsIntensitySbvp",
+            "moduleName": "BanubaSdk",
+            "objc_name": "supportsIntensity",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)supportsIntensity",
+                "mangledName": "$s9BanubaSdk0A12CameraModuleC17supportsIntensitySbvg",
+                "moduleName": "BanubaSdk",
+                "objc_name": "supportsIntensity",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
               }
             ]
           },
@@ -22113,42 +22102,42 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 5834,
+      "offset": 5812,
       "length": 14,
       "value": "\"enableBlur()\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 6384,
+      "offset": 6362,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 20964,
+      "offset": 20942,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 21091,
+      "offset": 21069,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 24893,
+      "offset": 24871,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 24916,
+      "offset": 24894,
       "length": 5,
       "value": "false"
     },

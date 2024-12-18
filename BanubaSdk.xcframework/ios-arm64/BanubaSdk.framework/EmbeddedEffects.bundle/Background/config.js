@@ -11,12 +11,9 @@ function setBgTexture(path){
     Background.texture(path);
 }
 
-function enableBgBlur(){
-    Background.blur(0.9);
-}
-
 function setBgVideo(path){
     Background.texture(path, false, true);
+
 }
 
 function setBgTextureByFd(fd){
@@ -43,13 +40,12 @@ function resumeVideo(){
 function playVideoRange(start, end){
     const BG = Background.getBackgroundVideo().asMedia();
     isEnded = false;
-    isPaused = false;
     BG.setLooped(false);
     BG.setStartPosition(start);
     BG.setEndPosition(end);
     BG.play();
         interval = setInterval(()=>{
-            bnb.log(`isPaused: ${isPaused}, isPlaying: ${BG.isPlaying()}`)
+            bnb.log(BG.isPlaying())
             if(BG.isPlaying() == false && isPaused == false){
                 BG.setStartPosition(0);
                 BG.setLooped(true);
