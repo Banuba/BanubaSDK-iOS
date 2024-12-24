@@ -6,7 +6,7 @@
 	<dict>
 		<key>EmbeddedEffects.bundle/Background/config.js</key>
 		<data>
-		NmODvNfMlPMZ1Y9ZSm9IHJ0GFJM=
+		igNglQh1KgARzfn0bZGEFjrGLkg=
 		</data>
 		<key>EmbeddedEffects.bundle/Background/config.json</key>
 		<data>
@@ -146,11 +146,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iO2PHy/+rHfNEGwUV3Jg4r/SB64=
+		wZRrTKiOfZCboJBXGze0wwXShn0=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		LdnNKj0aTshe2/vo+saC0cnLJls=
+		XyDJJwRWgrxXQsJHs+mR5HI9wWs=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		GVpu2Sx9MK/MBjdC3A8Z06E9bjY=
+		1WmDTDESInmrdahRU+hdde2W/Dk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -187,7 +187,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ynByNhHp/owbjnuKLQooLbuGxpm64t+93PyGYTuwJl4=
+			2F2UpV4Ttu/4YuH3wmkylYc1ch4cQN+Av9NWnFCGOuY=
 			</data>
 		</dict>
 		<key>EmbeddedEffects.bundle/Background/config.json</key>
@@ -432,7 +432,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3InTf8JMp2eDqLUSfZ7TIV/R0sSx+3pjGd6ervRkPDc=
+			rxua+eT7ZEJZ/uFznDQF/8j8Jip0Jx3gkFHoKdcvKv8=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -460,7 +460,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9eVjq1fxK2a/uxA2aD8pY/LFtdRR47ZwziRdnyu2/ok=
+			Fiz3QDgRWYjSupMp2TuBwpsManiabYLpotGabOI8isU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

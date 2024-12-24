@@ -14234,6 +14234,13 @@
       },
       {
         "kind": "Import",
+        "name": "BanubaUtilities",
+        "printedName": "BanubaUtilities",
+        "declKind": "Import",
+        "moduleName": "BanubaSdk"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -22515,23 +22522,16 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/Metal\/MetalHelper.swift",
       "kind": "Dictionary",
-      "offset": 1255,
+      "offset": 1278,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/Metal\/MetalHelper.swift",
       "kind": "BooleanLiteral",
-      "offset": 4972,
+      "offset": 4995,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/Metal\/MetalHelper.swift",
-      "kind": "Array",
-      "offset": 6574,
-      "length": 2,
-      "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Handlers\/DisplayLinkRunLoop.swift",
