@@ -729,5 +729,6 @@
     "script": {
         "entry_point": "config.js",
         "type": "legacy"
-    }
+    },
+    "supportsIntensity": true
 }

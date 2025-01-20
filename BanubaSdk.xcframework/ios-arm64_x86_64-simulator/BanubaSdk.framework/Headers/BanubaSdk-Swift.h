@@ -282,8 +282,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AVFoundation;
 @import BNBSdkCore;
+@import BanubaSDKServicing;
 @import BanubaUtilities;
-@import BanubaVideoEditorCore;
 @import CoreFoundation;
 @import CoreMedia;
 @import CoreVideo;
@@ -376,15 +376,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
-@class EmbeddedBackgroundImage;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly) BOOL isBackgroundEnabled;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
-- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)disableBackground;
-@end
-
 @class ExternalAudioConfiguration;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
@@ -394,12 +385,22 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
+@class EmbeddedBackgroundImage;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
+@property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
+- (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)disableBackground;
+@end
+
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL isBeautificationEnabled;
 @property (nonatomic) double intensity;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
 - (void)resetIntensity;
+- (void)enableBeautificationWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)disableBeautification;
 @end
 
 @class UIImage;
@@ -409,6 +410,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
+- (void)enableBackgroundBlur;
 - (void)stopVideoTextureIfNeeded;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
 - (void)unloadEffectTexture;
@@ -431,9 +433,9 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
-- (void)enableBlur;
 @property (nonatomic, readonly) BOOL isMaskLoaded;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
+- (void)loadMaskWithName:(NSString * _Nonnull)name completionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)callEffectMethod:(NSString * _Nonnull)method;
 - (void)unloadMask;
 - (void)removeAllFilters;
@@ -861,6 +863,7 @@ SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @interface MaskPostprocessingService (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
 - (void)processVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
 - (void)surfaceCreatedWith:(CGSize)size;
+- (void)setEffectSize:(CGSize)size;
 - (void)loadEffectWithPath:(NSString * _Nonnull)path;
 @end
 
@@ -1274,8 +1277,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AVFoundation;
 @import BNBSdkCore;
+@import BanubaSDKServicing;
 @import BanubaUtilities;
-@import BanubaVideoEditorCore;
 @import CoreFoundation;
 @import CoreMedia;
 @import CoreVideo;
@@ -1368,15 +1371,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)didProduceCapturingPerfomanceInfo:(CapturingPerfomanceInfo * _Nonnull)info;
 @end
 
-@class EmbeddedBackgroundImage;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly) BOOL isBackgroundEnabled;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
-- (void)enableBackgroundWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)disableBackground;
-@end
-
 @class ExternalAudioConfiguration;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKOutputServicing>
@@ -1386,12 +1380,22 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)stopVideoCapturingWithCancel:(BOOL)cancel;
 @end
 
+@class EmbeddedBackgroundImage;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
+@property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
+- (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)disableBackground;
+@end
+
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL isBeautificationEnabled;
 @property (nonatomic) double intensity;
-- (BOOL)toggleBeautification SWIFT_WARN_UNUSED_RESULT;
 - (void)resetIntensity;
+- (void)enableBeautificationWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)disableBeautification;
 @end
 
 @class UIImage;
@@ -1401,6 +1405,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsTextureServicing>
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
+- (void)enableBackgroundBlur;
 - (void)stopVideoTextureIfNeeded;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
 - (void)unloadEffectTexture;
@@ -1423,9 +1428,9 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
-- (void)enableBlur;
 @property (nonatomic, readonly) BOOL isMaskLoaded;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
+- (void)loadMaskWithName:(NSString * _Nonnull)name completionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)callEffectMethod:(NSString * _Nonnull)method;
 - (void)unloadMask;
 - (void)removeAllFilters;
@@ -1853,6 +1858,7 @@ SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @interface MaskPostprocessingService (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
 - (void)processVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
 - (void)surfaceCreatedWith:(CGSize)size;
+- (void)setEffectSize:(CGSize)size;
 - (void)loadEffectWithPath:(NSString * _Nonnull)path;
 @end
 
