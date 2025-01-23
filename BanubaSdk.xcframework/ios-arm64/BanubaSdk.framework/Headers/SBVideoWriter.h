@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
-#import <BanubaSDKServicing/BanubaSDKServicing.h>
+#import <BanubaVideoEditorCore/BanubaVideoEditorCore.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
