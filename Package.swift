@@ -13,20 +13,7 @@ let package = Package(
   products: [
     .library(
       name: "BanubaSdk",
-      targets: [
-        "BanubaSdk",
-        "BanubaUtilities",
-        "BanubaVideoEditorCore",
-        "BNBSdkCore",
-        "BNBSdkApi",
-        "BNBEffectPlayer",
-        "BNBScripting",
-        "BNBLips",
-        "BNBHair",
-        "BNBEyes",
-        "BNBBackground",
-        "BNBSkin"
-      ]
+      targets: ["BanubaSdkTarget"]
     )
   ],
   dependencies: [
@@ -48,49 +35,32 @@ let package = Package(
       name: "BanubaSdk",
       path: "BanubaSdk.xcframework"
     ),
-    .binaryTarget(
-      name: "BanubaUtilities",
-      path: "BanubaUtilities.xcframework"
+    .target(
+      name: "BanubaSdkTarget",
+      dependencies: [
+        .target(name: "BanubaSdkWrapper")
+      ],
+      path: "BanubaSdkTarget"
     ),
-    .binaryTarget(
-      name: "BanubaVideoEditorCore",
-      path: "BanubaVideoEditorCore.xcframework"
+    .target(
+      name: "BanubaSdkWrapper",
+      dependencies: [
+        .product(name: "BanubaUtilities", package: "BanubaUtilities-iOS"),
+        .product(name: "BanubaVideoEditorCore", package: "BanubaVideoEditorCore-iOS"),
+        
+        "BanubaSdk",
+        
+        "BNBSdkCore",
+        "BNBSdkApi",
+        "BNBEffectPlayer",
+        "BNBScripting",
+        "BNBLips",
+        "BNBHair",
+        "BNBEyes",
+        "BNBBackground",
+        "BNBSkin"
+      ],
+      path: "BanubaSdkWrapper"
     ),
-    .binaryTarget(
-      name: "BNBSdkCore",
-      path: "BNBSdkCore.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBSdkApi",
-      path: "BNBSdkApi.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBEffectPlayer",
-      path: "BNBEffectPlayer.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBScripting",
-      path: "BNBScripting.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBLips",
-      path: "BNBLips.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBHair",
-      path: "BNBHair.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBEyes",
-      path: "BNBEyes.xcframework"
-    ),
-    .binaryTarget(
-      name: "BNBBackground",
-      path: "BNBBackground.xcframework"
-    )
-    .binaryTarget(
-      name: "BNBSkin",
-      path: "BNBSkin.xcframework"
-    )
   ]
 )

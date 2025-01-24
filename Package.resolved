@@ -1,0 +1,113 @@
+{
+  "pins" : [
+    {
+      "identity" : "banubautilities-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Banuba/BanubaUtilities-iOS.git",
+      "state" : {
+        "revision" : "1f054bd4c269f652c79d30ced1f067a5a9154552",
+        "version" : "1.40.0"
+      }
+    },
+    {
+      "identity" : "banubavideoeditorcore-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Banuba/BanubaVideoEditorCore-iOS.git",
+      "state" : {
+        "revision" : "3eba7caeca83f371a06a5d34484dcfb5e48759d1",
+        "version" : "1.40.0"
+      }
+    },
+    {
+      "identity" : "bnbbackground",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBBackground.git",
+      "state" : {
+        "revision" : "60a857905377c577369e4b27ff22590ebcc8781d",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbeffectplayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBEffectPlayer.git",
+      "state" : {
+        "revision" : "8b1897978117f85475f9f771f51338b8dabc33fe",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbeyes",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBEyes.git",
+      "state" : {
+        "revision" : "3b9f76ba319f196e0016c0c5200668091f5444e4",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbfacetracker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBFaceTracker.git",
+      "state" : {
+        "revision" : "37b6d141622dc66eb22fd95d77197c55a98f4d23",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbhair",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBHair.git",
+      "state" : {
+        "revision" : "7d3c1eae98aa10599280fd4e8e2642c965e162c4",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnblips",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBLips.git",
+      "state" : {
+        "revision" : "bf1609e48375992ed4d4af2601742a2af1c4757e",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbscripting",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBScripting.git",
+      "state" : {
+        "revision" : "e9f02f6a38ac8e61835ec0bb83c4b113dcb9370d",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbsdkapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBSdkApi.git",
+      "state" : {
+        "revision" : "8604b90e8daaca72efd43ef27574289fdfe5bddc",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbsdkcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBSdkCore.git",
+      "state" : {
+        "revision" : "c0fa633c82c45d542c1cfa1b0ace043363a72ba9",
+        "version" : "1.16.2"
+      }
+    },
+    {
+      "identity" : "bnbskin",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sdk-banuba/BNBSkin.git",
+      "state" : {
+        "revision" : "ffa0d1651aba68bab50464524ea2388b9cfd1c75",
+        "version" : "1.16.2"
+      }
+    }
+  ],
+  "version" : 2
+}
