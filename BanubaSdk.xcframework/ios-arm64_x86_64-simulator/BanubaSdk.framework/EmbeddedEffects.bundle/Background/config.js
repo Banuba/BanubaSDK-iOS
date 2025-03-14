@@ -11,9 +11,12 @@ function setBgTexture(path){
     Background.texture(path);
 }
 
+function enableBgBlur(){
+    Background.blur(0.9);
+}
+
 function setBgVideo(path){
     Background.texture(path, false, true);
-
 }
 
 function setBgTextureByFd(fd){

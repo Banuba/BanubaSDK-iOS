@@ -6,7 +6,7 @@
 	<dict>
 		<key>EmbeddedEffects.bundle/Background/config.js</key>
 		<data>
-		igNglQh1KgARzfn0bZGEFjrGLkg=
+		mL7BsaB2++EM+Lg4tSXfs7T3jMw=
 		</data>
 		<key>EmbeddedEffects.bundle/Background/config.json</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>EmbeddedEffects.bundle/BeautyEffects/config.json</key>
 		<data>
-		RLLUhY121dLRqMDkjAP0ZogJd0c=
+		3gV/Xz+48rb5bgfuKw9IamQ7hGc=
 		</data>
 		<key>EmbeddedEffects.bundle/BeautyEffects/images/flare66.png</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<data>
-		l/keIcAExI3D4q3Fus7Tt6KU2V4=
+		DL3kttHp6O8bZPanSQyONFN8CuE=
 		</data>
 		<key>Headers/BanubaSdk.h</key>
 		<data>
@@ -142,31 +142,31 @@
 		</data>
 		<key>Headers/SBVideoWriter.h</key>
 		<data>
-		bNO1cCoxvukqJTLzswxBCXZmORA=
+		HVigZOt4gBWVW5lgJHttPutooPg=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iUBZWo3+qircozvF90NSgT3PkR4=
+		6bjQ9GbqmwHJHg7HyJr+Njwh2Xw=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		jL2M56w5mm6M5BSXN7WJTAxT5ZU=
+		6hRMRzhTkhdOz9MCPy/TG3efhA4=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Ou8gX9VmjfhZC8a9I4QJxBO4iSA=
+		ToR9G3xj0Hr/1f7L7YXKPx3Rqic=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ZI7ECObgD/lam9uFppLrnhtZjvk=
+		bKQC515NuQ3n1ZblpqLxOM5+xw8=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Ou8gX9VmjfhZC8a9I4QJxBO4iSA=
+		ToR9G3xj0Hr/1f7L7YXKPx3Rqic=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		1V+oGu6sRFvoQOG/u/X3Ev3bw2Y=
+		jC4e9X4zdMkjLtzBcoFbebY5Wcc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>default.metallib</key>
 		<data>
-		rN+mt2oLToi7Oyz9uKiARC9O4jY=
+		LpVP9Z2RYc5X9kI7zX3pAoeCmcM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -187,7 +187,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2F2UpV4Ttu/4YuH3wmkylYc1ch4cQN+Av9NWnFCGOuY=
+			WZOs09gVD4Vc1Jb0qDhiNjWuoQOCltz/zpEiO9iw45E=
 			</data>
 		</dict>
 		<key>EmbeddedEffects.bundle/Background/config.json</key>
@@ -236,7 +236,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Awuw8MT3hxrUvw5jdZRBW71TMYxV4BY78jZKaBcVT10=
+			QDbDiqrQxQLxktFcl7LEBKqRqRISlIL6Ow4wfv8ebm0=
 			</data>
 		</dict>
 		<key>EmbeddedEffects.bundle/BeautyEffects/images/flare66.png</key>
@@ -404,7 +404,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y33liQBc41Sf9QzMDAk3VOjy2STjt/px4x1N+8sI1l0=
+			nPVZ3uh9toD7sJ4A9BUgqlHFr3hrHR19uI+TDzrVOss=
 			</data>
 		</dict>
 		<key>Headers/BanubaSdk.h</key>
@@ -425,42 +425,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DnWYqmOPzzOucxOS7MVBU04KVOQbc397Nbd6z/H886w=
+			vVJ/fmGVdwHqjnj6iZtk6hgVarml6TCWk5YDkeDlh5s=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U8vHszKmJomQ1AygOv2En8MILCMg7cbfLHmZbL8O0nY=
+			61y2adkaX1dj3GJC8xM2A2RdHeqz93ChzsGO15b0qBc=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p2DLnFIPBX6Es1hKwOUwdWcMUXoUMd+Zb3s2q2webnU=
+			6/GqispCdsZ8yBhrLJ1KHK6Mhe/nirzPl7AjjFU64UU=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4PqkEg+3OvYR1KKNCuGGZRKvWrWSNqdaeSqH4N3E/x0=
+			3GwI4c1Hkd2N7TtRlPAePOgTDHD7mJ9hJ9TLJyErkTo=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p2DLnFIPBX6Es1hKwOUwdWcMUXoUMd+Zb3s2q2webnU=
+			6/GqispCdsZ8yBhrLJ1KHK6Mhe/nirzPl7AjjFU64UU=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IOr8uUcTmNooJK4GqYSVX5lIeXmcVM57wnv2faz9KJQ=
+			EeLx9B2g45sBsGeBfo7sIYwiQ8YEKmZO0uZXr6HGv2w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -481,7 +481,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2B2Twf5TeX6tAYKVMqRq/1h6kX9j8jc0XZLOB7Bi+o8=
+			oJZS4BWZobk0urr4KdRzw0rs2IjsAHGs4rseD5FlWqc=
 			</data>
 		</dict>
 	</dict>
