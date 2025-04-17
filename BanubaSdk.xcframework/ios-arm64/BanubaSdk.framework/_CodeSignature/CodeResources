@@ -4,123 +4,99 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>EmbeddedEffects.bundle/Background/config.js</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.js</key>
 		<data>
-		igNglQh1KgARzfn0bZGEFjrGLkg=
+		D9HeEP5OK7W/xTe24cXmkFkormM=
 		</data>
-		<key>EmbeddedEffects.bundle/Background/config.json</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.json</key>
 		<data>
-		bxE5URnjqOURa3drm/ciI4Urfgs=
+		QMYFh1HebiZquF208aL5/ilHkYo=
 		</data>
-		<key>EmbeddedEffects.bundle/Background/images/Apartment.jpg</key>
-		<data>
-		0LhZq5kXpr2NxsBtHmpKO3V0yWo=
-		</data>
-		<key>EmbeddedEffects.bundle/Background/images/Beach.jpg</key>
-		<data>
-		SAaqvgawTZ+5bToU/0XwCbk6Mf8=
-		</data>
-		<key>EmbeddedEffects.bundle/Background/images/Green.jpg</key>
-		<data>
-		oun0Xvqf8kzYNm49ZJvAAkxJkm4=
-		</data>
-		<key>EmbeddedEffects.bundle/Background/images/Meditation.jpg</key>
-		<data>
-		2YRegCPfooqMBlfrJF4+iMutJr4=
-		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/config.js</key>
-		<data>
-		4yJ0lX3hlg2fXsoNuOlVg4/GCPc=
-		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/config.json</key>
-		<data>
-		RLLUhY121dLRqMDkjAP0ZogJd0c=
-		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/flare66.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/flare66.png</key>
 		<data>
 		S//brOP45TkeclLokGdUCPG5FZg=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/lut3d_EYES_medium.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/lut3d_EYES_medium.png</key>
 		<data>
 		DPTbwhNgEOHqyJgMeP7dFlQQ2A4=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/lut3d_TEETH_medium.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/lut3d_TEETH_medium.png</key>
 		<data>
 		s+H5OjlQlf/6m6HXjEEkZj5s0Dw=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Base_Color.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Base_Color.png</key>
 		<data>
 		m+UVI9rvGvfLC7nvM7JcKMQ4aYU=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Metallic.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Metallic.png</key>
 		<data>
 		PsJz/p1AHZOnb0DqWaVJx0G7WS4=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Normal.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Normal.png</key>
 		<data>
 		VjgbqYKCLL9vaop3YPH4ASi2twc=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Roughness.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Roughness.png</key>
 		<data>
 		WaDZV+oBOQRW06dwiMyHppVGSTM=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/null_image.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/null_image.png</key>
 		<data>
 		ZXJtL/PG9CWr9mi2KoRu/Ka/1R0=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/null_lut.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/null_lut.png</key>
 		<data>
 		4xSIT6wkuD1oJV3VNRBqApiZ/2U=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/preview.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/preview.png</key>
 		<data>
 		m578I5W/S3/7oGc2hONtcUB3/Pg=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/soft3.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/soft3.png</key>
 		<data>
 		ynBcqq4a5vkZ4J7NbfH7NFNg/P4=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/meshes/face.bsm2</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/meshes/face.bsm2</key>
 		<data>
 		7hI49Mr6IKHdZKyHJg0OaDrSMHg=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/shaders/retouch.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/shaders/retouch.frag</key>
 		<data>
-		aUAOW1p6v02dGW4x0sOSsZcQ/Zo=
+		2zyhyQFE96RRL7OIzSTheEPlCMo=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/shaders/retouch.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/shaders/retouch.vert</key>
 		<data>
-		mchAL09AcXM7LbuTkHRt3bXVg74=
+		usyYqidCvIFyOPIPouDJrByG1lA=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/hblur.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/hblur.frag</key>
 		<data>
 		l3jO6czWND+ngj6uPhlbI5Vx+IU=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/hblur.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/hblur.vert</key>
 		<data>
 		1VR1Okrq51ipwKn5yz8lovAzdIs=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/smooth.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/smooth.frag</key>
 		<data>
-		5qqwFhPLJiX77naP294fe8hSDLo=
+		mKFk+In2YeXlflAHBfGf2EbghEk=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/smooth.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/smooth.vert</key>
 		<data>
 		ah6e+37WwBvjI0KR/CT0uThwWFw=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/soft_skin.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/soft_skin.frag</key>
 		<data>
-		kP+zqTZMRTZVD9u2Gv2sPi6qnrY=
+		5jQLSSa7BT+aKIWFNiJE60TJt4M=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/soft_skin.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/soft_skin.vert</key>
 		<data>
-		kTkHp78UoPi3QErbUmmjWCDoIxw=
+		HbJmkqJr++4Z3x83FOOHLto4l4s=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/vblur.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/vblur.frag</key>
 		<data>
 		M8Hpx3RAiWN+kDaUqx/1z2YAIno=
 		</data>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/vblur.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/vblur.vert</key>
 		<data>
 		1VR1Okrq51ipwKn5yz8lovAzdIs=
 		</data>
@@ -130,7 +106,7 @@
 		</data>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<data>
-		l/keIcAExI3D4q3Fus7Tt6KU2V4=
+		k1waiaaN96lyNRHkUNe0BrrQKRs=
 		</data>
 		<key>Headers/BanubaSdk.h</key>
 		<data>
@@ -142,31 +118,31 @@
 		</data>
 		<key>Headers/SBVideoWriter.h</key>
 		<data>
-		bNO1cCoxvukqJTLzswxBCXZmORA=
+		HVigZOt4gBWVW5lgJHttPutooPg=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		x3mo57yB1dE78JjnYuqgV2HWNbM=
+		Xv+aijU5iO5rcxt0V3ohEhJc8aI=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		jL2M56w5mm6M5BSXN7WJTAxT5ZU=
+		qKOO7Umw50qFjwDE+UPTQR4/XhI=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Ou8gX9VmjfhZC8a9I4QJxBO4iSA=
+		sOsMmLLebXmo4GXTWSXGS1MSCDY=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ZI7ECObgD/lam9uFppLrnhtZjvk=
+		bKQC515NuQ3n1ZblpqLxOM5+xw8=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Ou8gX9VmjfhZC8a9I4QJxBO4iSA=
+		sOsMmLLebXmo4GXTWSXGS1MSCDY=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		1V+oGu6sRFvoQOG/u/X3Ev3bw2Y=
+		lZvg5TpaKvrV1N55leLk+X3IiZE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -178,215 +154,173 @@
 		</data>
 		<key>default.metallib</key>
 		<data>
-		rN+mt2oLToi7Oyz9uKiARC9O4jY=
+		LpVP9Z2RYc5X9kI7zX3pAoeCmcM=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>EmbeddedEffects.bundle/Background/config.js</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2F2UpV4Ttu/4YuH3wmkylYc1ch4cQN+Av9NWnFCGOuY=
+			tj4mHCMSZScpsgzrIEBZQdQGvBo20mMONYy2iTIgIwU=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/Background/config.json</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U/62qSYG/nUsAeYRy4oqvIH0Z6CUfvgsK8kKhJCmzeg=
+			xj/XI+SYDR1tR0humkNMVc9g2ZBXqpkz3pOGW2B2NAc=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/Background/images/Apartment.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			M24ibYZR97p7O9kFqXRCmtaaDwfHJFgzxzqQw0w7z5E=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/Background/images/Beach.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			khYmwitIZnINkbeDAyA3l4ek9ORFt46Tvx+7+jFjRWA=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/Background/images/Green.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			9crB4nTMy6EXh4JdOU0EcCick+w9XwXBKvq8cfrtCho=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/Background/images/Meditation.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			FUR8yZudCcO6fcmZgg10PueTtmno0m4kSYnxM5AFTKM=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/config.js</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			z1901Ew8pRTQLB9gGo2m9TqtOvSDy4AuUvounVy0h6w=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/config.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Awuw8MT3hxrUvw5jdZRBW71TMYxV4BY78jZKaBcVT10=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/flare66.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/flare66.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			+tQwRhUn7//bssJNnb7mhBh/j+z8T3W4jHFYXY7rFc0=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/lut3d_EYES_medium.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/lut3d_EYES_medium.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			Jh2OLfrehcKmywKat8qn+qK1JnidbPy6U0NVUtiXS6w=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/lut3d_TEETH_medium.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/lut3d_TEETH_medium.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			c0dxIxit45S5Eeud8euBZyLg8EjSU3jUut83CDbVNV8=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Base_Color.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Base_Color.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			Xnbscatt7CrsjvS1EsMdCMjVaIYZAP5DkratmUCRePE=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Metallic.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Metallic.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			Wiff17aozsnkjVN41dtNZtxCFfKMwk+Zq1cyYBE4X+s=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Normal.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Normal.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			cH8FkCN8mP9WZex+KHyIX4k2U9Vm3bt4TcjBIoim8c4=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/no_Roughness.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/no_Roughness.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			7bsGHGnNmkhuWUc/M3NAohtIcRh078TBc/Zcu9FWPvM=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/null_image.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/null_image.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			XolzPYqOBVEAzaaL96cSqw4bJP7+5+OXkrR8tf98PLE=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/null_lut.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/null_lut.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			NSfNqNUnt/q/m4V7Odq7KiZbyuxAfYd1JdudvqP059I=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/preview.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/preview.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			AA+Pk7AmspkjhJrxmyuAJQqqpMeU2gXrimLeAtwDu5Y=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/images/soft3.png</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/soft3.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			ipadAOFJotPBJuPmz9rqg9NwZVoXLyjM5pL4gBMcXzQ=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/meshes/face.bsm2</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/meshes/face.bsm2</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			sVksu1OTxHpFN4jo/HAr+k3FxLZ1oKzFupTcmX275V4=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/shaders/retouch.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/shaders/retouch.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZE2WiYxm8rzZLUpSGDl0GltBFKFvZJ/rUGScE2Sgabs=
+			FXSqjGf7AqsfwD6mvqnjrrT5IwkNHZz1zyoGTxzgpmI=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/shaders/retouch.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/shaders/retouch.vert</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x2fAYGXP1MXZKVblNOVjmmoMnCd2+xBUO0QYoU+EMCk=
+			WM440KYWisYtGC/Z3qtC9innrzArLTtBgu8rkaHTuTQ=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/hblur.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/hblur.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			74Q/BF3V4EXhMDVaKKPmE4a+o1iv47KUv9GyLc7Oen8=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/hblur.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/hblur.vert</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			cx+QlcfM4xtrGWSWOaEIK9dojQSdTYUh8bqHOc0pEkY=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/smooth.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/smooth.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0AIGQqdqM4rkDKfwLV2xmv+m0j2+j9AM+zDPyriMLoU=
+			q5yZjNXvHNg5A0SoSXK1a9rKM/4B1VUsdd9FJsfpO5U=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/smooth.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/smooth.vert</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			kck8TAsdSz+jbVUaVoL1nRC4WVc3Kj8BXkL07yJRGao=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/soft_skin.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/soft_skin.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q4YulLPQwTsagyB7ka9M3rHQ/ghwNc+rJuJaAka2MmY=
+			CT+AdMbh9+28TUhCqpKS1eTIzH7AnlhJNd/aYId/uEg=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/soft_skin.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/soft_skin.vert</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7t1mZ2bE9JuwgBgbkfz612kfxXeS0to0mcH64qNbh34=
+			ERCAI3JoDhUWxkQFR5fmvz8fdmr72yxzLig6rAtzFPE=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/vblur.frag</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/vblur.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			wo4uvcBMjt3hVymqFDLtCQp1ZAuam2tvREG3QY2gDTE=
 			</data>
 		</dict>
-		<key>EmbeddedEffects.bundle/BeautyEffects/smooth/vblur.vert</key>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/smooth/vblur.vert</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -404,7 +338,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y33liQBc41Sf9QzMDAk3VOjy2STjt/px4x1N+8sI1l0=
+			zF2/xfxXke+JwqXo4PREMcrdaenLlIq9ShLL0fH/bVQ=
 			</data>
 		</dict>
 		<key>Headers/BanubaSdk.h</key>
@@ -425,42 +359,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DnWYqmOPzzOucxOS7MVBU04KVOQbc397Nbd6z/H886w=
+			vVJ/fmGVdwHqjnj6iZtk6hgVarml6TCWk5YDkeDlh5s=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U8vHszKmJomQ1AygOv2En8MILCMg7cbfLHmZbL8O0nY=
+			TfUrJkHyV5AWdWKUT4gXTPY+/8s82KXQDpvdeZeDDtM=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p2DLnFIPBX6Es1hKwOUwdWcMUXoUMd+Zb3s2q2webnU=
+			/2yiSvsAcr2Fc3DBBDvt692du1QAcyMCmu/yvWSg3xk=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4PqkEg+3OvYR1KKNCuGGZRKvWrWSNqdaeSqH4N3E/x0=
+			3GwI4c1Hkd2N7TtRlPAePOgTDHD7mJ9hJ9TLJyErkTo=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p2DLnFIPBX6Es1hKwOUwdWcMUXoUMd+Zb3s2q2webnU=
+			/2yiSvsAcr2Fc3DBBDvt692du1QAcyMCmu/yvWSg3xk=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IOr8uUcTmNooJK4GqYSVX5lIeXmcVM57wnv2faz9KJQ=
+			jgEi1SM1oF/wko6TaaVm0pWx722w5F/QgyT25I3dZdI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -481,7 +415,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2B2Twf5TeX6tAYKVMqRq/1h6kX9j8jc0XZLOB7Bi+o8=
+			oJZS4BWZobk0urr4KdRzw0rs2IjsAHGs4rseD5FlWqc=
 			</data>
 		</dict>
 	</dict>
