@@ -2,7 +2,7 @@
 
 import PackageDescription
 
-let faceARversionRange: Range<Version> = "1.16.0"..<"1.16.99"
+let faceARversionRange: Range<Version> = "1.17.0"..<"1.17.99"
 let version: Version = "1.43.0"
 
 let package = Package(
