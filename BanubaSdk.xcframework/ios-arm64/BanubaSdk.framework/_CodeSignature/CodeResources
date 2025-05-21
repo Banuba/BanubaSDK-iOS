@@ -122,7 +122,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7BRCEKH7UBQE1prct91vvQlg6Js=
+		6TZxEZJ1T848TCHtikUQTtHcC58=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		oG5JVLXeu5qrpF2o9LlPmgQf8AU=
+		xd9gfSJWrHUMTdnGbcwZ30HiZRc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -394,7 +394,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eCfGItQtyisxI4iMkMmE/A42dhv5tmCCYUxpMWYJsSY=
+			au0Tg2t2ZRJw5xQO3+5H20sOubfR8stKNqLtCDwhgs0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
