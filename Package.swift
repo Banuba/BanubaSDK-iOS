@@ -3,7 +3,7 @@
 import PackageDescription
 
 let faceARversionRange: Range<Version> = "1.16.0"..<"1.16.99"
-let version: Version = "1.44.2"
+let version: Version = "1.44.3"
 
 let package = Package(
   name: "BanubaSdk",
