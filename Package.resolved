@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Banuba/BanubaUtilities-iOS.git",
       "state" : {
-        "revision" : "1f054bd4c269f652c79d30ced1f067a5a9154552",
-        "version" : "1.40.0"
+        "revision" : "231c173c0f22c359e8e0a89b92aa737c89fa8db0",
+        "version" : "1.45.0"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Banuba/BanubaVideoEditorCore-iOS.git",
       "state" : {
-        "revision" : "3eba7caeca83f371a06a5d34484dcfb5e48759d1",
-        "version" : "1.40.0"
+        "revision" : "5df328398eb6a231deae47f0929c6f7130c6ac47",
+        "version" : "1.45.0"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBBackground.git",
       "state" : {
-        "revision" : "60a857905377c577369e4b27ff22590ebcc8781d",
-        "version" : "1.16.2"
+        "revision" : "bc2e276c4c1d8d94415a3d363e79ddfe3c93b12d",
+        "version" : "1.17.3"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBEffectPlayer.git",
       "state" : {
-        "revision" : "8b1897978117f85475f9f771f51338b8dabc33fe",
-        "version" : "1.16.2"
+        "revision" : "8e058c310b96fa487201aa99408d3ee2a51febbf",
+        "version" : "1.17.3"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBEyes.git",
       "state" : {
-        "revision" : "3b9f76ba319f196e0016c0c5200668091f5444e4",
-        "version" : "1.16.2"
+        "revision" : "6011a57e4c47fb228a5ce921649cbe50322bd81c",
+        "version" : "1.17.3"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBFaceTracker.git",
       "state" : {
-        "revision" : "37b6d141622dc66eb22fd95d77197c55a98f4d23",
-        "version" : "1.16.2"
+        "revision" : "1ac89b5047d4165378a035c4e033405f47c55771",
+        "version" : "1.17.3"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBHair.git",
       "state" : {
-        "revision" : "7d3c1eae98aa10599280fd4e8e2642c965e162c4",
-        "version" : "1.16.2"
+        "revision" : "ec8bd4b8d1e689e6906b562dce5117c26e227bee",
+        "version" : "1.17.3"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBLips.git",
       "state" : {
-        "revision" : "bf1609e48375992ed4d4af2601742a2af1c4757e",
-        "version" : "1.16.2"
+        "revision" : "bee873fed9a2d16b032124b922e24e59b184b8b5",
+        "version" : "1.17.3"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBScripting.git",
       "state" : {
-        "revision" : "e9f02f6a38ac8e61835ec0bb83c4b113dcb9370d",
-        "version" : "1.16.2"
+        "revision" : "6b526428ff89b8311108becb5d8852bb0256fc22",
+        "version" : "1.17.3"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBSdkApi.git",
       "state" : {
-        "revision" : "8604b90e8daaca72efd43ef27574289fdfe5bddc",
-        "version" : "1.16.2"
+        "revision" : "03369965ea58b33cb055926d0fbfef78d16d2015",
+        "version" : "1.17.3"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBSdkCore.git",
       "state" : {
-        "revision" : "c0fa633c82c45d542c1cfa1b0ace043363a72ba9",
-        "version" : "1.16.2"
+        "revision" : "a1170b2268abe6e6ca9d32450cfef605dbdaa691",
+        "version" : "1.17.3"
       }
     },
     {
@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sdk-banuba/BNBSkin.git",
       "state" : {
-        "revision" : "ffa0d1651aba68bab50464524ea2388b9cfd1c75",
-        "version" : "1.16.2"
+        "revision" : "098191d52a43cd2dc1dcd3225f97fd8e239aef85",
+        "version" : "1.17.3"
       }
     }
   ],
