@@ -98,7 +98,7 @@ import os
   public static var videoPreset: AVFoundation.AVCaptureSession.Preset! {
     get
   }
-  @objc public static func initialize(sdkToken: Swift.String, videoSize: CoreFoundation.CGSize, videoPreset: AVFoundation.AVCaptureSession.Preset, useHEVCCodecIfPossibleForRecorder: Swift.Bool, additionalEffectsPaths: [Swift.String]? = nil)
+  @objc public static func initialize(sdkToken: Swift.String, videoSize: CoreFoundation.CGSize, videoPreset: AVFoundation.AVCaptureSession.Preset, useHEVCCodecIfPossibleForRecorder: Swift.Bool, isMirrored: Swift.Bool, additionalEffectsPaths: [Swift.String]? = nil)
   @objc required override dynamic public init()
   public enum MethodInJson : Swift.String {
     case changeAxis
@@ -144,7 +144,7 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.CameraModule {
   @objc dynamic public func setMaxFaces(facesCount: Swift.Int32)
   @objc dynamic public func setup()
   @objc dynamic public func destroy()
-  @objc dynamic public func takeSnapshot(handler: @escaping (UIKit.UIImage?) -> Swift.Void)
+  @objc dynamic public func takeSnapshot(isFrontCameraMirrored: Swift.Bool, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc dynamic public func start(completion: @escaping () -> Swift.Void)
   @objc dynamic public func stop(completion: (() -> Swift.Void)?)
   @objc dynamic public func setRenderTarget(view: UIKit.UIView)
@@ -170,6 +170,9 @@ extension BanubaSdk.BanubaCameraModule {
 }
 extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKInputServicing {
   @objc dynamic public var zoomFactor: Swift.Float {
+    @objc get
+  }
+  @objc dynamic public var defaultZoom: Swift.Float {
     @objc get
   }
   @objc dynamic public var isFrontCamera: Swift.Bool {
@@ -216,7 +219,6 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKEffectsServici
   @objc dynamic public func removeAllFilters()
   @objc dynamic public func applyFilter(_ filter: any BanubaVideoEditorCore.RenderEffect)
   @objc dynamic public func removeFilter(_ filter: any BanubaVideoEditorCore.RenderEffect)
-  @objc dynamic public func setEffectSubtypeModificationsEventListener(_ listener: any BanubaVideoEditorCore.EffectSubtypeModificationsEventListener)
   @objc dynamic public func effectsPaths() -> [Swift.String]
   @objc dynamic public func effectDidBeginApplying()
   @objc dynamic public func effectDidEndApplying()
@@ -224,23 +226,16 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKEffectsServici
   @objc dynamic public func effectDidChangeState()
   @objc dynamic public func setDoubleTapGestureEnabled(_ isEnabled: Swift.Bool)
 }
-extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKEffectsTextureServicing {
-  @objc dynamic public func effectAddImageTexture(image: UIKit.UIImage, backgroundColor: UIKit.UIColor)
-  @objc dynamic public func effectAddVideoTexture(asset: AVFoundation.AVURLAsset, backgroundColor: UIKit.UIColor)
-  @objc dynamic public func stopVideoTextureIfNeeded()
-  @objc dynamic public func effectReloadTexturePreview(startTime: Foundation.TimeInterval, endTime: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval)
-  @objc dynamic public func unloadEffectTexture()
-}
 extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKBeautyEffectManaging {
-  @objc dynamic public var isBeautificationEnabled: Swift.Bool {
+  @objc dynamic public var isBeautyEnabled: Swift.Bool {
     @objc get
-    @objc set
   }
+  @objc dynamic public func enableBeauty() async
+  @objc dynamic public func disableBeauty()
   @objc dynamic public var intensity: Swift.Double {
     @objc get
     @objc set
   }
-  @objc dynamic public func toggleBeautification() -> Swift.Bool
   @objc dynamic public func resetIntensity()
 }
 extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKBackgroundEffectManaging {
@@ -250,16 +245,21 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKBackgroundEffe
   @objc dynamic public var embeddedImages: [BanubaVideoEditorCore.EmbeddedBackgroundImage] {
     @objc get
   }
-  @objc dynamic public func enableBackground(completion: @escaping () -> Swift.Void)
+  @objc dynamic public func enableBackground() async
   @objc dynamic public func disableBackground()
+  @objc dynamic public func effectAddImageTexture(image: UIKit.UIImage, backgroundColor: UIKit.UIColor)
+  @objc dynamic public func stopVideoTextureIfNeeded()
+  @objc dynamic public func effectAddVideoTexture(asset: AVFoundation.AVURLAsset, backgroundColor: UIKit.UIColor)
+  @objc dynamic public func effectReloadTexturePreview(startTime: Foundation.TimeInterval, endTime: Foundation.TimeInterval, itemDuration: Foundation.TimeInterval)
+  @objc dynamic public func enableBackgroundBlur()
+  @objc dynamic public func unloadEffectTexture()
+  @objc dynamic public func setCameraVideoFrame(_ frame: CoreFoundation.CGRect)
+  @objc dynamic public func resetCameraVideoFrame()
 }
 extension BanubaSdk.BanubaCameraModule : BanubaSdk.BanubaSdkManagerDelegate {
   @objc dynamic public func willOutput(pixelBuffer: CoreVideo.CVPixelBuffer)
   @objc dynamic public func willPresent(changedPixelBuffer: CoreVideo.CVPixelBuffer?)
   @objc dynamic public func didProduceCapturingPerfomanceInfo(_ info: BanubaSdk.CapturingPerfomanceInfo)
-}
-extension BanubaSdk.BanubaCameraModule : BNBSdkCore.BNBEffectEventListener {
-  @objc dynamic public func onEffectEvent(_ name: Swift.String, params: [Swift.String : Swift.String])
 }
 @_hasMissingDesignatedInitializers @objc public class WatermarkDrawSettings : ObjectiveC.NSObject {
   final public let translatePos: CoreFoundation.CGPoint
@@ -512,7 +512,6 @@ extension BNBSdkCore.BNBFrameData {
 }
 @objc public protocol OutputServicing {
   @objc func configureWatermark(_ watermarkInfo: BanubaSdk.WatermarkInfo)
-  @objc func takeSnapshot(handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func takeSnapshot(configuration: BanubaSdk.OutputConfiguration, handler: @escaping (UIKit.UIImage?) -> Swift.Void)
   @objc func removeWatermark()
   @objc func startVideoCapturing(fileURL: Foundation.URL?, externalAudioConfiguration: BanubaVideoEditorCore.ExternalAudioConfiguration?, progress: ((CoreMedia.CMTime) -> Swift.Void)?, didStart: (() -> Swift.Void)?, shouldSkipFrame: (() -> Swift.Bool)?, isFirstRun: Swift.Bool, periodicProgressTimeInterval: Foundation.TimeInterval, totalDuration: Foundation.TimeInterval, configuration: BanubaSdk.OutputConfiguration, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
@@ -583,6 +582,7 @@ extension BanubaSdk.CameraServicing {
   @objc var minZoomFactor: Swift.Float { get }
   @objc var maxZoomFactor: Swift.Float { get }
   @objc var zoomFactor: Swift.Float { get }
+  @objc var defaultZoom: Swift.Float { get }
   @objc func setZoomFactor(_ zoomFactor: Swift.Float) -> Swift.Float
 }
 @objc public protocol InputServiceDelegate {
