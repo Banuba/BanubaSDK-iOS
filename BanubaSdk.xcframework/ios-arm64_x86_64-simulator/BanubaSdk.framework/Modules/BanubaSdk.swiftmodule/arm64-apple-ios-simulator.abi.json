@@ -22150,14 +22150,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "StringLiteral",
-      "offset": 9937,
+      "offset": 9987,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9971,
+      "offset": 10021,
       "length": 5,
       "value": "false"
     },
