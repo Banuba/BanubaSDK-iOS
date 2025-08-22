@@ -8,7 +8,7 @@ function setMorphingStrength(str){
 
 function setAll(a = 0){
     strength = a <= 1.5 ? a : 1.5;
-    setMorphingStrength(strength/1.5);
+    setMorphingStrength(0);
     js_slider.setVector4(new bnb.Vec4(strength/1.5, 0., 0., 0.))
 }
 
