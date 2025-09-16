@@ -1,6 +1,5 @@
 #include <bnb/glsl.vert>
 #include <bnb/transform_uv.glsl>
-#include <bnb/transform_camera_uv.glsl>
 
 BNB_LAYOUT_LOCATION(0)
 BNB_IN vec3 attrib_pos;
@@ -27,7 +26,10 @@ void main()
     
     /* apply scale and offset to transformed_bg_uv to cut everything outside the texture */
     transformed_bg_uv = gl_Position.xy / gl_Position.w;
-    transformed_bg_uv = bnb_transform_camera_uv(transformed_bg_uv);
+    mat2 ori = mat2(bnb_camera_orientation.xy, bnb_camera_orientation.zw);
+    transformed_bg_uv = (ori * vec2(transformed_bg_uv.x * bnb_camera_scale_i420.x, transformed_bg_uv.y)) * 0.5 + 0.5;
+    transformed_bg_uv += mat2(-1.f, 0.f, 0.f, -1.f) * ori * camera_origin_scale.xy;
+    transformed_bg_uv = bnb_scale_uv(transformed_bg_uv, camera_origin_scale.zw);
 
 #ifdef BNB_VK_1
     var_uv.y = 1. - var_uv.y;
