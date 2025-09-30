@@ -282,8 +282,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AVFoundation;
 @import BNBSdkCore;
-@import BanubaSDKServicing;
 @import BanubaUtilities;
+@import BanubaVideoEditorCore;
 @import CoreFoundation;
 @import CoreMedia;
 @import CoreVideo;
@@ -343,14 +343,10 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 /// Setup the camera if needed
 @property (nonatomic) BOOL isCameraEnabled;
 @property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
-+ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
++ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder isMirrored:(BOOL)isMirrored additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BNBEffectEventListener>
-- (void)onEffectEvent:(NSString * _Nonnull)name params:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
 @end
 
 
@@ -386,26 +382,28 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic, readonly) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL isBeautyEnabled;
+- (void)enableBeautyWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)disableBeauty;
 @property (nonatomic) double intensity;
 - (void)resetIntensity;
-- (void)enableBeautificationWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
-- (void)disableBeautification;
 @end
 
+@class EmbeddedBackgroundImage;
 @class UIImage;
 @class UIColor;
 @class AVURLAsset;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
 @property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
 - (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)disableBackground;
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
-- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
-- (void)enableBackgroundBlur;
 - (void)stopVideoTextureIfNeeded;
+- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
+- (void)enableBackgroundBlur;
 - (void)unloadEffectTexture;
 - (void)setCameraVideoFrame:(CGRect)frame;
 - (void)resetCameraVideoFrame;
@@ -425,18 +423,16 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @end
 
 @protocol RenderEffect;
-@protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)enableBlur;
 @property (nonatomic, readonly) BOOL isMaskLoaded;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
-- (void)loadMaskWithName:(NSString * _Nonnull)name completionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)callEffectMethod:(NSString * _Nonnull)method;
 - (void)unloadMask;
 - (void)removeAllFilters;
 - (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
 - (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
-- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
 - (NSArray<NSString *> * _Nonnull)effectsPaths SWIFT_WARN_UNUSED_RESULT;
 - (void)effectDidBeginApplying;
 - (void)effectDidEndApplying;
@@ -456,7 +452,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)setMaxFacesWithFacesCount:(int32_t)facesCount;
 - (void)setup;
 - (void)destroy;
-- (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)takeSnapshotWithIsFrontCameraMirrored:(BOOL)isFrontCameraMirrored handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)startWithCompletion:(void (^ _Nonnull)(void))completion;
 - (void)stopWithCompletion:(void (^ _Nullable)(void))completion;
 - (void)setRenderTargetWithView:(UIView * _Nonnull)view;
@@ -468,8 +464,8 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKInputServicing>
-@property (nonatomic, readonly) float defaultZoom;
 @property (nonatomic, readonly) float zoomFactor;
+@property (nonatomic, readonly) float defaultZoom;
 @property (nonatomic, readonly) BOOL isFrontCamera;
 @property (nonatomic, readonly) enum CameraModuleSessionType currentCameraSessionType;
 @property (nonatomic, readonly) BOOL isMultiCamSupported;
@@ -477,7 +473,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)focusAt:(CGPoint)point useContinuousDetection:(BOOL)useContinuousDetection;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
 - (void)toggleCameraWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)switchToFrontCameraWithCompletion:(void (^ _Nonnull)(void))completion;
 - (void)startCamera;
 - (void)startAudioCapturing;
 - (void)stopAudioCapturing;
@@ -557,15 +552,14 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
-@end
-
-
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
 - (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
+
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
+@end
 
 @class BanubaVisualClipVideo;
 
@@ -580,6 +574,7 @@ SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
@@ -686,7 +681,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 @property (nonatomic) BOOL flipCamera;
 @property (nonatomic, readonly, strong) AVCaptureVideoDataOutput * _Nullable cameraVideoOutput;
 @property (nonatomic, readonly, copy) NSString * _Nonnull systemPressureStateLevel;
-@property (nonatomic, readonly) float defaultZoom;
 @property (nonatomic, readonly) BOOL isMultiCamSupported;
 @property (nonatomic) BOOL isMultiCamEnabled;
 - (void)setupCamera;
@@ -718,6 +712,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @property (nonatomic, readonly) float minZoomFactor;
 @property (nonatomic, readonly) float maxZoomFactor;
 @property (nonatomic, readonly) float zoomFactor;
+@property (nonatomic, readonly) float defaultZoom;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -849,20 +844,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
 
 SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @interface MaskPostprocessingService : NSObject
-/// MaskPostprocessingService constructor
-/// \param renderSize setup render size
-///
-- (nonnull instancetype)initWithRenderSize:(CGSize)renderSize OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 @interface MaskPostprocessingService (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
 - (void)processVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
-- (void)surfaceCreatedWith:(CGSize)size;
-- (void)setEffectSize:(CGSize)size;
 - (void)loadEffectWithPath:(NSString * _Nonnull)path;
+- (void)unloadEffect;
 @end
 
 
@@ -896,7 +885,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OutputConfig
 SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 @protocol OutputServicing
 - (void)configureWatermark:(WatermarkInfo * _Nonnull)watermarkInfo;
-- (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)takeSnapshotWithConfiguration:(OutputConfiguration * _Nonnull)configuration handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)removeWatermark;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame isFirstRun:(BOOL)isFirstRun periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
@@ -1275,8 +1263,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import AVFoundation;
 @import BNBSdkCore;
-@import BanubaSDKServicing;
 @import BanubaUtilities;
+@import BanubaVideoEditorCore;
 @import CoreFoundation;
 @import CoreMedia;
 @import CoreVideo;
@@ -1336,14 +1324,10 @@ SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 /// Setup the camera if needed
 @property (nonatomic) BOOL isCameraEnabled;
 @property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
-+ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
++ (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder isMirrored:(BOOL)isMirrored additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <BNBEffectEventListener>
-- (void)onEffectEvent:(NSString * _Nonnull)name params:(NSDictionary<NSString *, NSString *> * _Nonnull)params;
 @end
 
 
@@ -1379,26 +1363,28 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBeautyEffectManaging>
-@property (nonatomic, readonly) BOOL isBeautificationEnabled;
+@property (nonatomic, readonly) BOOL isBeautyEnabled;
+- (void)enableBeautyWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)disableBeauty;
 @property (nonatomic) double intensity;
 - (void)resetIntensity;
-- (void)enableBeautificationWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
-- (void)disableBeautification;
 @end
 
+@class EmbeddedBackgroundImage;
 @class UIImage;
 @class UIColor;
 @class AVURLAsset;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
 @property (nonatomic, readonly) BOOL isBackgroundEnabled;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
 - (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)disableBackground;
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
-- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
-- (void)enableBackgroundBlur;
 - (void)stopVideoTextureIfNeeded;
+- (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
+- (void)enableBackgroundBlur;
 - (void)unloadEffectTexture;
 - (void)setCameraVideoFrame:(CGRect)frame;
 - (void)resetCameraVideoFrame;
@@ -1418,18 +1404,16 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @end
 
 @protocol RenderEffect;
-@protocol EffectSubtypeModificationsEventListener;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
+- (void)enableBlur;
 @property (nonatomic, readonly) BOOL isMaskLoaded;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
-- (void)loadMaskWithName:(NSString * _Nonnull)name completionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)callEffectMethod:(NSString * _Nonnull)method;
 - (void)unloadMask;
 - (void)removeAllFilters;
 - (void)applyFilter:(id <RenderEffect> _Nonnull)filter;
 - (void)removeFilter:(id <RenderEffect> _Nonnull)filter;
-- (void)setEffectSubtypeModificationsEventListener:(id <EffectSubtypeModificationsEventListener> _Nonnull)listener;
 - (NSArray<NSString *> * _Nonnull)effectsPaths SWIFT_WARN_UNUSED_RESULT;
 - (void)effectDidBeginApplying;
 - (void)effectDidEndApplying;
@@ -1449,7 +1433,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)setMaxFacesWithFacesCount:(int32_t)facesCount;
 - (void)setup;
 - (void)destroy;
-- (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)takeSnapshotWithIsFrontCameraMirrored:(BOOL)isFrontCameraMirrored handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)startWithCompletion:(void (^ _Nonnull)(void))completion;
 - (void)stopWithCompletion:(void (^ _Nullable)(void))completion;
 - (void)setRenderTargetWithView:(UIView * _Nonnull)view;
@@ -1461,8 +1445,8 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKInputServicing>
-@property (nonatomic, readonly) float defaultZoom;
 @property (nonatomic, readonly) float zoomFactor;
+@property (nonatomic, readonly) float defaultZoom;
 @property (nonatomic, readonly) BOOL isFrontCamera;
 @property (nonatomic, readonly) enum CameraModuleSessionType currentCameraSessionType;
 @property (nonatomic, readonly) BOOL isMultiCamSupported;
@@ -1470,7 +1454,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)focusAt:(CGPoint)point useContinuousDetection:(BOOL)useContinuousDetection;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
 - (void)toggleCameraWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)switchToFrontCameraWithCompletion:(void (^ _Nonnull)(void))completion;
 - (void)startCamera;
 - (void)startAudioCapturing;
 - (void)stopAudioCapturing;
@@ -1550,15 +1533,14 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 
 
 
-@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
-- (void)onCameraPoiChanged:(float)x y:(float)y;
-@end
-
-
 @interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBFaceNumberListener>
 - (void)onFaceNumberChanged:(int32_t)faceNumber;
 @end
 
+
+@interface BanubaSdkManager (SWIFT_EXTENSION(BanubaSdk)) <BNBCameraPoiListener>
+- (void)onCameraPoiChanged:(float)x y:(float)y;
+@end
 
 @class BanubaVisualClipVideo;
 
@@ -1573,6 +1555,7 @@ SWIFT_CLASS("_TtCC9BanubaSdk16BanubaSdkManager21BanubaVisualClipVideo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_PROTOCOL("_TtP9BanubaSdk20InputServiceDelegate_")
@@ -1679,7 +1662,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk15CameraServicing_")
 @property (nonatomic) BOOL flipCamera;
 @property (nonatomic, readonly, strong) AVCaptureVideoDataOutput * _Nullable cameraVideoOutput;
 @property (nonatomic, readonly, copy) NSString * _Nonnull systemPressureStateLevel;
-@property (nonatomic, readonly) float defaultZoom;
 @property (nonatomic, readonly) BOOL isMultiCamSupported;
 @property (nonatomic) BOOL isMultiCamEnabled;
 - (void)setupCamera;
@@ -1711,6 +1693,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14CameraZoomable_")
 @property (nonatomic, readonly) float minZoomFactor;
 @property (nonatomic, readonly) float maxZoomFactor;
 @property (nonatomic, readonly) float zoomFactor;
+@property (nonatomic, readonly) float defaultZoom;
 - (float)setZoomFactor:(float)zoomFactor SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -1842,20 +1825,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14InputServicing_")
 
 SWIFT_CLASS("_TtC9BanubaSdk25MaskPostprocessingService")
 @interface MaskPostprocessingService : NSObject
-/// MaskPostprocessingService constructor
-/// \param renderSize setup render size
-///
-- (nonnull instancetype)initWithRenderSize:(CGSize)renderSize OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 @interface MaskPostprocessingService (SWIFT_EXTENSION(BanubaSdk)) <SDKMaskPostprocessServicing>
 - (void)processVideoFrame:(CVPixelBufferRef _Nonnull)from to:(CVPixelBufferRef _Nonnull)to time:(CMTime)time;
-- (void)surfaceCreatedWith:(CGSize)size;
-- (void)setEffectSize:(CGSize)size;
 - (void)loadEffectWithPath:(NSString * _Nonnull)path;
+- (void)unloadEffect;
 @end
 
 
@@ -1889,7 +1866,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) OutputConfig
 SWIFT_PROTOCOL("_TtP9BanubaSdk15OutputServicing_")
 @protocol OutputServicing
 - (void)configureWatermark:(WatermarkInfo * _Nonnull)watermarkInfo;
-- (void)takeSnapshotWithHandler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)takeSnapshotWithConfiguration:(OutputConfiguration * _Nonnull)configuration handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
 - (void)removeWatermark;
 - (void)startVideoCapturingWithFileURL:(NSURL * _Nullable)fileURL externalAudioConfiguration:(ExternalAudioConfiguration * _Nullable)externalAudioConfiguration progress:(void (^ _Nullable)(CMTime))progress didStart:(void (^ _Nullable)(void))didStart shouldSkipFrame:(BOOL (^ _Nullable)(void))shouldSkipFrame isFirstRun:(BOOL)isFirstRun periodicProgressTimeInterval:(NSTimeInterval)periodicProgressTimeInterval totalDuration:(NSTimeInterval)totalDuration configuration:(OutputConfiguration * _Nonnull)configuration completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;

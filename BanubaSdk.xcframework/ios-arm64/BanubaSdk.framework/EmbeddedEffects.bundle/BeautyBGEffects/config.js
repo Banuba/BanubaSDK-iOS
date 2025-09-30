@@ -122,3 +122,4 @@ function setCameraScale(arg){
 }
 
 setAll();
+Background.useFilter(false);
