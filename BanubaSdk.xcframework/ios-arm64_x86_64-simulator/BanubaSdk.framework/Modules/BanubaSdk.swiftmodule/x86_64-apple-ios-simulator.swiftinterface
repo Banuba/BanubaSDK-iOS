@@ -33,14 +33,14 @@ import os
   public var isReadyToProvideData: Swift.Bool {
     get
   }
-  public init(asset: AVFoundation.AVAsset)
+  public init(asset: AVFoundation.AVAsset, firstFrameTime: CoreMedia.CMTime)
+  @objc deinit
   public func setVolume(_ volume: Swift.Float)
   public func startPlaying()
   public func stopPlaying()
   public func seek(to time: Foundation.TimeInterval)
   public func draw(renderEncoder: any Metal.MTLRenderCommandEncoder, fullRenderSize: CoreFoundation.CGSize, relativeLeftTopPoint: CoreFoundation.CGPoint, scale: CoreFoundation.CGFloat)
   @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
-  @objc deinit
 }
 @objc public enum EffectPlayerRenderMode : Swift.Int {
   case photo
@@ -78,19 +78,21 @@ import os
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class BanubaCameraModule : ObjectiveC.NSObject {
-  @objc public var isPIPSessionAlreadySetup: Swift.Bool
   @objc public var isPIPSession: Swift.Bool
   @objc public var pipVideoURL: Foundation.URL?
   @objc public var pipSwitchSetting: BanubaVideoEditorCore.PIPSwitchLayoutSetting?
   @objc public var pipPlayerSetting: BanubaVideoEditorCore.PIPPlayerLayoutSetting?
   @objc public var pipCameraSetting: BanubaVideoEditorCore.PIPCameraLayoutSetting?
+  @objc public var pipVideoContentMode: BanubaVideoEditorCore.PIPVideoContentMode
+  @objc public var isRenderLoopRunning: Swift.Bool {
+    @objc get
+  }
   @objc public var isCameraEnabled: Swift.Bool {
     @objc get
     @objc set
   }
   public static var additionalEffectsPaths: [Swift.String]?
   @objc public var isLoaded: Swift.Bool
-  @objc public var allowProcessing: Swift.Bool
   @objc public var inputDelegate: (any BanubaVideoEditorCore.SDKInputServicingDelegate)?
   public static var videoSize: CoreFoundation.CGSize! {
     get
@@ -140,6 +142,9 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.CameraModule {
   @objc dynamic public var isPIPPlayerReadyToProvideData: Swift.Bool {
     @objc get
   }
+  @objc dynamic public var currentPiPVideoTime: CoreMedia.CMTime {
+    @objc get
+  }
   @objc dynamic public func addFPSListener(_ listener: ((_ fpsInfo: Foundation.NSAttributedString) -> Swift.Void)?)
   @objc dynamic public func setMaxFaces(facesCount: Swift.Int32)
   @objc dynamic public func setup()
@@ -154,15 +159,17 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.CameraModule {
   @objc dynamic public func stopRenderLoop()
 }
 extension BanubaSdk.BanubaCameraModule {
-  @objc dynamic public func seekPIPPlayer(to time: Foundation.TimeInterval)
+  @objc dynamic public func rewindPIPPlayer()
+  @objc dynamic public func resetPIPPlayerPlayback()
+  @objc dynamic public func resumePIPPlayer()
   @objc dynamic public func startPIPPlayer()
   @objc dynamic public func stopPIPPlayer()
   @objc dynamic public func setPIPPlayerVolume(_ volume: Swift.Float)
   @objc dynamic public func setupPIPSession(withVideoURL url: Foundation.URL, playerSetting: BanubaVideoEditorCore.PIPPlayerLayoutSetting, cameraSetting: BanubaVideoEditorCore.PIPCameraLayoutSetting, switchSetting: BanubaVideoEditorCore.PIPSwitchLayoutSetting)
+  @objc dynamic public func stopPIPSession()
   @objc dynamic public func startPIPSessionIfNeeded(withSetting setting: BanubaVideoEditorCore.PIPPlayerLayoutSetting, completion: (() -> Swift.Void)?)
-  @objc dynamic public func applyPIPCameraSettingIfNeeded(_ setting: BanubaVideoEditorCore.PIPCameraLayoutSetting, restoreSession: Swift.Bool)
-  @objc dynamic public func applyPIPPlayerSettingIfNeeded(_ setting: BanubaVideoEditorCore.PIPPlayerLayoutSetting, restoreSession: Swift.Bool)
-  @objc dynamic public func applyPIPSwitchSettingIfNeeded(_ setting: BanubaVideoEditorCore.PIPSwitchLayoutSetting, restoreSession: Swift.Bool)
+  @objc dynamic public func applyVideoContentMode(_ contentMode: BanubaVideoEditorCore.PIPVideoContentMode)
+  @objc dynamic public func applyPIPLayoutSetting(_ layoutSettings: BanubaVideoEditorCore.PIPLayoutSettings)
 }
 extension BanubaSdk.BanubaCameraModule {
   @objc dynamic public func startMultiCamMixing(isPresenterMode: Swift.Bool, completion: (() -> Swift.Void)?)
@@ -411,14 +418,15 @@ extension BanubaSdk.BanubaSdkManager {
   public var isPIPPlayerReadyToProvideData: Swift.Bool? {
     get
   }
-  public func createPIPPlayer(withVideoURL url: Foundation.URL, completion: (() -> Swift.Void)?)
+  public func createPIPPlayer(withVideoURL url: Foundation.URL, firstFrameTime: CoreMedia.CMTime, completion: (() -> Swift.Void)?)
+  public func destroyPIPPlayer()
   public func startPIPMixer(isPresenterMode: Swift.Bool, completion: (() -> Swift.Void)?)
   public func stopPIPMixer(completion: (() -> Swift.Void)?)
   public func startPIPPlayer()
   public func stopPIPPlayer()
   public func setPIPPlayerVolume(_ volume: Swift.Float)
   public func seekPIPPlayer(to time: Foundation.TimeInterval)
-  public func setRenderBehaviuor(_ renderBehaviour: BanubaSdk.RenderBehavior)
+  public func setRenderBehaviour(_ renderBehaviour: BanubaSdk.RenderBehavior)
   public func setPIPPlayerShapeType(_ shapeType: BanubaSdk.PIPShapeBuilder.PIPShapeType)
   public func setPIPMixerShapeType(_ shapeType: BanubaSdk.PIPShapeBuilder.PIPShapeType)
   public func setRenderTargetShapeType(_ type: BanubaSdk.PIPShapeBuilder.PIPShapeType)

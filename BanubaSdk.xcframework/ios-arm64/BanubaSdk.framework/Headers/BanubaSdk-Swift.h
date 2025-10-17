@@ -334,16 +334,16 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk14AudioCapturing_")
 
 SWIFT_CLASS("_TtC9BanubaSdk18BanubaCameraModule")
 @interface BanubaCameraModule : NSObject
-@property (nonatomic) BOOL isPIPSessionAlreadySetup;
 @property (nonatomic) BOOL isPIPSession;
 @property (nonatomic, copy) NSURL * _Nullable pipVideoURL;
 @property (nonatomic, strong) PIPSwitchLayoutSetting * _Nullable pipSwitchSetting;
 @property (nonatomic, strong) PIPPlayerLayoutSetting * _Nullable pipPlayerSetting;
 @property (nonatomic, strong) PIPCameraLayoutSetting * _Nullable pipCameraSetting;
+@property (nonatomic) enum PIPVideoContentMode pipVideoContentMode;
+@property (nonatomic, readonly) BOOL isRenderLoopRunning;
 /// Setup the camera if needed
 @property (nonatomic) BOOL isCameraEnabled;
 @property (nonatomic) BOOL isLoaded;
-@property (nonatomic) BOOL allowProcessing;
 @property (nonatomic, strong) id <SDKInputServicingDelegate> _Nullable inputDelegate;
 + (void)initializeWithSdkToken:(NSString * _Nonnull)sdkToken videoSize:(CGSize)videoSize videoPreset:(AVCaptureSessionPreset _Nonnull)videoPreset useHEVCCodecIfPossibleForRecorder:(BOOL)useHEVCCodecIfPossibleForRecorder isMirrored:(BOOL)isMirrored additionalEffectsPaths:(NSArray<NSString *> * _Nullable)additionalEffectsPaths;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -409,17 +409,20 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)resetCameraVideoFrame;
 @end
 
+@class PIPLayoutSettings;
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk))
-- (void)seekPIPPlayerTo:(NSTimeInterval)time;
+- (void)rewindPIPPlayer;
+- (void)resetPIPPlayerPlayback;
+- (void)resumePIPPlayer;
 - (void)startPIPPlayer;
 - (void)stopPIPPlayer;
 - (void)setPIPPlayerVolume:(float)volume;
 - (void)setupPIPSessionWithVideoURL:(NSURL * _Nonnull)url playerSetting:(PIPPlayerLayoutSetting * _Nonnull)playerSetting cameraSetting:(PIPCameraLayoutSetting * _Nonnull)cameraSetting switchSetting:(PIPSwitchLayoutSetting * _Nonnull)switchSetting;
+- (void)stopPIPSession;
 - (void)startPIPSessionIfNeededWithSetting:(PIPPlayerLayoutSetting * _Nonnull)setting completion:(void (^ _Nullable)(void))completion;
-- (void)applyPIPCameraSettingIfNeeded:(PIPCameraLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
-- (void)applyPIPPlayerSettingIfNeeded:(PIPPlayerLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
-- (void)applyPIPSwitchSettingIfNeeded:(PIPSwitchLayoutSetting * _Nonnull)setting restoreSession:(BOOL)restoreSession;
+- (void)applyVideoContentMode:(enum PIPVideoContentMode)contentMode;
+- (void)applyPIPLayoutSetting:(PIPLayoutSettings * _Nonnull)layoutSettings;
 @end
 
 @protocol RenderEffect;
@@ -441,27 +444,6 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)setDoubleTapGestureEnabled:(BOOL)isEnabled;
 @end
 
-@class NSAttributedString;
-@class UIView;
-
-@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <CameraModule>
-@property (nonatomic, readonly, strong) dispatch_queue_t _Nullable renderQueue;
-@property (nonatomic) BOOL autoStart;
-@property (nonatomic, readonly) BOOL isPIPPlayerReadyToProvideData;
-- (void)addFPSListener:(void (^ _Nullable)(NSAttributedString * _Nonnull))listener;
-- (void)setMaxFacesWithFacesCount:(int32_t)facesCount;
-- (void)setup;
-- (void)destroy;
-- (void)takeSnapshotWithIsFrontCameraMirrored:(BOOL)isFrontCameraMirrored handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
-- (void)startWithCompletion:(void (^ _Nonnull)(void))completion;
-- (void)stopWithCompletion:(void (^ _Nullable)(void))completion;
-- (void)setRenderTargetWithView:(UIView * _Nonnull)view;
-- (void)removeRenderTarget;
-- (UIView * _Nonnull)getRendererView SWIFT_WARN_UNUSED_RESULT;
-- (void)startRenderLoop;
-- (void)stopRenderLoop;
-@end
-
 
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKInputServicing>
 @property (nonatomic, readonly) float zoomFactor;
@@ -479,6 +461,28 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)setCameraSessionType:(enum CameraModuleSessionType)type;
 - (enum AVCaptureTorchMode)setTorchWithMode:(enum AVCaptureTorchMode)mode SWIFT_WARN_UNUSED_RESULT;
 - (enum AVCaptureTorchMode)toggleTorch SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class NSAttributedString;
+@class UIView;
+
+@interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <CameraModule>
+@property (nonatomic, readonly, strong) dispatch_queue_t _Nullable renderQueue;
+@property (nonatomic) BOOL autoStart;
+@property (nonatomic, readonly) BOOL isPIPPlayerReadyToProvideData;
+@property (nonatomic, readonly) CMTime currentPiPVideoTime;
+- (void)addFPSListener:(void (^ _Nullable)(NSAttributedString * _Nonnull))listener;
+- (void)setMaxFacesWithFacesCount:(int32_t)facesCount;
+- (void)setup;
+- (void)destroy;
+- (void)takeSnapshotWithIsFrontCameraMirrored:(BOOL)isFrontCameraMirrored handler:(void (^ _Nonnull)(UIImage * _Nullable))handler;
+- (void)startWithCompletion:(void (^ _Nonnull)(void))completion;
+- (void)stopWithCompletion:(void (^ _Nullable)(void))completion;
+- (void)setRenderTargetWithView:(UIView * _Nonnull)view;
+- (void)removeRenderTarget;
+- (UIView * _Nonnull)getRendererView SWIFT_WARN_UNUSED_RESULT;
+- (void)startRenderLoop;
+- (void)stopRenderLoop;
 @end
 
 @class BNBEffectPlayer;
