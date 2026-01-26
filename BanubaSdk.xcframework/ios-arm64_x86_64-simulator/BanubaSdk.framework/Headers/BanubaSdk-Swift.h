@@ -430,6 +430,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
 - (void)enableBlur;
 @property (nonatomic, readonly) BOOL isMaskLoaded;
+@property (nonatomic, readonly, copy) NSString * _Nullable currentMaskName;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
 - (void)callEffectMethod:(NSString * _Nonnull)method;
 - (void)unloadMask;
@@ -1415,6 +1416,7 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKEffectsServicing>
 - (void)enableBlur;
 @property (nonatomic, readonly) BOOL isMaskLoaded;
+@property (nonatomic, readonly, copy) NSString * _Nullable currentMaskName;
 - (void)loadMaskWithName:(NSString * _Nonnull)name synchronous:(BOOL)synchronous;
 - (void)callEffectMethod:(NSString * _Nonnull)method;
 - (void)unloadMask;

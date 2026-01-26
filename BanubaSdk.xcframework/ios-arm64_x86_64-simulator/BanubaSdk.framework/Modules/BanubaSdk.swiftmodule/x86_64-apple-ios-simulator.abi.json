@@ -6768,6 +6768,72 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "currentMaskName",
+            "printedName": "currentMaskName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)currentMaskName",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC15currentMaskNameSSSgvp",
+            "moduleName": "BanubaSdk",
+            "objc_name": "currentMaskName",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)currentMaskName",
+                "mangledName": "$s9BanubaSdk0A12CameraModuleC15currentMaskNameSSSgvg",
+                "moduleName": "BanubaSdk",
+                "objc_name": "currentMaskName",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "loadMask",
             "printedName": "loadMask(name:synchronous:)",
@@ -22071,14 +22137,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 23911,
+      "offset": 24087,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 23934,
+      "offset": 24110,
       "length": 5,
       "value": "false"
     },

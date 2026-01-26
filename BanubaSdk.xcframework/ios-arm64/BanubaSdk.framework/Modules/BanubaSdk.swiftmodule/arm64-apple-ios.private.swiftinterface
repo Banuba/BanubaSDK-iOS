@@ -220,6 +220,9 @@ extension BanubaSdk.BanubaCameraModule : BanubaVideoEditorCore.SDKEffectsServici
   @objc dynamic public var isMaskLoaded: Swift.Bool {
     @objc get
   }
+  @objc dynamic public var currentMaskName: Swift.String? {
+    @objc get
+  }
   @objc dynamic public func loadMask(name: Swift.String, synchronous: Swift.Bool)
   @objc dynamic public func callEffectMethod(_ method: Swift.String)
   @objc dynamic public func unloadMask()
