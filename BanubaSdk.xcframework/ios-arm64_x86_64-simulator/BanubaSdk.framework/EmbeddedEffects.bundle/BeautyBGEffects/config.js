@@ -121,5 +121,9 @@ function setCameraScale(arg){
     Background.cameraVideoScale(arg);
 }
 
+function requestBgHighQuality(arg){
+    Background.useFilter(arg);
+}
+
 setAll();
 Background.useFilter(false);
