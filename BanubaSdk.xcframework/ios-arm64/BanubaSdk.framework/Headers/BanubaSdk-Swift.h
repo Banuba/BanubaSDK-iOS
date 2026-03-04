@@ -378,13 +378,14 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)resetIntensity;
 @end
 
-@class EmbeddedBackgroundImage;
+@class EmbeddedAsset;
 @class UIImage;
 @class UIColor;
 @class AVURLAsset;
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
+@property (nonatomic, readonly, copy) NSArray<EmbeddedAsset *> * _Nonnull embeddedGreenScreenAssets;
+@property (nonatomic, readonly, copy) NSArray<EmbeddedAsset *> * _Nonnull embeddedWeathermanAssets;
 @property (nonatomic, readonly) BOOL isBackgroundEnabled;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedBackgroundImage *> * _Nonnull embeddedImages;
 - (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)disableBackground;
 - (void)effectAddImageTextureWithImage:(UIImage * _Nonnull)image backgroundColor:(UIColor * _Nonnull)backgroundColor;
@@ -517,6 +518,7 @@ SWIFT_CLASS("_TtC9BanubaSdk16BanubaSdkManager")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Intialize common banuba SDK resources. This must be called before <code>BanubaSdkManger</code> instance
 /// creation. Counterpart <code>deinitialize</code> exists.
+/// Safe to call multiple times: subsequent calls are no-op to avoid BNBUtilityManager singleton crash.
 /// \param resourcePath paths to cutom resources folders
 ///
 /// \param clientTokenString client token

@@ -4,22 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Apartment.jpg</key>
-		<data>
-		0LhZq5kXpr2NxsBtHmpKO3V0yWo=
-		</data>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Beach.jpg</key>
-		<data>
-		SAaqvgawTZ+5bToU/0XwCbk6Mf8=
-		</data>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Green.jpg</key>
-		<data>
-		oun0Xvqf8kzYNm49ZJvAAkxJkm4=
-		</data>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Meditation.jpg</key>
-		<data>
-		2YRegCPfooqMBlfrJF4+iMutJr4=
-		</data>
 		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.js</key>
 		<data>
 		+5+gHzHR7WHW9oy5qAei5Vaktdo=
@@ -27,6 +11,18 @@
 		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.json</key>
 		<data>
 		QMYFh1HebiZquF208aL5/ilHkYo=
+		</data>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/green_screen_assets/1.mp4</key>
+		<data>
+		Ys++H2Wf8+olkO03j2cUrk+GABo=
+		</data>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/green_screen_assets/5.png</key>
+		<data>
+		s6Q7UKtjc/jrNJJ/QNJtrn5md3s=
+		</data>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/green_screen_assets/6.png</key>
+		<data>
+		FeLR/uPtM7ureS7+ydkl628l2IQ=
 		</data>
 		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/flare66.png</key>
 		<data>
@@ -116,6 +112,10 @@
 		<data>
 		1VR1Okrq51ipwKn5yz8lovAzdIs=
 		</data>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/weatherman_assets/staticGreenBackground.png</key>
+		<data>
+		FeLR/uPtM7ureS7+ydkl628l2IQ=
+		</data>
 		<key>EmbeddedEffects.bundle/Root.plist</key>
 		<data>
 		VgwPC6ew7RoI8AnhiGeRZSen+Z0=
@@ -130,7 +130,7 @@
 		</data>
 		<key>Headers/BanubaSdk-Swift.h</key>
 		<data>
-		F/PWdYMhQGLGXSgSgF+CO4qIsb8=
+		a4p+2SmRDGSQDCKR1zs8cuwSGVM=
 		</data>
 		<key>Headers/BanubaSdk.h</key>
 		<data>
@@ -146,47 +146,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1wha6/KiqLMeBpRgtCV2KXNBiOE=
+		088reNhsdn1av6WRhlGYdrUKq8c=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		DXkMucBuvf2Y9Mxdup6JBgx7dRI=
+		WMRD56smCRmJvpaDgDIT1Mt8YVU=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		grgxn49PXiwnXQZx+yxE7EKcC4A=
+		nL4nRz+y86AjMafh6vfEJ2ZJiLM=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		u5+wL+cUYMtcz7kxfIycQO7vXCQ=
+		+P4Qk6TW6fe1ZMft+wpgQ45/PoI=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		grgxn49PXiwnXQZx+yxE7EKcC4A=
+		nL4nRz+y86AjMafh6vfEJ2ZJiLM=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Mn81YRcaHxoqNiSNwcIf2C9reLE=
+		ZoavrUVun+Cvj5I5igLkSTSrQVU=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		DXkMucBuvf2Y9Mxdup6JBgx7dRI=
+		WMRD56smCRmJvpaDgDIT1Mt8YVU=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		bLY1hrD6A7LMv9LDtEEUJxufv7o=
+		tbhibx91DPe7r2nqy7K2bMZQAps=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Oo0Jwap5hptKaLZ17oVERqufhTY=
+		jE5X0KfXn2ksigCmY7IEhfVfvAo=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bLY1hrD6A7LMv9LDtEEUJxufv7o=
+		tbhibx91DPe7r2nqy7K2bMZQAps=
 		</data>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZxzisGdFemyskBEhz7fDwCzsCIE=
+		GNBDooVxK1a0vKFDnkg942Ix9vM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -203,34 +203,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Apartment.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			M24ibYZR97p7O9kFqXRCmtaaDwfHJFgzxzqQw0w7z5E=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Beach.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			khYmwitIZnINkbeDAyA3l4ek9ORFt46Tvx+7+jFjRWA=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Green.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			9crB4nTMy6EXh4JdOU0EcCick+w9XwXBKvq8cfrtCho=
-			</data>
-		</dict>
-		<key>EmbeddedEffects.bundle/BeautyBGEffects/assets/Meditation.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			FUR8yZudCcO6fcmZgg10PueTtmno0m4kSYnxM5AFTKM=
-			</data>
-		</dict>
 		<key>EmbeddedEffects.bundle/BeautyBGEffects/config.js</key>
 		<dict>
 			<key>hash2</key>
@@ -243,6 +215,27 @@
 			<key>hash2</key>
 			<data>
 			xj/XI+SYDR1tR0humkNMVc9g2ZBXqpkz3pOGW2B2NAc=
+			</data>
+		</dict>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/green_screen_assets/1.mp4</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			aNWgNqhwpFSMDKntUecFyGnSb0/CX8gJU0Cac71lcVk=
+			</data>
+		</dict>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/green_screen_assets/5.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t0OGknfKV1/iVLYo3RH1hC7zkuit8PdfEBGz2Y/cP0A=
+			</data>
+		</dict>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/green_screen_assets/6.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IOL97l1emgN1CnSYMyyTWttQ4CWBTFo3c7Ci1D95oPo=
 			</data>
 		</dict>
 		<key>EmbeddedEffects.bundle/BeautyBGEffects/images/flare66.png</key>
@@ -399,6 +392,13 @@
 			cx+QlcfM4xtrGWSWOaEIK9dojQSdTYUh8bqHOc0pEkY=
 			</data>
 		</dict>
+		<key>EmbeddedEffects.bundle/BeautyBGEffects/weatherman_assets/staticGreenBackground.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IOL97l1emgN1CnSYMyyTWttQ4CWBTFo3c7Ci1D95oPo=
+			</data>
+		</dict>
 		<key>EmbeddedEffects.bundle/Root.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -424,7 +424,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QVl0sS/0nDwjSUMObDMfsBxtpeMrHIrmjDLnfTR1DZM=
+			WIbMbzWhlXior6nb1dtQsgPq71Whvd3WtnQjAoYz9qU=
 			</data>
 		</dict>
 		<key>Headers/BanubaSdk.h</key>
@@ -452,70 +452,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DHxjC8mdxPzJ8tkIczz/O3HvCsEfYZ+PfLlhiH0lNAM=
+			EVV3a0Xmu0NCZQcd+i5aNf1qd9qcpitnatfJ8dXZ58U=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kM23X52QeM1mGYchd5ubF65+pECSlWw3ZyJtElG450Q=
+			0kh26Elcw/ZaE4V9uUhNkwiwPI1r5P6Oth3bOxtranE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4ZvmkM+JLdS6gQeE0NmQkn9t8M1IGsO8dgvfm4/XJE0=
+			5qdgyWammD6655HJctRnaGw3WjUJlSKm4EBuiOcRbKY=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kM23X52QeM1mGYchd5ubF65+pECSlWw3ZyJtElG450Q=
+			0kh26Elcw/ZaE4V9uUhNkwiwPI1r5P6Oth3bOxtranE=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			a5L4bna3xvb09w9KPWBiYZMbmWzqyq9q0Qzi/SRjQAs=
+			ZGyJganaXpj4nSmYrS2uujEXOw3CBMOSNzr3+nzZ0Ik=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DHxjC8mdxPzJ8tkIczz/O3HvCsEfYZ+PfLlhiH0lNAM=
+			EVV3a0Xmu0NCZQcd+i5aNf1qd9qcpitnatfJ8dXZ58U=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v2ji2aBGJChvMsiOIBHSLo6y1m3PkMHQpO+9kcDIrqg=
+			D2eBokrYhFMIsXo0WnoulHOg8z5YkS5QwkARDA8YXSI=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WY3G7Dgcprmro+8JfIUxCyBG0hDoIoxvSbiTdC/kkPo=
+			Z1NMkEJ3l0za0knu93VaVgktJMnRg1x+Dufi5RFFZ/M=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v2ji2aBGJChvMsiOIBHSLo6y1m3PkMHQpO+9kcDIrqg=
+			D2eBokrYhFMIsXo0WnoulHOg8z5YkS5QwkARDA8YXSI=
 			</data>
 		</dict>
 		<key>Modules/BanubaSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mhftRzYAtThHBg7S4PAUxW7XSvpQCGo/VBIub8yrfFM=
+			rNgCwy0lEQE+3MVoxVrw15+eoOXM//JjLAQH1Dau8Uo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

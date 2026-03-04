@@ -7369,6 +7369,138 @@
           },
           {
             "kind": "Var",
+            "name": "embeddedGreenScreenAssets",
+            "printedName": "embeddedGreenScreenAssets",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EmbeddedAsset",
+                    "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
+                    "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)embeddedGreenScreenAssets",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC25embeddedGreenScreenAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvp",
+            "moduleName": "BanubaSdk",
+            "objc_name": "embeddedGreenScreenAssets",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EmbeddedAsset",
+                        "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
+                        "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)embeddedGreenScreenAssets",
+                "mangledName": "$s9BanubaSdk0A12CameraModuleC25embeddedGreenScreenAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvg",
+                "moduleName": "BanubaSdk",
+                "objc_name": "embeddedGreenScreenAssets",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "embeddedWeathermanAssets",
+            "printedName": "embeddedWeathermanAssets",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EmbeddedAsset",
+                    "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
+                    "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)embeddedWeathermanAssets",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC24embeddedWeathermanAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvp",
+            "moduleName": "BanubaSdk",
+            "objc_name": "embeddedWeathermanAssets",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EmbeddedAsset",
+                        "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
+                        "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)embeddedWeathermanAssets",
+                "mangledName": "$s9BanubaSdk0A12CameraModuleC24embeddedWeathermanAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvg",
+                "moduleName": "BanubaSdk",
+                "objc_name": "embeddedWeathermanAssets",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "isBackgroundEnabled",
             "printedName": "isBackgroundEnabled",
             "children": [
@@ -7408,72 +7540,6 @@
                 "mangledName": "$s9BanubaSdk0A12CameraModuleC19isBackgroundEnabledSbvg",
                 "moduleName": "BanubaSdk",
                 "objc_name": "isBackgroundEnabled",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "embeddedImages",
-            "printedName": "embeddedImages",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[BanubaVideoEditorCore.EmbeddedBackgroundImage]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EmbeddedBackgroundImage",
-                    "printedName": "BanubaVideoEditorCore.EmbeddedBackgroundImage",
-                    "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedBackgroundImage"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)embeddedImages",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC14embeddedImagesSay0A15VideoEditorCore23EmbeddedBackgroundImageCGvp",
-            "moduleName": "BanubaSdk",
-            "objc_name": "embeddedImages",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[BanubaVideoEditorCore.EmbeddedBackgroundImage]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EmbeddedBackgroundImage",
-                        "printedName": "BanubaVideoEditorCore.EmbeddedBackgroundImage",
-                        "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedBackgroundImage"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)embeddedImages",
-                "mangledName": "$s9BanubaSdk0A12CameraModuleC14embeddedImagesSay0A15VideoEditorCore23EmbeddedBackgroundImageCGvg",
-                "moduleName": "BanubaSdk",
-                "objc_name": "embeddedImages",
                 "declAttributes": [
                   "Dynamic",
                   "ObjC"
@@ -22443,70 +22509,77 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "StringLiteral",
-      "offset": 399,
-      "length": 8,
-      "value": "\"assets\""
+      "offset": 404,
+      "length": 21,
+      "value": "\"green_screen_assets\""
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
+      "kind": "StringLiteral",
+      "offset": 466,
+      "length": 19,
+      "value": "\"weatherman_assets\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1025,
+      "offset": 1103,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2287,
+      "offset": 2002,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2464,
+      "offset": 2179,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2512,
+      "offset": 2227,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2518,
+      "offset": 2233,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2528,
+      "offset": 2243,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2539,
+      "offset": 2254,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "StringLiteral",
-      "offset": 10288,
+      "offset": 10003,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 10322,
+      "offset": 10037,
       "length": 5,
       "value": "false"
     },
@@ -22631,197 +22704,204 @@
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9373,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "Array",
-      "offset": 9671,
+      "offset": 9891,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12070,
+      "offset": 12722,
       "length": 4,
       "value": "1024"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12077,
+      "offset": 12729,
       "length": 3,
       "value": "768"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13105,
+      "offset": 13757,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13169,
+      "offset": 13821,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 18900,
+      "offset": 19552,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18938,
+      "offset": 19590,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18970,
+      "offset": 19622,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 19002,
+      "offset": 19654,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21891,
+      "offset": 22543,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21965,
+      "offset": 22617,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 22033,
+      "offset": 22685,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 23073,
+      "offset": 23725,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 24578,
+      "offset": 25230,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 25076,
+      "offset": 25728,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 27215,
+      "offset": 27867,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 27247,
+      "offset": 27899,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 27278,
+      "offset": 27930,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 29416,
+      "offset": 30068,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 29447,
+      "offset": 30099,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 31498,
+      "offset": 32150,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 31971,
+      "offset": 32623,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 32394,
+      "offset": 33046,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 32432,
+      "offset": 33084,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 32464,
+      "offset": 33116,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "FloatLiteral",
-      "offset": 39293,
+      "offset": 39945,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 39334,
+      "offset": 39986,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/BanubaSdkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 39604,
+      "offset": 40256,
       "length": 5,
       "value": "false"
     },
@@ -23304,28 +23384,28 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/InputService.swift",
       "kind": "IntegerLiteral",
-      "offset": 33808,
+      "offset": 33811,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/InputService.swift",
       "kind": "StringLiteral",
-      "offset": 33881,
+      "offset": 33884,
       "length": 23,
       "value": "\"adjustingWhiteBalance\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/InputService.swift",
       "kind": "StringLiteral",
-      "offset": 33944,
+      "offset": 33947,
       "length": 16,
       "value": "\"adjustingFocus\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/EffectPlayer\/Services\/InputService.swift",
       "kind": "StringLiteral",
-      "offset": 34003,
+      "offset": 34006,
       "length": 19,
       "value": "\"adjustingExposure\""
     },
