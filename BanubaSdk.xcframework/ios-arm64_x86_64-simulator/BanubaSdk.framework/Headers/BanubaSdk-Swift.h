@@ -378,13 +378,10 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)resetIntensity;
 @end
 
-@class EmbeddedAsset;
 @class UIImage;
 @class UIColor;
 @class AVURLAsset;
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly, copy) NSArray<EmbeddedAsset *> * _Nonnull embeddedGreenScreenAssets;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedAsset *> * _Nonnull embeddedWeathermanAssets;
 @property (nonatomic, readonly) BOOL isBackgroundEnabled;
 - (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)disableBackground;
@@ -393,6 +390,9 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
 - (void)enableBackgroundBlur;
+- (void)disableBackgroundBlur;
+- (void)enableBackgroundColorWith:(UIColor * _Nonnull)color;
+- (void)disableBackgroundColor;
 - (void)unloadEffectTexture;
 - (void)setCameraVideoFrame:(CGRect)frame;
 - (void)resetCameraVideoFrame;
@@ -1314,13 +1314,10 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)resetIntensity;
 @end
 
-@class EmbeddedAsset;
 @class UIImage;
 @class UIColor;
 @class AVURLAsset;
 @interface BanubaCameraModule (SWIFT_EXTENSION(BanubaSdk)) <SDKBackgroundEffectManaging>
-@property (nonatomic, readonly, copy) NSArray<EmbeddedAsset *> * _Nonnull embeddedGreenScreenAssets;
-@property (nonatomic, readonly, copy) NSArray<EmbeddedAsset *> * _Nonnull embeddedWeathermanAssets;
 @property (nonatomic, readonly) BOOL isBackgroundEnabled;
 - (void)enableBackgroundWithCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
 - (void)disableBackground;
@@ -1329,6 +1326,9 @@ SWIFT_PROTOCOL("_TtP9BanubaSdk24BanubaSdkManagerDelegate_")
 - (void)effectAddVideoTextureWithAsset:(AVURLAsset * _Nonnull)asset backgroundColor:(UIColor * _Nonnull)backgroundColor;
 - (void)effectReloadTexturePreviewWithStartTime:(NSTimeInterval)startTime endTime:(NSTimeInterval)endTime itemDuration:(NSTimeInterval)itemDuration;
 - (void)enableBackgroundBlur;
+- (void)disableBackgroundBlur;
+- (void)enableBackgroundColorWith:(UIColor * _Nonnull)color;
+- (void)disableBackgroundColor;
 - (void)unloadEffectTexture;
 - (void)setCameraVideoFrame:(CGRect)frame;
 - (void)resetCameraVideoFrame;

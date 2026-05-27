@@ -7369,138 +7369,6 @@
           },
           {
             "kind": "Var",
-            "name": "embeddedGreenScreenAssets",
-            "printedName": "embeddedGreenScreenAssets",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EmbeddedAsset",
-                    "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
-                    "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)embeddedGreenScreenAssets",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC25embeddedGreenScreenAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvp",
-            "moduleName": "BanubaSdk",
-            "objc_name": "embeddedGreenScreenAssets",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EmbeddedAsset",
-                        "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
-                        "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)embeddedGreenScreenAssets",
-                "mangledName": "$s9BanubaSdk0A12CameraModuleC25embeddedGreenScreenAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvg",
-                "moduleName": "BanubaSdk",
-                "objc_name": "embeddedGreenScreenAssets",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "embeddedWeathermanAssets",
-            "printedName": "embeddedWeathermanAssets",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EmbeddedAsset",
-                    "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
-                    "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(py)embeddedWeathermanAssets",
-            "mangledName": "$s9BanubaSdk0A12CameraModuleC24embeddedWeathermanAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvp",
-            "moduleName": "BanubaSdk",
-            "objc_name": "embeddedWeathermanAssets",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[BanubaVideoEditorCore.EmbeddedAsset]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EmbeddedAsset",
-                        "printedName": "BanubaVideoEditorCore.EmbeddedAsset",
-                        "usr": "c:@M@BanubaVideoEditorCore@objc(cs)EmbeddedAsset"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)embeddedWeathermanAssets",
-                "mangledName": "$s9BanubaSdk0A12CameraModuleC24embeddedWeathermanAssetsSay0A15VideoEditorCore13EmbeddedAssetCGvg",
-                "moduleName": "BanubaSdk",
-                "objc_name": "embeddedWeathermanAssets",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "isBackgroundEnabled",
             "printedName": "isBackgroundEnabled",
             "children": [
@@ -7751,6 +7619,84 @@
             "mangledName": "$s9BanubaSdk0A12CameraModuleC20enableBackgroundBluryyF",
             "moduleName": "BanubaSdk",
             "objc_name": "enableBackgroundBlur",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "disableBackgroundBlur",
+            "printedName": "disableBackgroundBlur()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)disableBackgroundBlur",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC21disableBackgroundBluryyF",
+            "moduleName": "BanubaSdk",
+            "objc_name": "disableBackgroundBlur",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableBackgroundColor",
+            "printedName": "enableBackgroundColor(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)enableBackgroundColorWith:",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC21enableBackgroundColor4withySo7UIColorC_tF",
+            "moduleName": "BanubaSdk",
+            "objc_name": "enableBackgroundColorWith:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "disableBackgroundColor",
+            "printedName": "disableBackgroundColor()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BanubaSdk@objc(cs)BanubaCameraModule(im)disableBackgroundColor",
+            "mangledName": "$s9BanubaSdk0A12CameraModuleC22disableBackgroundColoryyF",
+            "moduleName": "BanubaSdk",
+            "objc_name": "disableBackgroundColor",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -22425,14 +22371,14 @@
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "StringLiteral",
-      "offset": 24087,
+      "offset": 24057,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BanubaCameraModule.swift",
       "kind": "BooleanLiteral",
-      "offset": 24110,
+      "offset": 24080,
       "length": 5,
       "value": "false"
     },
@@ -22508,78 +22454,71 @@
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
-      "kind": "StringLiteral",
-      "offset": 404,
-      "length": 21,
-      "value": "\"green_screen_assets\""
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
-      "kind": "StringLiteral",
-      "offset": 466,
-      "length": 19,
-      "value": "\"weatherman_assets\""
-    },
-    {
-      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1103,
+      "offset": 1006,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1998,
+      "offset": 1119,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2175,
+      "offset": 1368,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1545,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2223,
+      "offset": 1593,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2229,
+      "offset": 1599,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2239,
+      "offset": 1609,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2250,
+      "offset": 1620,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "StringLiteral",
-      "offset": 10005,
+      "offset": 10121,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/user\/.jenkins\/workspace\/Release iOS modules\/BanubaSdk\/BanubaSdk\/BanubaSdk\/Components\/BeautyBackgroundEffectManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 10039,
+      "offset": 10155,
       "length": 5,
       "value": "false"
     },

@@ -113,6 +113,10 @@ function setBackgroundClearColor(r, g, b, a){
     Background.clearColor(r, g, b, a);
 }
 
+function setBackgroundColor(r, g, b, a){
+    Background.color(r, g, b, a);
+}
+
 function setCameraVideoOrigin(arg){
     Background.cameraVideoOrigin(arg);
 }
