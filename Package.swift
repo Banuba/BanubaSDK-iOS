@@ -3,7 +3,7 @@
 import PackageDescription
 
 let faceARversionRange: Range<Version> = "1.18.0"..<"1.18.99"
-let version: Version = "1.52.1"
+let version: Version = "1.53.0-beta.0"
 
 let package = Package(
   name: "BanubaSdk",
@@ -33,7 +33,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BanubaSdk",
-      path: "BanubaSdk.xcframework"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.53.0-beta.0/BanubaSdk-1.53.0-beta.0.xcframework.zip",
+      checksum: "e1ce8c8936535f8d52390de6dfb267a174519671bf54dafc6fc0f3108f3d4626"
     ),
     .target(
       name: "BanubaSdkTarget",
