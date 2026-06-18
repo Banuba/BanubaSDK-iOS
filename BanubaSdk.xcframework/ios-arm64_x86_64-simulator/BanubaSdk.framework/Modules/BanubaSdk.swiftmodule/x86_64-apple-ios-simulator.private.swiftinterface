@@ -183,9 +183,7 @@ extension BanubaSdk.BanubaCameraModule {
   @objc dynamic public func setPIPPlayerVolume(_ volume: Swift.Float)
   @objc dynamic public func setupPIPSession(withVideoURL url: Foundation.URL, playerSetting: BanubaVideoEditorCore.PIPPlayerLayoutSetting, cameraSetting: BanubaVideoEditorCore.PIPCameraLayoutSetting, switchSetting: BanubaVideoEditorCore.PIPSwitchLayoutSetting)
   @objc dynamic public func stopPIPSession()
-  #if compiler(>=5.3) && $NonescapableTypes
-  @objc dynamic public func startPIPSessionIfNeeded(withSetting setting: BanubaVideoEditorCore.PIPPlayerLayoutSetting, completion: (() -> Swift.Void)?)
-  #endif
+  @objc dynamic public func startPIPSessionIfNeeded(withSetting setting: BanubaVideoEditorCore.PIPPlayerLayoutSetting) async
   @objc dynamic public func applyVideoContentMode(_ contentMode: BanubaVideoEditorCore.PIPVideoContentMode)
   @objc dynamic public func applyPIPLayoutSetting(_ layoutSettings: BanubaVideoEditorCore.PIPLayoutSettings)
 }
@@ -540,6 +538,8 @@ public enum RenderBehavior {
   case fullScreen
   case verticalSplitUp
   case verticalSplitDown
+  case verticalSplitTwoThirdsDown
+  case verticalSplitOneThirdUp
   case horizontalSplitLeft
   case horizontalSplitRight
   case pip
