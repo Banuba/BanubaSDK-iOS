@@ -2,8 +2,9 @@
 
 import PackageDescription
 
-let faceARversionRange: Range<Version> = "1.18.0"..<"1.18.99"
-let version: Version = "1.52.2"
+let faceARversionRange: Range<Version> = "1.17.0-beta.0"..<"1.17.99"
+let banubaUtilsVersionRange: Range<Version> = "1.53.0-beta.0"..<"1.53.99"
+let banubaCoreVersionRange: Range<Version> = "1.53.0-beta.0"..<"1.53.99"
 
 let package = Package(
   name: "BanubaSdk",
@@ -17,9 +18,9 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(url: "https://github.com/Banuba/BanubaUtilities-iOS.git", exact: version),
-    .package(url: "https://github.com/Banuba/BanubaVideoEditorCore-iOS.git", exact: version),
-    
+    .package(url: "https://github.com/Banuba/BanubaUtilities-iOS.git", banubaUtilsVersionRange),
+    .package(url: "https://github.com/Banuba/BanubaVideoEditorCore-iOS.git", banubaCoreVersionRange),
+
     .package(url: "https://github.com/sdk-banuba/BNBSdkCore.git", faceARversionRange),
     .package(url: "https://github.com/sdk-banuba/BNBSdkApi.git", faceARversionRange),
     .package(url: "https://github.com/sdk-banuba/BNBEffectPlayer.git", faceARversionRange),
@@ -31,9 +32,17 @@ let package = Package(
     .package(url: "https://github.com/sdk-banuba/BNBSkin.git", faceARversionRange)
   ],
   targets: [
+    // Local development uses the path-based binaryTarget below.
+    // Release flow (fastlane patch_package_swift_for_nexus) replaces it in the GitHub distribution repo with:
+    // .binaryTarget(
+    //   name: "BanubaSdk",
+    //   url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/{version}/BanubaSdk-{version}.xcframework.zip",
+    //   checksum: "{computed at release}"
+    // )
     .binaryTarget(
       name: "BanubaSdk",
-      path: "BanubaSdk.xcframework"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.53.0/BanubaSdk-1.53.0.xcframework.zip",
+      checksum: "a8145d10360a402788bca4e1b4f8ec1207a397157ec8d6b8e0d2ad37cdd3c39a"
     ),
     .target(
       name: "BanubaSdkTarget",
