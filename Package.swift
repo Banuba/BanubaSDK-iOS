@@ -3,8 +3,8 @@
 import PackageDescription
 
 let faceARversionRange: Range<Version> = "1.17.0-beta.0"..<"1.17.99"
-let banubaUtilsVersionRange: Range<Version> = "1.53.0-beta.0"..<"1.53.99"
-let banubaCoreVersionRange: Range<Version> = "1.53.0-beta.0"..<"1.53.99"
+let banubaUtilsVersionRange: Range<Version> = "1.53.1"..<"1.53.99"
+let banubaCoreVersionRange: Range<Version> = "1.53.1"..<"1.53.99"
 
 let package = Package(
   name: "BanubaSdk",
@@ -32,17 +32,10 @@ let package = Package(
     .package(url: "https://github.com/sdk-banuba/BNBSkin.git", faceARversionRange)
   ],
   targets: [
-    // Local development uses the path-based binaryTarget below.
-    // Release flow (fastlane patch_package_swift_for_nexus) replaces it in the GitHub distribution repo with:
-    // .binaryTarget(
-    //   name: "BanubaSdk",
-    //   url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/{version}/BanubaSdk-{version}.xcframework.zip",
-    //   checksum: "{computed at release}"
-    // )
     .binaryTarget(
       name: "BanubaSdk",
-      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.53.0/BanubaSdk-1.53.0.xcframework.zip",
-      checksum: "a8145d10360a402788bca4e1b4f8ec1207a397157ec8d6b8e0d2ad37cdd3c39a"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.53.1/BanubaSdk-1.53.1.xcframework.zip",
+      checksum: "88c9ccb46f7562a81a7385787caee572648c88913bacb6a5bd9de2f857eba3fd"
     ),
     .target(
       name: "BanubaSdkTarget",
