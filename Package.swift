@@ -3,8 +3,8 @@
 import PackageDescription
 
 let faceARversionRange: Range<Version> = "1.17.0-beta.0"..<"1.17.99"
-let banubaUtilsVersionRange: Range<Version> = "1.54.0"..<"1.59.99"
-let banubaCoreVersionRange: Range<Version> = "1.54.0"..<"1.59.99"
+let banubaUtilsVersionRange: Range<Version> = "1.54.2"..<"1.59.99"
+let banubaCoreVersionRange: Range<Version> = "1.54.2"..<"1.59.99"
 
 let package = Package(
   name: "BanubaSdk",
@@ -34,8 +34,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BanubaSdk",
-      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.54.0/BanubaSdk-1.54.0.xcframework.zip",
-      checksum: "f2a1e336d8d05661ba9b4a0e34def4746f16b68913ccbcf4425577357961ea20"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.54.1/BanubaSdk-1.54.1.xcframework.zip",
+      checksum: "c47c3c09fa5631f055896008d2e0f235782a29c43f454e68d9114b84e1d66218"
     ),
     .target(
       name: "BanubaSdkTarget",
