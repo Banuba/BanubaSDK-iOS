@@ -3,8 +3,8 @@
 import PackageDescription
 
 let faceARversionRange: Range<Version> = "1.17.0-beta.0"..<"1.17.99"
-let banubaUtilsVersionRange: Range<Version> = "1.55.0"..<"1.59.99"
-let banubaCoreVersionRange: Range<Version> = "1.55.0"..<"1.59.99"
+let banubaUtilsVersion: Version = "1.55.1"
+let banubaCoreVersion: Version = "1.55.1"
 
 let package = Package(
   name: "BanubaSdk",
@@ -18,8 +18,8 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(url: "https://github.com/Banuba/BanubaUtilities-iOS.git", banubaUtilsVersionRange),
-    .package(url: "https://github.com/Banuba/BanubaVideoEditorCore-iOS.git", banubaCoreVersionRange),
+    .package(url: "https://github.com/Banuba/BanubaUtilities-iOS.git", exact: banubaUtilsVersion),
+    .package(url: "https://github.com/Banuba/BanubaVideoEditorCore-iOS.git", exact: banubaCoreVersion),
 
     .package(url: "https://github.com/sdk-banuba/BNBSdkCore.git", faceARversionRange),
     .package(url: "https://github.com/sdk-banuba/BNBSdkApi.git", faceARversionRange),
@@ -34,8 +34,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "BanubaSdk",
-      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.55.0/BanubaSdk-1.55.0.xcframework.zip",
-      checksum: "1789def424fadc3320a8ca405e6bb7342a3605616457b0392c1bade244291bcb"
+      url: "https://nexus.banuba.net/repository/ios-frameworks/ios/frameworks/BanubaSDK/1.55.1/BanubaSdk-1.55.1.xcframework.zip",
+      checksum: "bef3ff3534699cb940bb1cf92423c6b077a81eca8fe1e21459963eafa6b863fa"
     ),
     .target(
       name: "BanubaSdkTarget",
